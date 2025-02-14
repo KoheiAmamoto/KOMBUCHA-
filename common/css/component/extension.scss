@@ -1,0 +1,11094 @@
+@use "mixin" as *;
+// class付与だけで汎用的に使えるものを記載
+
+/*
+■ルール
+各略語は各プロパティの頭文字2~3文字で表す
+基本的に単体のスタイルを記載
+*/
+
+/* ===============================================
+改行用
+=============================================== */
+.br1366on{
+  display:none;
+}
+.br1024on{
+  display:none;
+}
+.br768on{
+  display:none;
+}
+.br480on{
+  display:none;
+}
+.br375on{
+  display:none;
+}
+@include minxl{
+  .br1366off{
+    display:none;
+  }
+  .br1366on{
+    display:block;
+  }
+  .sp1366off{
+    display:none;
+  }
+}
+
+@include lg{
+  .br1024off{
+    display:none;
+  }
+  .br1024on{
+    display:block;
+  }
+  .sp1024off{
+    display:none;
+  }
+}
+@include md{
+  .br768off{
+    display:none;
+  }
+  .br768on{
+    display:block;
+  }
+  .sp768off{
+    display:none;
+  }
+}
+@include xs{
+  .br480off{
+    display:none;
+  }
+  .br480on{
+    display:block;
+  }
+  .sp480off{
+    display:none;
+  }
+}
+
+
+
+/* -----------------------------------------------
+表示/非表示
+----------------------------------------------- */
+
+@include minxs{
+  *.sp480on{
+    display: none !important;
+  }
+}
+
+@include minmd{
+  *.sp768on{
+    display: none !important;
+  }
+}
+
+@include minlg{
+  *.sp1024on{
+    display: none !important;
+  }
+}
+
+/* --- 色関連 --- */
+/* color - col */
+
+.col{
+  /* 固定色 */
+  &-wht{
+    color: $c1;
+    &-child{
+      *{
+        color: $c1;
+      }
+    }
+  }
+  &-blk{
+    color: $c2;
+    &-child{
+      *{
+        color: $c2;
+      }
+    }
+  }
+  &-blu{
+    color: $c3;
+    &-child{
+      *{
+        color: $c3;
+      }
+    }
+  }
+  &-grn{
+    color: $c4;
+    &-child{
+      *{
+        color: $c4;
+      }
+    }
+  }
+  &-red{
+    color: $c5;
+    &-child{
+      *{
+        color: $c5;
+      }
+    }
+  }
+  &-ylw{
+    color: $c6;
+    &-child{
+      *{
+        color: $c6;
+      }
+    }
+  }
+  // ホバー時
+  &-hov-wht{
+    &:hover{
+      color: $c1;
+    }
+  }
+  &-hov-blk{
+    &:hover{
+      color: $c2;
+    }
+  }
+  &-hov-blu{
+    &:hover{
+      color: $c3;
+    }
+  }
+  &-hov-grn{
+    &:hover{
+      color: $c4;
+    }
+  }
+  &-hov-red{
+    &:hover{
+      color: $c5;
+    }
+  }
+  &-hov-ylw{
+    &:hover{
+      color: $c6;
+    }
+  }
+
+  /* サイトカラー  */
+  &-fst{
+    color: $sc1;
+  }
+  &-sec{
+    color: $sc2;
+  }
+  &-thd{
+    color: $sc3;
+  }
+  &-for{
+    color: $sc4;
+  }
+  &-fth{
+    color: $sc5;
+  }
+  &-six{
+    color: $sc6;
+  }
+  // ホバー時
+  &-hov-fst{
+    &:hover{
+      color: $sc1;
+    }
+  }
+  &-hov-sec{
+    &:hover{
+      color: $sc2;
+    }
+  }
+  &-hov-thd{
+    &:hover{
+      color: $sc3;
+    }
+  }
+  &-hov-for{
+    &:hover{
+      color: $sc4;
+    }
+  }
+  &-hov-fth{
+    &:hover{
+      color: $sc5;
+    }
+  }
+  &-hov-six{
+    &:hover{
+      color: $sc6;
+    }
+  }
+
+}
+
+
+
+/* background-color - bgc */
+.bgc{
+  /* 固定色 */
+  // 通常
+  &-wht{
+    background-color: $c1;
+    &-xl{
+      @include xl{
+        background-color: $c1;
+      }
+    }
+    &-lg{
+      @include lg{
+        background-color: $c1;
+      }
+    }
+    &-md{
+      @include md{
+        background-color: $c1;
+      }
+    }
+    &-mdxs{
+      @include md-xs{
+        background-color: $c1;
+      }
+    }
+    &-xs{
+      @include xs{
+        background-color: $c1;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        background-color: $c1;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        background-color: $c1;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        background-color: $c1;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        background-color: $c1;
+      }
+    }
+  }
+  &-blk{
+    background-color: $c2;
+    &-xl{
+      @include xl{
+        background-color: $c2;
+      }
+    }
+    &-lg{
+      @include lg{
+        background-color: $c2;
+      }
+    }
+    &-md{
+      @include md{
+        background-color: $c2;
+      }
+    }
+    &-mdxs{
+      @include md-xs{
+        background-color: $c2;
+      }
+    }
+    &-xs{
+      @include xs{
+        background-color: $c2;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        background-color: $c2;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        background-color: $c2;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        background-color: $c2;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        background-color: $c2;
+      }
+    }
+  }
+  &-blu{
+    background-color: $c3;
+    &-xl{
+      @include xl{
+        background-color: $c3;
+      }
+    }
+    &-lg{
+      @include lg{
+        background-color: $c3;
+      }
+    }
+    &-md{
+      @include md{
+        background-color: $c3;
+      }
+    }
+    &-mdxs{
+      @include md-xs{
+        background-color: $c3;
+      }
+    }
+    &-xs{
+      @include xs{
+        background-color: $c3;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        background-color: $c3;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        background-color: $c3;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        background-color: $c3;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        background-color: $c3;
+      }
+    }
+  }
+  &-grn{
+    background-color: $c4;
+    &-xl{
+      @include xl{
+        background-color: $c4;
+      }
+    }
+    &-lg{
+      @include lg{
+        background-color: $c4;
+      }
+    }
+    &-md{
+      @include md{
+        background-color: $c4;
+      }
+    }
+    &-mdxs{
+      @include md-xs{
+        background-color: $c4;
+      }
+    }
+    &-xs{
+      @include xs{
+        background-color: $c4;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        background-color: $c4;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        background-color: $c4;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        background-color: $c4;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        background-color: $c4;
+      }
+    }
+  }
+  &-red{
+    background-color: $c5;
+    &-xl{
+      @include xl{
+        background-color: $c5;
+      }
+    }
+    &-lg{
+      @include lg{
+        background-color: $c5;
+      }
+    }
+    &-md{
+      @include md{
+        background-color: $c5;
+      }
+    }
+    &-mdxs{
+      @include md-xs{
+        background-color: $c5;
+      }
+    }
+    &-xs{
+      @include xs{
+        background-color: $c5;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        background-color: $c5;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        background-color: $c5;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        background-color: $c5;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        background-color: $c5;
+      }
+    }
+  }
+  &-ylw{
+    background-color: $sc3;
+    &-xl{
+      @include xl{
+        background-color: $sc3;
+      }
+    }
+    &-lg{
+      @include lg{
+        background-color: $sc3;
+      }
+    }
+    &-md{
+      @include md{
+        background-color: $sc3;
+      }
+    }
+    &-mdxs{
+      @include md-xs{
+        background-color: $sc3;
+      }
+    }
+    &-xs{
+      @include xs{
+        background-color: $sc3;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        background-color: $sc3;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        background-color: $sc3;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        background-color: $sc3;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        background-color: $sc3;
+      }
+    }
+  }
+  &-n{
+    background-color: transparent;
+    &-xl{
+      @include xl{
+        background-color: transparent;
+      }
+    }
+    &-lg{
+      @include lg{
+        background-color: transparent;
+      }
+    }
+    &-md{
+      @include md{
+        background-color: transparent;
+      }
+    }
+    &-mdxs{
+      @include md-xs{
+        background-color: transparent;
+      }
+    }
+    &-xs{
+      @include xs{
+        background-color: transparent;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        background-color: transparent;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        background-color: transparent;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        background-color: transparent;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        background-color: transparent;
+      }
+    }
+  }
+
+  // 透過
+  &-opa-wht{
+    @include ps(r);
+    &::before{
+      content: '';
+      @include ps(a);
+      @include psa;
+      background-color: $c1;
+      opacity: 0.6;
+      z-index: -1;
+    }
+  }
+  &-opa-blk{
+    @include ps(r);
+    &::before{
+      content: '';
+      @include ps(a);
+      @include psa;
+      background-color: $c2;
+      opacity: 0.6;
+      z-index: -1;
+    }
+  }
+  &-opa-blu{
+    @include ps(r);
+    &::before{
+      content: '';
+      @include ps(a);
+      @include psa;
+      background-color: $c3;
+      opacity: 0.6;
+      z-index: -1;
+    }
+  }
+  &-opa-grn{
+    @include ps(r);
+    &::before{
+      content: '';
+      @include ps(a);
+      @include psa;
+      background-color: $c4;
+      opacity: 0.6;
+      z-index: -1;
+    }
+  }
+  &-opa-red{
+    @include ps(r);
+    &::before{
+      content: '';
+      @include ps(a);
+      @include psa;
+      background-color: $c5;
+      opacity: 0.6;
+      z-index: -1;
+    }
+  }
+  &-opa-ylw{
+    @include ps(r);
+    &::before{
+      content: '';
+      @include ps(a);
+      @include psa;
+      background-color: $sc3;
+      opacity: 0.6;
+      z-index: -1;
+    }
+  }
+
+  // ホバー
+  &-hov-wht{
+    &:hover{
+      background-color: $c1;
+    }
+  }
+  &-hov-blk{
+    &:hover{
+      background-color: $c2;
+    }
+  }
+  &-hov-blu{
+    &:hover{
+      background-color: $c3;
+    }
+  }
+  &-hov-grn{
+    &:hover{
+      background-color: $c4;
+    }
+  }
+  &-hov-red{
+    &:hover{
+      background-color: $c5;
+    }
+  }
+  &-hov-ylw{
+    &:hover{
+      background-color: $sc3;
+    }
+  }
+
+  /* サイトカラー */
+  // 通常
+  &-fst{
+    background-color: $sc1;
+    &-xl{
+      @include xl{
+        background-color: $sc1;
+      }
+    }
+    &-lg{
+      @include lg{
+        background-color: $sc1;
+      }
+    }
+    &-md{
+      @include md{
+        background-color: $sc1;
+      }
+    }
+    &-mdxs{
+      @include md-xs{
+        background-color: $sc1;
+      }
+    }
+    &-xs{
+      @include xs{
+        background-color: $sc1;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        background-color: $sc1;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        background-color: $sc1;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        background-color: $sc1;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        background-color: $sc1;
+      }
+    }
+  }
+  &-sec{
+    background-color: $sc2;
+    &-xl{
+      @include xl{
+        background-color: $sc2;
+      }
+    }
+    &-lg{
+      @include lg{
+        background-color: $sc2;
+      }
+    }
+    &-md{
+      @include md{
+        background-color: $sc2;
+      }
+    }
+    &-mdxs{
+      @include md-xs{
+        background-color: $sc2;
+      }
+    }
+    &-xs{
+      @include xs{
+        background-color: $sc2;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        background-color: $sc2;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        background-color: $sc2;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        background-color: $sc2;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        background-color: $sc2;
+      }
+    }
+  }
+  &-thd{
+    background-color: $sc3;
+    &-xl{
+      @include xl{
+        background-color: $sc3;
+      }
+    }
+    &-lg{
+      @include lg{
+        background-color: $sc3;
+      }
+    }
+    &-md{
+      @include md{
+        background-color: $sc3;
+      }
+    }
+    &-mdxs{
+      @include md-xs{
+        background-color: $sc3;
+      }
+    }
+    &-xs{
+      @include xs{
+        background-color: $sc3;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        background-color: $sc3;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        background-color: $sc3;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        background-color: $sc3;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        background-color: $sc3;
+      }
+    }
+  }
+  &-for{
+    background-color: $sc4;
+    &-xl{
+      @include xl{
+        background-color: $sc4;
+      }
+    }
+    &-lg{
+      @include lg{
+        background-color: $sc4;
+      }
+    }
+    &-md{
+      @include md{
+        background-color: $sc4;
+      }
+    }
+    &-mdxs{
+      @include md-xs{
+        background-color: $sc4;
+      }
+    }
+    &-xs{
+      @include xs{
+        background-color: $sc4;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        background-color: $sc4;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        background-color: $sc4;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        background-color: $sc4;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        background-color: $sc4;
+      }
+    }
+  }
+  &-fth{
+    background-color: $sc5;
+    &-xl{
+      @include xl{
+        background-color: $sc5;
+      }
+    }
+    &-lg{
+      @include lg{
+        background-color: $sc5;
+      }
+    }
+    &-md{
+      @include md{
+        background-color: $sc5;
+      }
+    }
+    &-mdxs{
+      @include md-xs{
+        background-color: $sc5;
+      }
+    }
+    &-xs{
+      @include xs{
+        background-color: $sc5;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        background-color: $sc5;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        background-color: $sc5;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        background-color: $sc5;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        background-color: $sc5;
+      }
+    }
+  }
+  &-six{
+    background-color: $sc6;
+    &-xl{
+      @include xl{
+        background-color: $sc6;
+      }
+    }
+    &-lg{
+      @include lg{
+        background-color: $sc6;
+      }
+    }
+    &-md{
+      @include md{
+        background-color: $sc6;
+      }
+    }
+    &-mdxs{
+      @include md-xs{
+        background-color: $sc6;
+      }
+    }
+    &-xs{
+      @include xs{
+        background-color: $sc6;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        background-color: $sc6;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        background-color: $sc6;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        background-color: $sc6;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        background-color: $sc6;
+      }
+    }
+  }
+
+  // 透過
+  &-opa-fst{
+    @include ps(r);
+    &::before{
+      content: '';
+      @include ps(a);
+      @include psa;
+      background-color: $sc1;
+      opacity: 0.6;
+      z-index: -1;
+    }
+  }
+  &-opa-sec{
+    @include ps(r);
+    &::before{
+      content: '';
+      @include ps(a);
+      @include psa;
+      background-color: $sc2;
+      opacity: 0.6;
+      z-index: -1;
+    }
+  }
+  &-opa-thd{
+    @include ps(r);
+    &::before{
+      content: '';
+      @include ps(a);
+      @include psa;
+      background-color: $sc3;
+      opacity: 0.6;
+      z-index: -1;
+    }
+  }
+  &-opa-for{
+    @include ps(r);
+    &::before{
+      content: '';
+      @include ps(a);
+      @include psa;
+      background-color: $sc4;
+      opacity: 0.6;
+      z-index: -1;
+    }
+  }
+  &-opa-fth{
+    @include ps(r);
+    &::before{
+      content: '';
+      @include ps(a);
+      @include psa;
+      background-color: $sc5;
+      opacity: 0.6;
+      z-index: -1;
+    }
+  }
+  &-opa-six{
+    @include ps(r);
+    &::before{
+      content: '';
+      @include ps(a);
+      @include psa;
+      background-color: $sc6;
+      opacity: 0.6;
+      z-index: -1;
+    }
+  }
+
+  // ホバー
+  &-hov-fst{
+    &:hover{
+      background-color: $sc1;
+    }
+  }
+  &-hov-sec{
+    &:hover{
+      background-color: $sc2;
+    }
+  }
+  &-hov-thd{
+    &:hover{
+      background-color: $sc3;
+    }
+  }
+  &-hov-for{
+    &:hover{
+      background-color: $sc4;
+    }
+  }
+  &-hov-fth{
+    &:hover{
+      background-color: $sc5;
+    }
+  }
+  &-hov-six{
+    &:hover{
+      background-color: $sc6;
+    }
+  }
+
+}
+
+
+/* --- border-color - bdc --- */
+.bdc{
+  /* 固定色 */
+  &-wht{
+    border-color: $c1;
+  }
+  &-blk{
+    border-color: $c2;
+  }
+  &-blu{
+    border-color: $c3;
+  }
+  &-grn{
+    border-color: $c4;
+  }
+  &-red{
+    border-color: $c5;
+  }
+  &-ylw{
+    border-color: $c6;
+  }
+
+  /* サイトカラー */
+  &-fst{
+    border-color: $sc1;
+  }
+  &-sec{
+    border-color: $sc2;
+  }
+  &-thd{
+    border-color: $sc3;
+  }
+  &-for{
+    border-color: $sc4;
+  }
+  &-fth{
+    border-color: $sc5;
+  }
+  &-six{
+    border-color: $sc6;
+  }
+
+
+}
+
+
+/* --- フォント --- */
+/* font-family - fam */
+// .fam-zenR{
+//   font-family: ZenOldMincho-Regular;
+// }
+// .fam-zenM{
+//   font-family: ZenOldMincho-Medium;
+// }
+// .fam-zenB{
+//   font-family: ZenOldMincho-Bold;
+// }
+// .fam-zenBL{
+//   font-family: ZenOldMincho-Black;
+// }
+
+.fam-EL{
+  font-weight: 100;
+  font-weight: lighter;
+}
+.fam-R{
+  font-weight: 400;
+  font-weight: normal
+}
+.fam-M{
+  font-weight: 500;
+  font-weight: medium;
+}
+.fam-B{
+  font-weight: 700;
+  font-weight: bold;
+}
+.fam-EB{
+  font-weight: 900;
+  font-weight: bolder;
+}
+
+
+/* font-size - fs */
+@for $i from 8 through 200 {
+  /* px */
+  .fs-px-#{$i} {
+    font-size: $i * 1px;
+    &-xl{
+      @include xl{
+        font-size: $i + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        font-size: $i + px;
+      }
+    }
+    &-md{
+      @include md{
+        font-size: $i + px;
+      }
+    }
+    &-mdxs{
+      @include md-xs{
+        font-size: $i + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        font-size: $i + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        font-size: $i + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        font-size: $i + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        font-size: $i + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        font-size: $i + px;
+      }
+    }
+  }
+  /* vw */
+  .fs-vw-#{$i} {
+    font-size: xl($i);
+    &-xl{
+      @include xl{
+        font-size: xl($i);
+      }
+    }
+    &-lg{
+      @include lg{
+        font-size: lg($i);
+      }
+    }
+    &-md{
+      @include md{
+        font-size: xxs($i);
+        // font-size: md($i);
+      }
+    }
+    &-mdxs{
+      @include md-xs{
+        // font-size: xxs($i);
+        font-size: md($i);
+      }
+    }
+    &-xs{
+      @include xs{
+        font-size: xxs($i);
+      }
+    }
+    &-minxs{
+      @include minxs{
+        font-size: xl($i);
+      }
+    }
+    &-minmd{
+      @include minmd{
+        font-size: xl($i);
+      }
+    }
+    &-minlg{
+      @include minlg{
+        font-size: xl($i);
+      }
+    }
+  }
+  /* px */
+  .fs-px-#{$i}-child {
+    *{
+      font-size: $i 1px;
+    }
+    &-xl{
+      *{
+        @include xl{
+          font-size: $i + px;
+        }
+      }
+    }
+    &-lg{
+      *{
+        @include lg{
+          font-size: $i + px;
+        }
+      }
+    }
+    &-md{
+      *{
+        @include md{
+          font-size: $i + px;
+        }
+      }
+    }
+    &-mdxs{
+      *{
+        @include md-xs{
+          font-size: $i + px;
+        }
+      }
+    }
+    &-xs{
+      *{
+        @include xs{
+          font-size: $i + px;
+        }
+      }
+    }
+    &-minxs{
+      *{
+        @include minxs{
+          font-size: $i + px;
+        }
+      }
+    }
+    &-minmd{
+      *{
+        @include minmd{
+          font-size: $i + px;
+        }
+      }
+    }
+    &-minlg{
+      *{
+        @include minlg{
+          font-size: $i + px;
+        }
+      }
+    }
+    &-minxl{
+      *{
+        @include minxl{
+          font-size: $i + px;
+        }
+      }
+    }
+  }
+  /* vw */
+  .fs-vw-#{$i}-child{
+    *{
+      font-size: xl($i);
+    }
+    &-xl{
+      *{
+        @include xl{
+          font-size: xl($i);
+        }
+      }
+    }
+    &-lg{
+      *{
+        @include lg{
+          font-size: lg($i);
+        }
+      }
+    }
+    &-md{
+      *{
+        @include md{
+          font-size: xxs($i);
+        }
+      }
+    }
+    &-mdxs{
+      *{
+        @include md-xs{
+          font-size: md($i);
+        }
+      }
+    }
+    &-xs{
+      *{
+        @include xs{
+          font-size: xxs($i);
+        }
+      }
+    }
+    &-minxs{
+      *{
+        @include minxs{
+          font-size: xl($i);
+        }
+      }
+    }
+    &-minmd{
+      *{
+        @include minmd{
+          font-size: xl($i);
+        }
+      }
+    }
+    &-minlg{
+      *{
+        @include minlg{
+          font-size: xl($i);
+        }
+      }
+    }
+    &-minxl{
+      *{
+        @include minxl{
+          font-size: xl($i);
+        }
+      }
+    }
+  }
+}
+
+/* text-align - ta */
+.ta{
+  &-l{
+    text-align: left;
+    &-xl{
+      @include xl{
+        text-align: left;
+      }
+    }
+    &-lg{
+      @include lg{
+        text-align: left;
+      }
+    }
+    &-md{
+      @include md{
+        text-align: left;
+      }
+    }
+    &-xs{
+      @include xs{
+        text-align: left;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        text-align: left;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        text-align: left;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        text-align: left;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        text-align: left;
+      }
+    }
+  }
+  &-r{
+    text-align: right;
+    &-xl{
+      @include xl{
+        text-align: right;
+      }
+    }
+    &-lg{
+      @include lg{
+        text-align: right;
+      }
+    }
+    &-md{
+      @include md{
+        text-align: right;
+      }
+    }
+    &-xs{
+      @include xs{
+        text-align: right;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        text-align: right;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        text-align: right;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        text-align: right;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        text-align: right;
+      }
+    }
+  }
+  &-c{
+    text-align: center;
+    &-xl{
+      @include xl{
+        text-align: center;
+      }
+    }
+    &-lg{
+      @include lg{
+        text-align: center;
+      }
+    }
+    &-md{
+      @include md{
+        text-align: center;
+      }
+    }
+    &-xs{
+      @include xs{
+        text-align: center;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        text-align: center;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        text-align: center;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        text-align: center;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        text-align: center;
+      }
+    }
+  }
+  &-j{
+    text-align: justify;
+    &-xl{
+      @include xl{
+        text-align: justify;
+      }
+    }
+    &-lg{
+      @include lg{
+        text-align: justify;
+      }
+    }
+    &-md{
+      @include md{
+        text-align: justify;
+      }
+    }
+    &-xs{
+      @include xs{
+        text-align: justify;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        text-align: justify;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        text-align: justify;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        text-align: justify;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        text-align: justify;
+      }
+    }
+  }
+
+  &-l-child{
+    *{
+      text-align: left;
+    }
+    &-xl{
+      @include xl{
+        *{
+          text-align: left;
+        }
+      }
+    }
+    &-lg{
+      @include lg{
+        *{
+          text-align: left;
+        }
+      }
+    }
+    &-md{
+      @include md{
+        *{
+          text-align: left;
+        }
+      }
+    }
+    &-xs{
+      @include xs{
+        *{
+          text-align: left;
+        }
+      }
+    }
+    &-minxs{
+      @include minxs{
+        *{
+          text-align: left;
+        }
+      }
+    }
+    &-minmd{
+      @include minmd{
+        *{
+          text-align: left;
+        }
+      }
+    }
+    &-minlg{
+      @include minlg{
+        *{
+          text-align: left;
+        }
+      }
+    }
+    &-minxl{
+      @include minxl{
+        *{
+          text-align: left;
+        }
+      }
+    }
+  }
+  &-r-child{
+    *{
+      text-align: right;
+    }
+    &-xl{
+      @include xl{
+        *{
+          text-align: right;
+        }
+      }
+    }
+    &-lg{
+      @include lg{
+        *{
+          text-align: right;
+        }
+      }
+    }
+    &-md{
+      @include md{
+        *{
+          text-align: right;
+        }
+      }
+    }
+    &-xs{
+      @include xs{
+        *{
+          text-align: right;
+        }
+      }
+    }
+    &-minxs{
+      @include minxs{
+        *{
+          text-align: right;
+        }
+      }
+    }
+    &-minmd{
+      @include minmd{
+        *{
+          text-align: right;
+        }
+      }
+    }
+    &-minlg{
+      @include minlg{
+        *{
+          text-align: right;
+        }
+      }
+    }
+    &-minxl{
+      @include minxl{
+        *{
+          text-align: right;
+        }
+      }
+    }
+  }
+  &-c-child{
+    *{
+      text-align: center;
+    }
+    &-xl{
+      @include xl{
+        *{
+          text-align: center;
+        }
+      }
+    }
+    &-lg{
+      @include lg{
+        *{
+          text-align: center;
+        }
+      }
+    }
+    &-md{
+      @include md{
+        *{
+          text-align: center;
+        }
+      }
+    }
+    &-xs{
+      @include xs{
+        *{
+          text-align: center;
+        }
+      }
+    }
+    &-minxs{
+      @include minxs{
+        *{
+          text-align: center;
+        }
+      }
+    }
+    &-minmd{
+      @include minmd{
+        *{
+          text-align: center;
+        }
+      }
+    }
+    &-minlg{
+      @include minlg{
+        *{
+          text-align: center;
+        }
+      }
+    }
+    &-minxl{
+      @include minxl{
+        *{
+          text-align: center;
+        }
+      }
+    }
+  }
+  &-j-child{
+    *{
+      text-align: justify;
+    }
+    &-xl{
+      @include xl{
+        *{
+          text-align: justify;
+        }
+      }
+    }
+    &-lg{
+      @include lg{
+        *{
+          text-align: justify;
+        }
+      }
+    }
+    &-md{
+      @include md{
+        *{
+          text-align: justify;
+        }
+      }
+    }
+    &-xs{
+      @include xs{
+        *{
+          text-align: justify;
+        }
+      }
+    }
+    &-minxs{
+      @include minxs{
+        *{
+          text-align: justify;
+        }
+      }
+    }
+    &-minmd{
+      @include minmd{
+        *{
+          text-align: justify;
+        }
+      }
+    }
+    &-minlg{
+      @include minlg{
+        *{
+          text-align: justify;
+        }
+      }
+    }
+    &-minxl{
+      @include minxl{
+        *{
+          text-align: justify;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+/* --- opacity - opa --- */
+$step: 0.1; // ステップの値を設定する
+$iterations: 10; // ループの回数を設定する
+
+@for $i from $iterations through 1 {
+  $value1: $i * $step;
+  $value2: $i;
+  // $valueを使用した処理を行う
+  @if $value2 == 10{
+    .opa-1{
+      @include opa($value1);
+    }
+  }
+  @if $value2 != 10{
+    .opa-0#{$value2}{
+      @include opa($value1);
+    }
+  }
+}
+.opa-0{
+  @include opa(0);
+}
+
+/* --- transition tra --- */
+@for $anime-i from 10 through 2 {
+  .tra-#{$anime-i} {
+    @include anime($anime-i);
+    &-child{
+      *{
+        @include anime($anime-i);
+      }
+    }
+  }
+}
+@for $i from $iterations through 1 {
+  $value1: $i * $step;
+  $value2: $i;
+  // $valueを使用した処理を行う
+  @if $value2 == 10{
+    .tra-1{
+      @include anime($value1);
+      &-child{
+        *{
+          @include anime($value1);
+        }
+      }
+    }
+  }
+  @if $value2 != 10{
+    .tra-0#{$value2}{
+      @include anime($value1);
+      &-child{
+        *{
+          @include anime($value1);
+        }
+      }
+    }
+  }
+}
+.tra-0{
+  @include anime(0);
+}
+.tra{
+  @include anime;
+}
+/* --- アニメーション - ホバー時 --- */
+/* 透過 */
+@for $i from $iterations through 1 {
+  $value1: $i * $step;
+  $value2: $i;
+  // $valueを使用した処理を行う
+  @if $value2 == 10{
+    @include minmd{
+      .opa-hov-1{
+        &:hover{
+          @include opa($value1);
+        }
+        &-child:hover{
+          *{
+            @include opa($value1);
+          }
+        }
+      }
+    }
+  }
+  @if $value2 != 10{
+    @include minmd{
+      .opa-hov-0#{$value2}{
+        &:hover{
+          @include opa($value1);
+        }
+        &-child:hover{
+          *{
+            @include opa($value1);
+          }
+        }
+      }
+    }
+  }
+}
+/* 下線が変化 */
+.bd-hov-1{
+  @include ps(r);
+  &::after{
+    content: '';
+    @include bgc(n,$sc1);
+    @include anime;
+    @include ps(a);
+    @include pst(p,105);
+    @include psx(px,0);
+    @include w(px,0);
+    @include h(px,3,n);
+  }
+  &:hover{
+    &::after{
+      @include w(p,100);
+    }
+  }
+}
+/* 背景が変化 */
+.bgc-hov-1{
+  @include ps(r);
+  @include cs;
+  @include z(1);
+  &::before{
+    @include anime;
+    content: '';
+    @include ps(a);
+    @include psa(px,0);
+    @include z(-1);
+    @include w(px,0);
+    @include bgc(n,$sc2,i);
+  }
+
+  &:hover{
+    &::before{
+      @include w();
+    }
+  }
+}
+.bgc-hov-2{
+  @include ps(r);
+  @include cs;
+  &::before,&::after{
+    @include anime;
+    content: '';
+    @include ps(a);
+    @include psa(px,0);
+    @include z(-1);
+  }
+  &::before{
+    @include bgc(n,$sc2,i);
+  }
+  &::after{
+    @include w(px,0);
+    @include bgc(n,$sc1,i);
+  }
+  &:hover{
+    &::after{
+      @include w();
+    }
+  }
+}
+
+/* --- display - disp --- */
+
+/* block */
+.disp-b{
+  @include db;
+  &-xl{
+    @include xl{
+      @include db;
+    }
+  }
+  &-lg{
+    @include lg{
+      @include db;
+    }
+  }
+  &-md{
+    @include md{
+      @include db;
+    }
+  }
+  &-xs{
+    @include xs{
+      @include db;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      @include db;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      @include db;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      @include db;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      @include db;
+    }
+  }
+}
+
+/* inline-block */
+.disp-ib{
+  @include dib;
+  &-xl{
+    @include xl{
+      @include dib;
+    }
+  }
+  &-lg{
+    @include lg{
+      @include dib;
+    }
+  }
+  &-md{
+    @include md{
+      @include dib;
+    }
+  }
+  &-xs{
+    @include xs{
+      @include dib;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      @include dib;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      @include dib;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      @include dib;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      @include dib;
+    }
+  }
+}
+
+/* none */
+.disp-n{
+  @include dn;
+  &-xl{
+    @include xl{
+      @include dn;
+    }
+  }
+  &-lg{
+    @include lg{
+      @include dn;
+    }
+  }
+  &-md{
+    @include md{
+      @include dn;
+    }
+  }
+  &-xs{
+    @include xs{
+      @include dn;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      @include dn;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      @include dn;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      @include dn;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      @include dn;
+    }
+  }
+}
+
+/* inline */
+.disp-i{
+  @include di;
+  &-xl{
+    @include xl{
+      @include di;
+    }
+  }
+  &-lg{
+    @include lg{
+      @include di;
+    }
+  }
+  &-md{
+    @include md{
+      @include di;
+    }
+  }
+  &-xs{
+    @include xs{
+      @include di;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      @include di;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      @include di;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      @include di;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      @include di;
+    }
+  }
+}
+
+/* flex */
+.disp-f{
+  @include df;
+  &-xl{
+    @include xl{
+      @include df;
+    }
+  }
+  &-lg{
+    @include lg{
+      @include df;
+    }
+  }
+  &-md{
+    @include md{
+      @include df;
+    }
+  }
+  &-xs{
+    @include xs{
+      @include df;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      @include df;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      @include df;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      @include df;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      @include df;
+    }
+  }
+}
+
+/* inline-flex */
+.disp-if{
+  @include dif;
+  &-xl{
+    @include xl{
+      @include dif;
+    }
+  }
+  &-lg{
+    @include lg{
+      @include dif;
+    }
+  }
+  &-md{
+    @include md{
+      @include dif;
+    }
+  }
+  &-xs{
+    @include xs{
+      @include dif;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      @include dif;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      @include dif;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      @include dif;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      @include dif;
+    }
+  }
+}
+
+
+/* --- flexプロパティ --- */
+
+/* align-items - ai */
+.ai-fs{
+  align-items: flex-start;
+  &-xl{
+    @include xl{
+      align-items: flex-start;
+    }
+  }
+  &-lg{
+    @include lg{
+      align-items: flex-start;
+    }
+  }
+  &-md{
+    @include md{
+      align-items: flex-start;
+    }
+  }
+  &-xs{
+    @include xs{
+      align-items: flex-start;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      align-items: flex-start;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      align-items: flex-start;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      align-items: flex-start;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      align-items: flex-start;
+    }
+  }
+}
+.ai-c{
+  align-items: center;
+  &-xl{
+    @include xl{
+      align-items: center;
+    }
+  }
+  &-lg{
+    @include lg{
+      align-items: center;
+    }
+  }
+  &-md{
+    @include md{
+      align-items: center;
+    }
+  }
+  &-xs{
+    @include xs{
+      align-items: center;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      align-items: center;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      align-items: center;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      align-items: center;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      align-items: center;
+    }
+  }
+}
+.ai-fe{
+  align-items: flex-end;
+  &-xl{
+    @include xl{
+      align-items: flex-end;
+    }
+  }
+  &-lg{
+    @include lg{
+      align-items: flex-end;
+    }
+  }
+  &-md{
+    @include md{
+      align-items: flex-end;
+    }
+  }
+  &-xs{
+    @include xs{
+      align-items: flex-end;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      align-items: flex-end;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      align-items: flex-end;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      align-items: flex-end;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      align-items: flex-end;
+    }
+  }
+}
+
+/* justify-content - jc */
+.jc-fs{
+  justify-content: flex-start;
+  &-xl{
+    @include xl{
+      justify-content: flex-start;
+    }
+  }
+  &-lg{
+    @include lg{
+      justify-content: flex-start;
+    }
+  }
+  &-md{
+    @include md{
+      justify-content: flex-start;
+    }
+  }
+  &-xs{
+    @include xs{
+      justify-content: flex-start;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      justify-content: flex-start;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      justify-content: flex-start;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      justify-content: flex-start;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      justify-content: flex-start;
+    }
+  }
+}
+.jc-c{
+  justify-content: center;
+  &-xl{
+    @include xl{
+      justify-content: center;
+    }
+  }
+  &-lg{
+    @include lg{
+      justify-content: center;
+    }
+  }
+  &-md{
+    @include md{
+      justify-content: center;
+    }
+  }
+  &-xs{
+    @include xs{
+      justify-content: center;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      justify-content: center;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      justify-content: center;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      justify-content: center;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      justify-content: center;
+    }
+  }
+}
+.jc-e{
+  justify-content: flex-end;
+  &-xl{
+    @include xl{
+      justify-content: flex-end;
+    }
+  }
+  &-lg{
+    @include lg{
+      justify-content: flex-end;
+    }
+  }
+  &-md{
+    @include md{
+      justify-content: flex-end;
+    }
+  }
+  &-xs{
+    @include xs{
+      justify-content: flex-end;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      justify-content: flex-end;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      justify-content: flex-end;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      justify-content: flex-end;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      justify-content: flex-end;
+    }
+  }
+}
+.jc-sa{
+  justify-content: space-around;
+  &-xl{
+    @include xl{
+      justify-content: space-around;
+    }
+  }
+  &-lg{
+    @include lg{
+      justify-content: space-around;
+    }
+  }
+  &-md{
+    @include md{
+      justify-content: space-around;
+    }
+  }
+  &-xs{
+    @include xs{
+      justify-content: space-around;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      justify-content: space-around;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      justify-content: space-around;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      justify-content: space-around;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      justify-content: space-around;
+    }
+  }
+}
+.jc-sb{
+  justify-content: space-between;
+  &-xl{
+    @include xl{
+      justify-content: space-between;
+    }
+  }
+  &-lg{
+    @include lg{
+      justify-content: space-between;
+    }
+  }
+  &-md{
+    @include md{
+      justify-content: space-between;
+    }
+  }
+  &-xs{
+    @include xs{
+      justify-content: space-between;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      justify-content: space-between;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      justify-content: space-between;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      justify-content: space-between;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      justify-content: space-between;
+    }
+  }
+}
+
+/* flex-direction - fd */
+.fd-c{
+  flex-direction: column;
+  &-xl{
+    @include xl{
+      flex-direction: column;
+    }
+  }
+  &-lg{
+    @include lg{
+      flex-direction: column;
+    }
+  }
+  &-md{
+    @include md{
+      flex-direction: column;
+    }
+  }
+  &-xs{
+    @include xs{
+      flex-direction: column;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      flex-direction: column;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      flex-direction: column;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      flex-direction: column;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      flex-direction: column;
+    }
+  }
+}
+.fd-cr{
+  flex-direction: column-reverse;
+  &-xl{
+    @include xl{
+      flex-direction: column-reverse;
+    }
+  }
+  &-lg{
+    @include lg{
+      flex-direction: column-reverse;
+    }
+  }
+  &-md{
+    @include md{
+      flex-direction: column-reverse;
+    }
+  }
+  &-xs{
+    @include xs{
+      flex-direction: column-reverse;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      flex-direction: column-reverse;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      flex-direction: column-reverse;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      flex-direction: column-reverse;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      flex-direction: column;
+    }
+  }
+}
+.fd-r{
+  flex-direction: row;
+  &-xl{
+    @include xl{
+      flex-direction: row;
+    }
+  }
+  &-lg{
+    @include lg{
+      flex-direction: row;
+    }
+  }
+  &-md{
+    @include md{
+      flex-direction: row;
+    }
+  }
+  &-xs{
+    @include xs{
+      flex-direction: row;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      flex-direction: row;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      flex-direction: row;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      flex-direction: row;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      flex-direction: row;
+    }
+  }
+}
+.fd-rr{
+  flex-direction: row-reverse;
+  &-xl{
+    @include xl{
+      flex-direction: row-reverse;
+    }
+  }
+  &-lg{
+    @include lg{
+      flex-direction: row-reverse;
+    }
+  }
+  &-md{
+    @include md{
+      flex-direction: row-reverse;
+    }
+  }
+  &-xs{
+    @include xs{
+      flex-direction: row-reverse;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      flex-direction: row-reverse;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      flex-direction: row-reverse;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      flex-direction: row-reverse;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+/* flex-wrap - fw */
+.fw-w{
+  flex-wrap: wrap;
+  &-xl{
+    @include xl{
+      flex-wrap: wrap;
+    }
+  }
+  &-lg{
+    @include lg{
+      flex-wrap: wrap;
+    }
+  }
+  &-md{
+    @include md{
+      flex-wrap: wrap;
+    }
+  }
+  &-xs{
+    @include xs{
+      flex-wrap: wrap;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      flex-wrap: wrap;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      flex-wrap: wrap;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      flex-wrap: wrap;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      flex-wrap: wrap;
+    }
+  }
+}
+.fw-n{
+  flex-wrap: nowrap;
+  &-xl{
+    @include xl{
+      flex-wrap: nowrap;
+    }
+  }
+  &-lg{
+    @include lg{
+      flex-wrap: nowrap;
+    }
+  }
+  &-md{
+    @include md{
+      flex-wrap: nowrap;
+    }
+  }
+  &-xs{
+    @include xs{
+      flex-wrap: nowrap;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      flex-wrap: nowrap;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      flex-wrap: nowrap;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      flex-wrap: nowrap;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      flex-wrap: nowrap;
+    }
+  }
+}
+
+/* --- max-width - maxwid --- */
+/* % */
+@for $i from 0 through 100 {
+  .mw-#{$i} {
+    max-width: $i * 1%;
+    &-md{
+      @include md{
+        max-width: $i * 1%;
+      }
+    }
+    &-lg{
+      @include lg{
+        max-width: $i * 1%;
+      }
+    }
+    &-xl{
+      @include xl{
+        max-width: $i * 1%;
+      }
+    }
+    &-xs{
+      @include xs{
+        max-width: $i * 1%;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        max-width: $i * 1%;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        max-width: $i * 1%;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        max-width: $i * 1%;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        max-width: $i * 1%;
+      }
+    }
+  }
+}
+/* px */
+@for $i from 0 through 100 {
+  $num: $i * 10;
+  .mw-px-#{$num} {
+    max-width: $num + px;
+    &-xl{
+      @include xl{
+        max-width: $num + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        max-width: $num + px;
+      }
+    }
+    &-md{
+      @include md{
+        max-width: $num + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        max-width: $num + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        max-width: $num + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        max-width: $num + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        max-width: $num + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        max-width: $num + px;
+      }
+    }
+  }
+}
+.mw-px-1920 {
+  max-width:1920px;
+  &-xl{
+    @include xl{
+      max-width: 1920px;
+    }
+  }
+  &-lg{
+    @include lg{
+      max-width: 1920px;
+    }
+  }
+  &-md{
+    @include md{
+      max-width: 1920px;
+    }
+  }
+  &-xs{
+    @include xs{
+      max-width: 1920px;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      max-width: 1920px;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      max-width: 1920px;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      max-width: 1920px;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      max-width: 1920px;
+    }
+  }
+}
+
+/* --- min-width - minwid --- */
+/* % */
+@for $i from 0 through 100 {
+  .miw-#{$i} {
+    min-width: $i * 1%;
+    &-xl{
+      @include xl{
+        min-width: $i * 1%;
+      }
+    }
+    &-lg{
+      @include lg{
+        min-width: $i * 1%;
+      }
+    }
+    &-md{
+      @include md{
+        min-width: $i * 1%;
+      }
+    }
+    &-mdxs{
+      @include md-xs{
+        min-width: $i * 1%;
+      }
+    }
+    &-xs{
+      @include xs{
+        min-width: $i * 1%;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        min-width: $i * 1%;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        min-width: $i * 1%;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        min-width: $i * 1%;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        min-width: $i * 1%;
+      }
+    }
+  }
+}
+/* px */
+@for $i from 0 through 200 {
+  $num: $i * 5;
+  .miw-px-#{$num} {
+    min-width: $num + px;
+    &-xl{
+      @include xl{
+        min-width: $num + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        min-width: $num + px;
+      }
+    }
+    &-md{
+      @include md{
+        min-width: $num + px;
+      }
+    }
+    &-mdxs{
+      @include md-xs{
+        min-width: $num + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        min-width: $num + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        min-width: $num + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        min-width: $num + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        min-width: $num + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        min-width: $num + px;
+      }
+    }
+  }
+}
+.miw-px-1920 {
+  min-width:1920px;
+  &-xl{
+    @include xl{
+      min-width: 1920px;
+    }
+  }
+  &-lg{
+    @include lg{
+      min-width: 1920px;
+    }
+  }
+  &-md{
+    @include md{
+      min-width: 1920px;
+    }
+  }
+  &-xs{
+    @include xs{
+      min-width: 1920px;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      min-width: 1920px;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      min-width: 1920px;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      min-width: 1920px;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      min-width: 1920px;
+    }
+  }
+}
+
+/* --- width - w --- */
+/* % */
+@for $i from 0 through 100 {
+  .w-#{$i} {
+    width: $i * 1%;
+    &-xl{
+      @include xl{
+        width: $i * 1%;
+      }
+    }
+    &-lg{
+      @include lg{
+        width: $i * 1%;
+      }
+    }
+    &-md{
+      @include md{
+        width: $i * 1%;
+      }
+    }
+    &-xs{
+      @include xs{
+        width: $i * 1%;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        width: $i * 1%;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        width: $i * 1%;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        width: $i * 1%;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        width: $i * 1%;
+      }
+    }
+  }
+}
+/* px */
+@for $i from 0 through 300 {
+  $num: $i * 5;
+  .w-px-#{$num} {
+    width: $num + px;
+    &-xl{
+      @include xl{
+        width: $num + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        width: $num + px;
+      }
+    }
+    &-md{
+      @include md{
+        width: $num + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        width: $num + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        width: $num + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        width: $num + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        width: $num + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        width: $num + px;
+      }
+    }
+  }
+}
+/* vw */
+@for $i from 0 through 300 {
+  $num: $i * 5;
+  .w-vw-#{$num} {
+    width: xl($num);
+    &-xl{
+      @include xl{
+        width: xl($num);
+      }
+    }
+    &-lg{
+      @include lg{
+        width: lg($num);
+      }
+    }
+    &-md{
+      @include md{
+        width: xxs($num);
+      }
+    }
+    &-mdxs{
+      @include md-xs{
+        width: md($num);
+      }
+    }
+    &-xs{
+      @include xs{
+        width: xxs($num);
+      }
+    }
+    &-minxs{
+      @include minxs{
+        width: xl($num);
+      }
+    }
+    &-minmd{
+      @include minmd{
+        width: xl($num);
+      }
+    }
+    &-minlg{
+      @include minlg{
+        width: xl($num);
+      }
+    }
+  }
+}
+// auto
+.wa{
+  width: auto;
+}
+
+
+/* --- max-height - maxwid --- */
+/* % */
+@for $i from 0 through 100 {
+  .mh-#{$i} {
+    max-height: $i * 1%;
+    &-xl{
+      @include xl{
+        max-height: $i * 1%;
+      }
+    }
+    &-lg{
+      @include lg{
+        max-height: $i * 1%;
+      }
+    }
+    &-md{
+      @include md{
+        max-height: $i * 1%;
+      }
+    }
+    &-xs{
+      @include xs{
+        max-height: $i * 1%;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        max-height: $i * 1%;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        max-height: $i * 1%;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        max-height: $i * 1%;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        max-height: $i * 1%;
+      }
+    }
+  }
+}
+/* vh */
+@for $i from 0 through 100 {
+  .mh-vh-#{$i} {
+    max-height: $i + vh;
+    &-xl{
+      @include xl{
+        max-height: $i + vh;
+      }
+    }
+    &-lg{
+      @include lg{
+        max-height: $i + vh;
+      }
+    }
+    &-md{
+      @include md{
+        max-height: $i + vh;
+      }
+    }
+    &-xs{
+      @include xs{
+        max-height: $i + vh;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        max-height: $i + vh;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        max-height: $i + vh;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        max-height: $i + vh;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        max-height: $i + vh;
+      }
+    }
+  }
+}
+/* vw */
+@for $i from 0 through 100 {
+  $num: $i * 5;
+  .mh-vw-#{$num} {
+    max-height: xl($num);
+
+    &-xl{
+      @include xl{
+        max-height: xl($num);
+      }
+    }
+    &-lg{
+      @include lg{
+        max-height: lg($num);
+      }
+    }
+    &-md{
+      @include md{
+        max-height: md($num);
+      }
+    }
+    &-mdxs{
+      @include md-xs{
+        max-height: md($num);
+      }
+    }
+    &-xs{
+      @include xs{
+        max-height: xxs($num);
+      }
+    }
+    &-minxs{
+      @include minxs{
+        max-height: xl($num);
+      }
+    }
+    &-minmd{
+      @include minmd{
+        max-height: xl($num);
+      }
+    }
+    &-minlg{
+      @include minlg{
+        max-height: xl($num);
+      }
+    }
+    &-minxl{
+      @include minxl{
+        max-height: xl($num);
+      }
+    }
+  }
+}
+/* px */
+@for $i from 0 through 300 {
+  $num: $i * 5;
+  .mh-px-#{$num} {
+    max-height: $num + px;
+    &-xl{
+      @include xl{
+        max-height: $num + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        max-height: $num + px;
+      }
+    }
+    &-md{
+      @include md{
+        max-height: $num + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        max-height: $num + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        max-height: $num + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        max-height: $num + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        max-height: $num + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        max-height: $num + px;
+      }
+    }
+  }
+}
+.mh-px-1920 {
+  max-height:1920px;
+  &-xl{
+    @include xl{
+      max-height: 1920px;
+    }
+  }
+  &-lg{
+    @include lg{
+      max-height: 1920px;
+    }
+  }
+  &-md{
+    @include md{
+      max-height: 1920px;
+    }
+  }
+  &-xs{
+    @include xs{
+      max-height: 1920px;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      max-height: 1920px;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      max-height: 1920px;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      max-height: 1920px;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      max-height: 1920px;
+    }
+  }
+}
+
+/* --- min-height - minwid --- */
+/* % */
+@for $i from 0 through 100 {
+  .mih-#{$i} {
+    min-height: $i * 1%;
+    &-xl{
+      @include xl{
+        min-height: $i * 1%;
+      }
+    }
+    &-lg{
+      @include lg{
+        min-height: $i * 1%;
+      }
+    }
+    &-md{
+      @include md{
+        min-height: $i * 1%;
+      }
+    }
+    &-xs{
+      @include xs{
+        min-height: $i * 1%;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        min-height: $i * 1%;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        min-height: $i * 1%;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        min-height: $i * 1%;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        min-height: $i * 1%;
+      }
+    }
+  }
+}
+/* vh */
+@for $i from 0 through 100 {
+  .mh-vh-#{$i} {
+    min-height: $i + vh;
+    &-xl{
+      @include xl{
+        min-height: $i + vh;
+      }
+    }
+    &-lg{
+      @include lg{
+        min-height: $i + vh;
+      }
+    }
+    &-md{
+      @include md{
+        min-height: $i + vh;
+      }
+    }
+    &-xs{
+      @include xs{
+        min-height: $i + vh;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        min-height: $i + vh;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        min-height: $i + vh;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        min-height: $i + vh;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        min-height: $i + vh;
+      }
+    }
+  }
+}
+/* px */
+@for $i from 0 through 200 {
+  $num: $i * 5;
+  .mh-px-#{$num} {
+    min-height: $num + px;
+    &-xl{
+      @include xl{
+        min-height: $num + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        min-height: $num + px;
+      }
+    }
+    &-md{
+      @include md{
+        min-height: $num + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        min-height: $num + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        min-height: $num + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        min-height: $num + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        min-height: $num + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        min-height: $num + px;
+      }
+    }
+  }
+}
+.mh-px-1920 {
+  min-height:1920px;
+  &-xl{
+    @include xl{
+      min-height: 1920px;
+    }
+  }
+  &-lg{
+    @include lg{
+      min-height: 1920px;
+    }
+  }
+  &-md{
+    @include md{
+      min-height: 1920px;
+    }
+  }
+  &-xs{
+    @include xs{
+      min-height: 1920px;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      min-height: 1920px;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      min-height: 1920px;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      min-height: 1920px;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      min-height: 1920px;
+    }
+  }
+}
+
+/* --- height - wid --- */
+/* % */
+@for $i from 0 through 100 {
+  .h-#{$i} {
+    height: $i * 1%;
+    &-xl{
+      @include xl{
+        height: $i * 1%;
+      }
+    }
+    &-lg{
+      @include lg{
+        height: $i * 1%;
+      }
+    }
+    &-md{
+      @include md{
+        height: $i * 1%;
+      }
+    }
+    &-xs{
+      @include xs{
+        height: $i * 1%;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        height: $i * 1%;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        height: $i * 1%;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        height: $i * 1%;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        height: $i * 1%;
+      }
+    }
+  }
+}
+/* vh */
+@for $i from 0 through 100 {
+  .h-vh-#{$i} {
+    height: $i + vh;
+    &-xl{
+      @include xl{
+        height: $i + vh;
+      }
+    }
+    &-lg{
+      @include lg{
+        height: $i + vh;
+      }
+    }
+    &-md{
+      @include md{
+        height: $i + vh;
+      }
+    }
+    &-xs{
+      @include xs{
+        height: $i + vh;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        height: $i + vh;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        height: $i + vh;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        height: $i + vh;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        height: $i + vh;
+      }
+    }
+  }
+}
+/* px */
+@for $i from 0 through 300 {
+  $num: $i * 5;
+  .h-px-#{$num} {
+    height: $num + px;
+    &-xl{
+      @include xl{
+        height: $num + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        height: $num + px;
+      }
+    }
+    &-md{
+      @include md{
+        height: $num + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        height: $num + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        height: $num + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        height: $num + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        height: $num + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        height: $num + px;
+      }
+    }
+  }
+}
+/* vw */
+@for $i from 0 through 300 {
+  $num: $i * 5;
+  .h-vw-#{$num} {
+    height: xl($num);
+    &-xl{
+      @include xl{
+        height: xl($num);
+      }
+    }
+    &-lg{
+      @include lg{
+        height: lg($num);
+      }
+    }
+    &-md{
+      @include md{
+        height: xxs($num);
+      }
+    }
+    &-xs{
+      @include xs{
+        height: xxs($num);
+      }
+    }
+    &-minxs{
+      @include minxs{
+        height: xl($num);
+      }
+    }
+    &-minmd{
+      @include minmd{
+        height: xl($num);
+      }
+    }
+    &-minlg{
+      @include minlg{
+        height: xl($num);
+      }
+    }
+  }
+}
+// auto
+.ha{
+  height: auto;
+}
+
+
+/* --- padding全部 - padA --- */
+/* % */
+@for $i from 0 through 200 {
+  .padA-#{$i} {
+    padding: $i * 1%;
+    &-xl{
+      @include xl{
+        padding: $i * 1%;
+      }
+    }
+    &-lg{
+      @include lg{
+        padding: $i * 1%;
+      }
+    }
+    &-md{
+      @include md{
+        padding: $i * 1%;
+      }
+    }
+    &-xs{
+      @include xs{
+        padding: $i * 1%;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        padding: $i * 1%;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        padding: $i * 1%;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        padding: $i * 1%;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        padding: $i * 1%;
+      }
+    }
+  }
+}
+/* px */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .padA-px-#{$num} {
+    padding: $num + px;
+    &-xl{
+      @include xl{
+        padding: $num + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        padding: $num + px;
+      }
+    }
+    &-md{
+      @include md{
+        padding: $num + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        padding: $num + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        padding: $num + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        padding: $num + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        padding: $num + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        padding: $num + px;
+      }
+    }
+  }
+}
+/* vw */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .padA-vw-#{$num} {
+    padding: xl($num);
+    &-xl{
+      @include xl{
+        padding: xl($num);
+      }
+    }
+    &-lg{
+      @include lg{
+        padding: lg($num);
+      }
+    }
+    &-md{
+      @include md{
+        padding: xxs($num);
+      }
+    }
+    &-xs{
+      @include xs{
+        padding: xxs($num);
+      }
+    }
+    &-minxs{
+      @include minxs{
+        padding: xl($num);
+      }
+    }
+    &-minmd{
+      @include minmd{
+        padding: xl($num);
+      }
+    }
+    &-minlg{
+      @include minlg{
+        padding: xl($num);
+      }
+    }
+  }
+}
+
+/* padding-top&bottom - padY */
+/* % */
+@for $i from 0 through 100 {
+  .padY-#{$i} {
+    padding-top: $i * 1%;
+    padding-bottom: $i * 1%;
+    &-xl{
+      @include xl{
+        padding-top: $i * 1%;
+        padding-bottom: $i * 1%;
+      }
+    }
+    &-lg{
+      @include lg{
+        padding-top: $i * 1%;
+        padding-bottom: $i * 1%;
+      }
+    }
+    &-md{
+      @include md{
+        padding-top: $i * 1%;
+        padding-bottom: $i * 1%;
+      }
+    }
+    &-mdxs{
+      @include md-xs{
+        padding-top: $i * 1%;
+        padding-bottom: $i * 1%;
+      }
+    }
+    &-xs{
+      @include xs{
+        padding-top: $i * 1%;
+        padding-bottom: $i * 1%;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        padding-top: $i * 1%;
+        padding-bottom: $i * 1%;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        padding-top: $i * 1%;
+        padding-bottom: $i * 1%;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        padding-top: $i * 1%;
+        padding-bottom: $i * 1%;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        padding-top: $i * 1%;
+        padding-bottom: $i * 1%;
+      }
+    }
+  }
+}
+/* px */
+@for $i from 0 through 40{
+  $num: $i * 5;
+  .padY-px-#{$num} {
+    padding-top: $num + px;
+    padding-bottom: $num + px;
+    &-xl{
+      @include xl{
+        padding-top: $num + px;
+        padding-bottom: $num + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        padding-top: $num + px;
+        padding-bottom: $num + px;
+      }
+    }
+    &-md{
+      @include md{
+        padding-top: $num + px;
+        padding-bottom: $num + px;
+      }
+    }
+    &-mdxs{
+      @include md-xs{
+        padding-top: $num + px;
+        padding-bottom: $num + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        padding-top: $num + px;
+        padding-bottom: $num + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        padding-top: $num + px;
+        padding-bottom: $num + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        padding-top: $num + px;
+        padding-bottom: $num + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        padding-top: $num + px;
+        padding-bottom: $num + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        padding-top: $num + px;
+        padding-bottom: $num + px;
+      }
+    }
+  }
+}
+/* vw */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .padY-vw-#{$num} {
+    padding-top: xl($num);
+    padding-bottom: xl($num);
+    &-xl{
+      @include xl{
+        padding-top: xl($num);
+        padding-bottom: xl($num);
+      }
+    }
+    &-lg{
+      @include lg{
+        padding-top: lg($num);
+        padding-bottom: lg($num);
+      }
+    }
+    &-md{
+      @include md{
+        padding-top: xxs($num);
+        padding-bottom: xxs($num);
+      }
+    }
+    &-mdxs{
+      @include md-xs{
+        padding-top: md($num);
+        padding-bottom: md($num);
+      }
+    }
+    &-xs{
+      @include xs{
+        padding-top: xxs($num);
+        padding-bottom: xxs($num);
+      }
+    }
+    &-minxs{
+      @include minxs{
+        padding-top: xl($num);
+        padding-bottom: xl($num);
+      }
+    }
+    &-minmd{
+      @include minmd{
+        padding-top: xl($num);
+        padding-bottom: xl($num);
+      }
+    }
+    &-minlg{
+      @include minlg{
+        padding-top: xl($num);
+        padding-bottom: xl($num);
+      }
+    }
+  }
+}
+
+/* padding-left&right - padX */
+/* % */
+@for $i from 0 through 100 {
+  .padX-#{$i} {
+    padding-left: $i * 1%;
+    padding-right: $i * 1%;
+    &-xl{
+      @include xl{
+        padding-left: $i * 1%;
+        padding-right: $i * 1%;
+      }
+    }
+    &-lg{
+      @include lg{
+        padding-left: $i * 1%;
+        padding-right: $i * 1%;
+      }
+    }
+    &-md{
+      @include md{
+        padding-left: $i * 1%;
+        padding-right: $i * 1%;
+      }
+    }
+    &-mdxs{
+      @include md-xs{
+        padding-left: $i * 1%;
+        padding-right: $i * 1%;
+      }
+    }
+    &-xs{
+      @include xs{
+        padding-left: $i * 1%;
+        padding-right: $i * 1%;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        padding-left: $i * 1%;
+        padding-right: $i * 1%;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        padding-left: $i * 1%;
+        padding-right: $i * 1%;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        padding-left: $i * 1%;
+        padding-right: $i * 1%;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        padding-left: $i * 1%;
+        padding-right: $i * 1%;
+      }
+    }
+  }
+}
+/* px */
+@for $i from 0 through 40{
+  $num: $i * 5;
+  .padX-px-#{$num} {
+    padding-left: $num + px;
+    padding-right: $num + px;
+    &-xl{
+      @include xl{
+        padding-left: $num + px;
+        padding-right: $num + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        padding-left: $num + px;
+        padding-right: $num + px;
+      }
+    }
+    &-md{
+      @include md{
+        padding-left: $num + px;
+        padding-right: $num + px;
+      }
+    }
+    &-mdxs{
+      @include md-xs{
+        padding-left: $num + px;
+        padding-right: $num + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        padding-left: $num + px;
+        padding-right: $num + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        padding-left: $num + px;
+        padding-right: $num + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        padding-left: $num + px;
+        padding-right: $num + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        padding-left: $num + px;
+        padding-right: $num + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        padding-left: $num + px;
+        padding-right: $num + px;
+      }
+    }
+  }
+}
+/* vw */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .padX-vw-#{$num} {
+    padding-left: xl($num);
+    padding-right: xl($num);
+    &-xl{
+      @include xl{
+        padding-left: xl($num);
+        padding-right: xl($num);
+      }
+    }
+    &-lg{
+      @include lg{
+        padding-left: lg($num);
+        padding-right: lg($num);
+      }
+    }
+    &-md{
+      @include md{
+        padding-left: xxs($num);
+        padding-right: xxs($num);
+      }
+    }
+    &-mdxs{
+      @include md-xs{
+        padding-left: md($num);
+        padding-right: md($num);
+      }
+    }
+    &-xs{
+      @include xs{
+        padding-left: xxs($num);
+        padding-right: xxs($num);
+      }
+    }
+    &-minxs{
+      @include minxs{
+        padding-left: xl($num);
+        padding-right: xl($num);
+      }
+    }
+    &-minmd{
+      @include minmd{
+        padding-left: xl($num);
+        padding-right: xl($num);
+      }
+    }
+    &-minlg{
+      @include minlg{
+        padding-left: xl($num);
+        padding-right: xl($num);
+      }
+    }
+  }
+}
+
+/* padding-top - padT */
+/* % */
+@for $i from 0 through 100 {
+  .padT-#{$i} {
+    padding-top: $i * 1%;
+    &-xl{
+      @include xl{
+        padding-top: $i * 1%;
+      }
+    }
+    &-lg{
+      @include lg{
+        padding-top: $i * 1%;
+      }
+    }
+    &-md{
+      @include md{
+        padding-top: $i * 1%;
+      }
+    }
+    &-xs{
+      @include xs{
+        padding-top: $i * 1%;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        padding-top: $i * 1%;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        padding-top: $i * 1%;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        padding-top: $i * 1%;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        padding-top: $i * 1%;
+      }
+    }
+  }
+}
+/* px */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .padT-px-#{$num} {
+    padding-top: $num + px;
+    &-xl{
+      @include xl{
+        padding-top: $num + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        padding-top: $num + px;
+      }
+    }
+    &-md{
+      @include md{
+        padding-top: $num + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        padding-top: $num + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        padding-top: $num + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        padding-top: $num + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        padding-top: $num + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        padding-top: $num + px;
+      }
+    }
+  }
+}
+/* vw */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .padT-vw-#{$num} {
+    padding-top: xl($num);
+    &-xl{
+      @include xl{
+        padding-top: xl($num);
+      }
+    }
+    &-lg{
+      @include lg{
+        padding-top: lg($num);
+      }
+    }
+    &-md{
+      @include md{
+        padding-top: xxs($num);
+      }
+    }
+    &-xs{
+      @include xs{
+        padding-top: xxs($num);
+      }
+    }
+    &-minxs{
+      @include minxs{
+        padding-top: xl($num);
+      }
+    }
+    &-minmd{
+      @include minmd{
+        padding-top: xl($num);
+      }
+    }
+    &-minlg{
+      @include minlg{
+        padding-top: xl($num);
+      }
+    }
+  }
+}
+
+/* padding-right - padR */
+/* % */
+@for $i from 0 through 100 {
+  .padR-#{$i} {
+    padding-right: $i * 1%;
+    &-xl{
+      @include xl{
+        padding-right: $i * 1%;
+      }
+    }
+    &-lg{
+      @include lg{
+        padding-right: $i * 1%;
+      }
+    }
+    &-md{
+      @include md{
+        padding-right: $i * 1%;
+      }
+    }
+    &-xs{
+      @include xs{
+        padding-right: $i * 1%;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        padding-right: $i * 1%;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        padding-right: $i * 1%;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        padding-right: $i * 1%;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        padding-right: $i * 1%;
+      }
+    }
+  }
+}
+/* px */
+@for $i from 0 through 200 {
+  $num: $i * 5;
+  .padR-px-#{$num} {
+    padding-right: $num + px;
+    &-xl{
+      @include xl{
+        padding-right: $num + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        padding-right: $num + px;
+      }
+    }
+    &-md{
+      @include md{
+        padding-right: $num + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        padding-right: $num + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        padding-right: $num + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        padding-right: $num + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        padding-right: $num + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        padding-right: $num + px;
+      }
+    }
+  }
+}
+/* vw */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .padR-vw-#{$num} {
+    padding-right: xl($num);
+    &-xl{
+      @include xl{
+        padding-right: xl($num);
+      }
+    }
+    &-lg{
+      @include lg{
+        padding-right: lg($num);
+      }
+    }
+    &-md{
+      @include md{
+        padding-right: xxs($num);
+      }
+    }
+    &-xs{
+      @include xs{
+        padding-right: xxs($num);
+      }
+    }
+    &-minxs{
+      @include minxs{
+        padding-right: xl($num);
+      }
+    }
+    &-minmd{
+      @include minmd{
+        padding-right: xl($num);
+      }
+    }
+    &-minlg{
+      @include minlg{
+        padding-right: xl($num);
+      }
+    }
+  }
+}
+
+/* padding-bottom - padB */
+/* % */
+@for $i from 0 through 100 {
+  .padB-#{$i} {
+    padding-bottom: $i * 1%;
+    &-xl{
+      @include xl{
+        padding-bottom: $i * 1%;
+      }
+    }
+    &-lg{
+      @include lg{
+        padding-bottom: $i * 1%;
+      }
+    }
+    &-md{
+      @include md{
+        padding-bottom: $i * 1%;
+      }
+    }
+    &-xs{
+      @include xs{
+        padding-bottom: $i * 1%;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        padding-bottom: $i * 1%;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        padding-bottom: $i * 1%;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        padding-bottom: $i * 1%;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        padding-bottom: $i * 1%;
+      }
+    }
+  }
+}
+/* px */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .padB-px-#{$num} {
+    padding-bottom: $num + px;
+    &-xl{
+      @include xl{
+        padding-bottom: $num + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        padding-bottom: $num + px;
+      }
+    }
+    &-md{
+      @include md{
+        padding-bottom: $num + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        padding-bottom: $num + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        padding-bottom: $num + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        padding-bottom: $num + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        padding-bottom: $num + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        padding-bottom: $num + px;
+      }
+    }
+  }
+}
+/* vw */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .padB-vw-#{$num} {
+    padding-bottom: xl($num);
+    &-xl{
+      @include xl{
+        padding-bottom: xl($num);
+      }
+    }
+    &-lg{
+      @include lg{
+        padding-bottom: lg($num);
+      }
+    }
+    &-md{
+      @include md{
+        padding-bottom: xxs($num);
+      }
+    }
+    &-xs{
+      @include xs{
+        padding-bottom: xxs($num);
+      }
+    }
+    &-minxs{
+      @include minxs{
+        padding-bottom: xl($num);
+      }
+    }
+    &-minmd{
+      @include minmd{
+        padding-bottom: xl($num);
+      }
+    }
+    &-minlg{
+      @include minlg{
+        padding-bottom: xl($num);
+      }
+    }
+  }
+}
+
+/* padding-left - padL */
+/* % */
+@for $i from 0 through 100 {
+  .padL-#{$i} {
+    padding-left: $i * 1%;
+    &-xl{
+      @include xl{
+        padding-left: $i * 1%;
+      }
+    }
+    &-lg{
+      @include lg{
+        padding-left: $i * 1%;
+      }
+    }
+    &-md{
+      @include md{
+        padding-left: $i * 1%;
+      }
+    }
+    &-xs{
+      @include xs{
+        padding-left: $i * 1%;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        padding-left: $i * 1%;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        padding-left: $i * 1%;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        padding-left: $i * 1%;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        padding-left: $i * 1%;
+      }
+    }
+  }
+}
+/* px */
+@for $i from 0 through 40{
+  $num: $i * 5;
+  .padL-px-#{$num} {
+    padding-left: $num + px;
+    &-xl{
+      @include xl{
+        padding-left: $num + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        padding-left: $num + px;
+      }
+    }
+    &-md{
+      @include md{
+        padding-left: $num + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        padding-left: $num + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        padding-left: $num + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        padding-left: $num + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        padding-left: $num + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        padding-left: $num + px;
+      }
+    }
+  }
+}
+/* vw */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .padL-vw-#{$num} {
+    padding-left: xl($num);
+    &-xl{
+      @include xl{
+        padding-left: xl($num);
+      }
+    }
+    &-lg{
+      @include lg{
+        padding-left: lg($num);
+      }
+    }
+    &-md{
+      @include md{
+        padding-left: xxs($num);
+      }
+    }
+    &-xs{
+      @include xs{
+        padding-left: xxs($num);
+      }
+    }
+    &-minxs{
+      @include minxs{
+        padding-left: xl($num);
+      }
+    }
+    &-minmd{
+      @include minmd{
+        padding-left: xl($num);
+      }
+    }
+    &-minlg{
+      @include minlg{
+        padding-left: xl($num);
+      }
+    }
+  }
+}
+
+
+/* --- margin - mar --- */
+/* % */
+@for $i from 0 through 100 {
+  .marA-#{$i} {
+    margin: $i * 1%;
+    &-xl{
+      @include xl{
+        margin: $i * 1%;
+      }
+    }
+    &-lg{
+      @include lg{
+        margin: $i * 1%;
+      }
+    }
+    &-md{
+      @include md{
+        margin: $i * 1%;
+      }
+    }
+    &-xs{
+      @include xs{
+        margin: $i * 1%;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        margin: $i * 1%;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        margin: $i * 1%;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        margin: $i * 1%;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        margin: $i * 1%;
+      }
+    }
+  }
+}
+/* px */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .marA-px-#{$num} {
+    margin: $num + px;
+    &-xl{
+      @include xl{
+        margin: $num + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        margin: $num + px;
+      }
+    }
+    &-md{
+      @include md{
+        margin: $num + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        margin: $num + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        margin: $num + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        margin: $num + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        margin: $num + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        margin: $num + px;
+      }
+    }
+  }
+}
+/* vw */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .marA-vw-#{$num} {
+    margin: xl($num);
+    &-xl{
+      @include xl{
+        margin: xl($num);
+      }
+    }
+    &-lg{
+      @include lg{
+        margin: lg($num);
+      }
+    }
+    &-md{
+      @include md{
+        margin: xxs($num);
+      }
+    }
+    &-xs{
+      @include xs{
+        margin: xxs($num);
+      }
+    }
+    &-minxs{
+      @include minxs{
+        margin: xl($num);
+      }
+    }
+    &-minmd{
+      @include minmd{
+        margin: xl($num);
+      }
+    }
+    &-minlg{
+      @include minlg{
+        margin: xl($num);
+      }
+    }
+  }
+}
+// auto
+.marA{
+  margin-top: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  &-xl{
+    @include xl{
+      margin-top: auto;
+      margin-right: auto;
+      margin-bottom: auto;
+      margin-left: auto;
+    }
+  }
+  &-lg{
+    @include lg{
+      margin-top: auto;
+      margin-right: auto;
+      margin-bottom: auto;
+      margin-left: auto;
+    }
+  }
+  &-md{
+    @include md{
+      margin-top: auto;
+      margin-right: auto;
+      margin-bottom: auto;
+      margin-left: auto;
+    }
+  }
+  &-xs{
+    @include xs{
+      margin-top: auto;
+      margin-right: auto;
+      margin-bottom: auto;
+      margin-left: auto;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      margin-top: auto;
+      margin-right: auto;
+      margin-bottom: auto;
+      margin-left: auto;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      margin-top: auto;
+      margin-right: auto;
+      margin-bottom: auto;
+      margin-left: auto;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      margin-top: auto;
+      margin-right: auto;
+      margin-bottom: auto;
+      margin-left: auto;
+    }
+  }
+}
+
+/* margin-top & margin-bottom - marT */
+/* % */
+@for $i from 0 through 100 {
+  .marY-#{$i} {
+    margin-top: $i * 1%;
+    margin-bottom: $i * 1%;
+    &-xl{
+      @include xl{
+        margin-top: $i * 1%;
+        margin-bottom: $i * 1%;
+      }
+    }
+    &-lg{
+      @include lg{
+        margin-top: $i * 1%;
+        margin-bottom: $i * 1%;
+      }
+    }
+    &-md{
+      @include md{
+        margin-top: $i * 1%;
+        margin-bottom: $i * 1%;
+      }
+    }
+    &-xs{
+      @include xs{
+        margin-top: $i * 1%;
+        margin-bottom: $i * 1%;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        margin-top: $i * 1%;
+        margin-bottom: $i * 1%;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        margin-top: $i * 1%;
+        margin-bottom: $i * 1%;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        margin-top: $i * 1%;
+        margin-bottom: $i * 1%;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        margin-top: $i * 1%;
+        margin-bottom: $i * 1%;
+      }
+    }
+  }
+}
+/* px */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .marY-px-#{$num} {
+    margin-top: $num + px;
+    margin-bottom: $num + px;
+    &-xl{
+      @include xl{
+        margin-top: $num + px;
+        margin-bottom: $num + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        margin-top: $num + px;
+        margin-bottom: $num + px;
+      }
+    }
+    &-md{
+      @include md{
+        margin-top: $num + px;
+        margin-bottom: $num + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        margin-top: $num + px;
+        margin-bottom: $num + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        margin-top: $num + px;
+        margin-bottom: $num + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        margin-top: $num + px;
+        margin-bottom: $num + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        margin-top: $num + px;
+        margin-bottom: $num + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        margin-top: $num + px;
+        margin-bottom: $num + px;
+      }
+    }
+  }
+}
+/* vw */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .marY-vw-#{$num} {
+    margin-top: xl($num);
+    margin-bottom: xl($num);
+    &-xl{
+      @include xl{
+        margin-top: xl($num);
+        margin-bottom: xl($num);
+      }
+    }
+    &-lg{
+      @include lg{
+        margin-top: lg($num);
+        margin-bottom: lg($num);
+      }
+    }
+    &-md{
+      @include md{
+        margin-top: xxs($num);
+        margin-bottom: xxs($num);
+      }
+    }
+    &-xs{
+      @include xs{
+        margin-top: xxs($num);
+        margin-bottom: xxs($num);
+      }
+    }
+    &-minxs{
+      @include minxs{
+        margin-top: xl($num);
+        margin-bottom: xl($num);
+      }
+    }
+    &-minmd{
+      @include minmd{
+        margin-top: xl($num);
+        margin-bottom: xl($num);
+      }
+    }
+    &-minlg{
+      @include minlg{
+        margin-top: xl($num);
+        margin-bottom: xl($num);
+      }
+    }
+  }
+}
+// auto
+.marY{
+  margin-top: auto;
+  margin-bottom: auto;
+  &-xl{
+    @include xl{
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+  &-lg{
+    @include lg{
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+  &-md{
+    @include md{
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+  &-xs{
+    @include xs{
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+}
+
+/* margin-right & margin-left - marX */
+/* % */
+@for $i from 0 through 100 {
+  .marX-#{$i} {
+    margin-right: $i * 1%;
+    margin-left: $i * 1%;
+    &-xl{
+      @include xl{
+        margin-right: $i * 1%;
+        margin-left: $i * 1%;
+      }
+    }
+    &-lg{
+      @include lg{
+        margin-right: $i * 1%;
+        margin-left: $i * 1%;
+      }
+    }
+    &-md{
+      @include md{
+        margin-right: $i * 1%;
+        margin-left: $i * 1%;
+      }
+    }
+    &-xs{
+      @include xs{
+        margin-right: $i * 1%;
+        margin-left: $i * 1%;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        margin-right: $i * 1%;
+        margin-left: $i * 1%;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        margin-right: $i * 1%;
+        margin-left: $i * 1%;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        margin-right: $i * 1%;
+        margin-left: $i * 1%;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        margin-right: $i * 1%;
+        margin-left: $i * 1%;
+      }
+    }
+  }
+}
+/* px */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .marX-px-#{$num} {
+    margin-right: $num + px;
+    margin-left: $num + px;
+    &-xl{
+      @include xl{
+        margin-right: $num + px;
+        margin-left: $num + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        margin-right: $num + px;
+        margin-left: $num + px;
+      }
+    }
+    &-md{
+      @include md{
+        margin-right: $num + px;
+        margin-left: $num + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        margin-right: $num + px;
+        margin-left: $num + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        margin-right: $num + px;
+        margin-left: $num + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        margin-right: $num + px;
+        margin-left: $num + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        margin-right: $num + px;
+        margin-left: $num + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        margin-right: $num + px;
+        margin-left: $num + px;
+      }
+    }
+  }
+}
+/* vw */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .marX-vw-#{$num} {
+    margin-right: xl($num);
+    margin-left: xl($num);
+    &-xl{
+      @include xl{
+        margin-right: xl($num);
+        margin-left: xl($num);
+      }
+    }
+    &-lg{
+      @include lg{
+        margin-right: lg($num);
+        margin-left: lg($num);
+      }
+    }
+    &-md{
+      @include md{
+        margin-right: xxs($num);
+        margin-left: xxs($num);
+      }
+    }
+    &-xs{
+      @include xs{
+        margin-right: xxs($num);
+        margin-left: xxs($num);
+      }
+    }
+    &-minxs{
+      @include minxs{
+        margin-right: xl($num);
+        margin-left: xl($num);
+      }
+    }
+    &-minmd{
+      @include minmd{
+        margin-right: xl($num);
+        margin-left: xl($num);
+      }
+    }
+    &-minlg{
+      @include minlg{
+        margin-right: xl($num);
+        margin-left: xl($num);
+      }
+    }
+    &-minxl{
+      @include minxl{
+        margin-right: xl($num);
+        margin-left: xl($num);
+      }
+    }
+  }
+}
+// auto
+.marX{
+  margin-right: auto;
+  margin-left: auto;
+  &-xl{
+    @include xl{
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  &-lg{
+    @include lg{
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  &-md{
+    @include md{
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  &-xs{
+    @include xs{
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+}
+
+/* margin-top - marT */
+/* % */
+@for $i from 0 through 100 {
+  .marT-#{$i} {
+    margin-top: $i * 1%;
+    &-xl{
+      @include xl{
+        margin-top: $i * 1%;
+      }
+    }
+    &-lg{
+      @include lg{
+        margin-top: $i * 1%;
+      }
+    }
+    &-md{
+      @include md{
+        margin-top: $i * 1%;
+      }
+    }
+    &-xs{
+      @include xs{
+        margin-top: $i * 1%;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        margin-top: $i * 1%;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        margin-top: $i * 1%;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        margin-top: $i * 1%;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        margin-top: $i * 1%;
+      }
+    }
+  }
+}
+/* px */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .marT-px-#{$num} {
+    margin-top: $num + px;
+    &-xl{
+      @include xl{
+        margin-top: $num + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        margin-top: $num + px;
+      }
+    }
+    &-md{
+      @include md{
+        margin-top: $num + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        margin-top: $num + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        margin-top: $num + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        margin-top: $num + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        margin-top: $num + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        margin-top: $num + px;
+      }
+    }
+  }
+}
+/* vw */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .marT-vw-#{$num} {
+    margin-top: xl($num);
+    &-xl{
+      @include xl{
+        margin-top: xl($num);
+      }
+    }
+    &-lg{
+      @include lg{
+        margin-top: lg($num);
+      }
+    }
+    &-md{
+      @include md{
+        margin-top: xxs($num);
+      }
+    }
+    &-xs{
+      @include xs{
+        margin-top: xxs($num);
+      }
+    }
+    &-minxs{
+      @include minxs{
+        margin-top: xl($num);
+      }
+    }
+    &-minmd{
+      @include minmd{
+        margin-top: xl($num);
+      }
+    }
+    &-minlg{
+      @include minlg{
+        margin-top: xl($num);
+      }
+    }
+    &-minxl{
+      @include minxl{
+        margin-top: xl($num);
+      }
+    }
+  }
+}
+// auto
+.marT{
+  margin-top: auto;
+  &-xl{
+    @include xl{
+      margin-top: auto;
+    }
+  }
+  &-lg{
+    @include lg{
+      margin-top: auto;
+    }
+  }
+  &-md{
+    @include md{
+      margin-top: auto;
+    }
+  }
+  &-xs{
+    @include xs{
+      margin-top: auto;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      margin-top: auto;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      margin-top: auto;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      margin-top: auto;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      margin-top: auto;
+    }
+  }
+}
+
+/* margin-right - marR */
+/* % */
+@for $i from 0 through 100 {
+  .marR-#{$i} {
+    margin-right: $i * 1%;
+    &-xl{
+      @include xl{
+        margin-right: $i * 1%;
+      }
+    }
+    &-lg{
+      @include lg{
+        margin-right: $i * 1%;
+      }
+    }
+    &-md{
+      @include md{
+        margin-right: $i * 1%;
+      }
+    }
+    &-xs{
+      @include xs{
+        margin-right: $i * 1%;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        margin-right: $i * 1%;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        margin-right: $i * 1%;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        margin-right: $i * 1%;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        margin-right: $i * 1%;
+      }
+    }
+  }
+}
+/* px */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .marR-px-#{$num} {
+    margin-right: $num + px;
+    &-xl{
+      @include xl{
+        margin-right: $num + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        margin-right: $num + px;
+      }
+    }
+    &-md{
+      @include md{
+        margin-right: $num + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        margin-right: $num + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        margin-right: $num + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        margin-right: $num + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        margin-right: $num + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        margin-right: $num + px;
+      }
+    }
+  }
+}
+/* vw */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .marR-vw-#{$num} {
+    margin-right: xl($num);
+    &-xl{
+      @include xl{
+        margin-right: xl($num);
+      }
+    }
+    &-lg{
+      @include lg{
+        margin-right: lg($num);
+      }
+    }
+    &-md{
+      @include md{
+        margin-right: xxs($num);
+      }
+    }
+    &-xs{
+      @include xs{
+        margin-right: xxs($num);
+      }
+    }
+    &-minxs{
+      @include minxs{
+        margin-right: xl($num);
+      }
+    }
+    &-minmd{
+      @include minmd{
+        margin-right: xl($num);
+      }
+    }
+    &-minlg{
+      @include minlg{
+        margin-right: xl($num);
+      }
+    }
+    &-minxl{
+      @include minxl{
+        margin-right: xl($num);
+      }
+    }
+  }
+}
+// auto
+.marR{
+  margin-right: auto;
+  &-xl{
+    @include xl{
+      margin-right: auto;
+    }
+  }
+  &-lg{
+    @include lg{
+      margin-right: auto;
+    }
+  }
+  &-md{
+    @include md{
+      margin-right: auto;
+    }
+  }
+  &-xs{
+    @include xs{
+      margin-right: auto;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      margin-right: auto;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      margin-right: auto;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      margin-right: auto;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      margin-right: auto;
+    }
+  }
+}
+
+/* margin-bottom - marB */
+/* % */
+@for $i from 0 through 100 {
+  .marB-#{$i} {
+    margin-bottom: $i * 1%;
+    &-xl{
+      @include xl{
+        margin-bottom: $i * 1%;
+      }
+    }
+    &-lg{
+      @include lg{
+        margin-bottom: $i * 1%;
+      }
+    }
+    &-md{
+      @include md{
+        margin-bottom: $i * 1%;
+      }
+    }
+    &-xs{
+      @include xs{
+        margin-bottom: $i * 1%;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        margin-bottom: $i * 1%;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        margin-bottom: $i * 1%;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        margin-bottom: $i * 1%;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        margin-bottom: $i * 1%;
+      }
+    }
+  }
+}
+/* px */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .marB-px-#{$num} {
+    margin-bottom: $num + px;
+    &-xl{
+      @include xl{
+        margin-bottom: $num + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        margin-bottom: $num + px;
+      }
+    }
+    &-md{
+      @include md{
+        margin-bottom: $num + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        margin-bottom: $num + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        margin-bottom: $num + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        margin-bottom: $num + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        margin-bottom: $num + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        margin-bottom: $num + px;
+      }
+    }
+  }
+}
+/* vw */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .marB-vw-#{$num} {
+    margin-bottom: xl($num);
+    &-xl{
+      @include xl{
+        margin-bottom: xl($num);
+      }
+    }
+    &-lg{
+      @include lg{
+        margin-bottom: lg($num);
+      }
+    }
+    &-md{
+      @include md{
+        margin-bottom: xxs($num);
+      }
+    }
+    &-xs{
+      @include xs{
+        margin-bottom: xxs($num);
+      }
+    }
+    &-minxs{
+      @include minxs{
+        margin-bottom: xl($num);
+      }
+    }
+    &-minmd{
+      @include minmd{
+        margin-bottom: xl($num);
+      }
+    }
+    &-minlg{
+      @include minlg{
+        margin-bottom: xl($num);
+      }
+    }
+    &-minxl{
+      @include minxl{
+        margin-bottom: xl($num);
+      }
+    }
+  }
+}
+// auto
+.marB{
+  margin-bottom: auto;
+  &-xl{
+    @include xl{
+      margin-bottom: auto;
+    }
+  }
+  &-lg{
+    @include lg{
+      margin-bottom: auto;
+    }
+  }
+  &-md{
+    @include md{
+      margin-bottom: auto;
+    }
+  }
+  &-xs{
+    @include xs{
+      margin-bottom: auto;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      margin-bottom: auto;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      margin-bottom: auto;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      margin-bottom: auto;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      margin-bottom: auto;
+    }
+  }
+}
+
+
+/* margin-left - marL */
+/* % */
+@for $i from 0 through 100 {
+  .marL-#{$i} {
+    margin-left: $i * 1%;
+    &-xl{
+      @include xl{
+        margin-left: $i * 1%;
+      }
+    }
+    &-lg{
+      @include lg{
+        margin-left: $i * 1%;
+      }
+    }
+    &-md{
+      @include md{
+        margin-left: $i * 1%;
+      }
+    }
+    &-xs{
+      @include xs{
+        margin-left: $i * 1%;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        margin-left: $i * 1%;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        margin-left: $i * 1%;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        margin-left: $i * 1%;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        margin-left: $i * 1%;
+      }
+    }
+  }
+}
+/* px */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .marL-px-#{$num} {
+    margin-left: $num + px;
+    &-xl{
+      @include xl{
+        margin-left: $num + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        margin-left: $num + px;
+      }
+    }
+    &-md{
+      @include md{
+        margin-left: $num + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        margin-left: $num + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        margin-left: $num + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        margin-left: $num + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        margin-left: $num + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        margin-left: $num + px;
+      }
+    }
+  }
+}
+/* vw */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .marL-vw-#{$num} {
+    margin-left: xl($num);
+    &-xl{
+      @include xl{
+        margin-left: xl($num);
+      }
+    }
+    &-lg{
+      @include lg{
+        margin-left: lg($num);
+      }
+    }
+    &-md{
+      @include md{
+        margin-left: xxs($num);
+      }
+    }
+    &-xs{
+      @include xs{
+        margin-left: xxs($num);
+      }
+    }
+    &-minxs{
+      @include minxs{
+        margin-left: xl($num);
+      }
+    }
+    &-minmd{
+      @include minmd{
+        margin-left: xl($num);
+      }
+    }
+    &-minlg{
+      @include minlg{
+        margin-left: xl($num);
+      }
+    }
+    &-minxl{
+      @include minxl{
+        margin-left: xl($num);
+      }
+    }
+  }
+}
+// auto
+.marL{
+  margin-left: auto;
+  &-xl{
+    @include xl{
+      margin-left: auto;
+    }
+  }
+  &-lg{
+    @include lg{
+      margin-left: auto;
+    }
+  }
+  &-md{
+    @include md{
+      margin-left: auto;
+    }
+  }
+  &-xs{
+    @include xs{
+      margin-left: auto;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      margin-left: auto;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      margin-left: auto;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      margin-left: auto;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      margin-left: auto;
+    }
+  }
+}
+
+
+
+/* --- position - pos --- */
+/* 初期値 */
+.pos{
+  position: inherit;
+}
+/* relative */
+.pos-rel{
+  position: relative;
+  &-xl{
+    @include xl{
+      position: relative;
+    }
+  }
+  &-lg{
+    @include lg{
+      position: relative;
+    }
+  }
+  &-md{
+    @include md{
+      position: relative;
+    }
+  }
+  &-xs{
+    @include xs{
+      position: relative;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      position: relative;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      position: relative;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      position: relative;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      position: relative;
+    }
+  }
+}
+/* absolute */
+.pos-abs{
+  position: absolute;
+  &-xl{
+    @include xl{
+      position: absolute;
+    }
+  }
+  &-lg{
+    @include lg{
+      position: absolute;
+    }
+  }
+  &-md{
+    @include md{
+      position: absolute;
+    }
+  }
+  &-xs{
+    @include xs{
+      position: absolute;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      position: absolute;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      position: absolute;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      position: absolute;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      position: absolute;
+    }
+  }
+}
+/* fixed */
+.pos-fix{
+  position: fixed;
+  &-xl{
+    @include xl{
+      position: fixed;
+    }
+  }
+  &-lg{
+    @include lg{
+      position: fixed;
+    }
+  }
+  &-md{
+    @include md{
+      position: fixed;
+    }
+  }
+  &-xs{
+    @include xs{
+      position: fixed;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      position: fixed;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      position: fixed;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      position: fixed;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      position: fixed;
+    }
+  }
+}
+
+/* z-index - zi */
+@for $i from 10 through -10 {
+  $value: if($i < 0, "n#{-$i}", $i);
+  .zi-#{$value} {
+    z-index: $i;
+  }
+}
+
+
+
+
+/* --- positionの値 --- */
+/* 全方向 - allrange - al */
+/* % */
+@for $i from 0 through 100 {
+  .posA-#{$i} {
+    top: $i * 1%;
+    right: $i * 1%;
+    bottom: $i * 1%;
+    left: $i * 1%;
+    &-xl{
+      @include xl{
+        top: $i * 1%;
+        right: $i * 1%;
+        bottom: $i * 1%;
+        left: $i * 1%;
+      }
+    }
+    &-lg{
+      @include lg{
+        top: $i * 1%;
+        right: $i * 1%;
+        bottom: $i * 1%;
+        left: $i * 1%;
+      }
+    }
+    &-md{
+      @include md{
+        top: $i * 1%;
+        right: $i * 1%;
+        bottom: $i * 1%;
+        left: $i * 1%;
+      }
+    }
+    &-xs{
+      @include xs{
+        top: $i * 1%;
+        right: $i * 1%;
+        bottom: $i * 1%;
+        left: $i * 1%;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        top: $i * 1%;
+        right: $i * 1%;
+        bottom: $i * 1%;
+        left: $i * 1%;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        top: $i * 1%;
+        right: $i * 1%;
+        bottom: $i * 1%;
+        left: $i * 1%;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        top: $i * 1%;
+        right: $i * 1%;
+        bottom: $i * 1%;
+        left: $i * 1%;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        top: $i * 1%;
+        right: $i * 1%;
+        bottom: $i * 1%;
+        left: $i * 1%;
+      }
+    }
+  }
+}
+/* px */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .posA-px-#{$num} {
+    top: $num + px;
+    right: $num + px;
+    bottom: $num + px;
+    left: $num + px;
+    &-xl{
+      @include xl{
+        top: $num + px;
+        right: $num + px;
+        bottom: $num + px;
+        left: $num + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        top: $num + px;
+        right: $num + px;
+        bottom: $num + px;
+        left: $num + px;
+      }
+    }
+    &-md{
+      @include md{
+        top: $num + px;
+        right: $num + px;
+        bottom: $num + px;
+        left: $num + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        top: $num + px;
+        right: $num + px;
+        bottom: $num + px;
+        left: $num + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        top: $num + px;
+        right: $num + px;
+        bottom: $num + px;
+        left: $num + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        top: $num + px;
+        right: $num + px;
+        bottom: $num + px;
+        left: $num + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        top: $num + px;
+        right: $num + px;
+        bottom: $num + px;
+        left: $num + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        top: $num + px;
+        right: $num + px;
+        bottom: $num + px;
+        left: $num + px;
+      }
+    }
+  }
+}
+/* vw */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .posA-vw-#{$num} {
+    top: xl($num);
+    right: xl($num);
+    bottom: xl($num);
+    left: xl($num);
+    &-xl{
+      @include xl{
+        top: xl($num);
+        right: xl($num);
+        bottom: xl($num);
+        left: xl($num);
+      }
+    }
+    &-lg{
+      @include lg{
+        top: lg($num);
+        right: lg($num);
+        bottom: lg($num);
+        left: lg($num);
+      }
+    }
+    &-md{
+      @include md{
+        top: xxs($num);
+        right: xxs($num);
+        bottom: xxs($num);
+        left: xxs($num);
+      }
+    }
+    &-xs{
+      @include xs{
+        top: xxs($num);
+        right: xxs($num);
+        bottom: xxs($num);
+        left: xxs($num);
+      }
+    }
+    &-minxs{
+      @include minxs{
+        top: xl($num);
+        right: xl($num);
+        bottom: xl($num);
+        left: xl($num);
+      }
+    }
+    &-minmd{
+      @include minmd{
+        top: xl($num);
+        right: xl($num);
+        bottom: xl($num);
+        left: xl($num);
+      }
+    }
+    &-minlg{
+      @include minlg{
+        top: xl($num);
+        right: xl($num);
+        bottom: xl($num);
+        left: xl($num);
+      }
+    }
+    &-minxl{
+      @include minxl{
+        top: xl($num);
+        right: xl($num);
+        bottom: xl($num);
+        left: xl($num);
+      }
+    }
+  }
+}
+// auto
+.posA{
+  &-xl{
+    @include xl{
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: auto;
+    }
+  }
+  &-lg{
+    @include lg{
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: auto;
+    }
+  }
+  &-md{
+    @include md{
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: auto;
+    }
+  }
+  &-xs{
+    @include xs{
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: auto;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: auto;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: auto;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: auto;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: auto;
+    }
+  }
+}
+
+/* top & bottom -  posY */
+/* % */
+@for $i from 0 through 100 {
+  .posY-#{$i} {
+    top: $i * 1%;
+    bottom: $i * 1%;
+    &-xl{
+      @include xl{
+        top: $i * 1%;
+        bottom: $i * 1%;
+      }
+    }
+    &-lg{
+      @include lg{
+        top: $i * 1%;
+        bottom: $i * 1%;
+      }
+    }
+    &-md{
+      @include md{
+        top: $i * 1%;
+        bottom: $i * 1%;
+      }
+    }
+    &-xs{
+      @include xs{
+        top: $i * 1%;
+        bottom: $i * 1%;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        top: $i * 1%;
+        bottom: $i * 1%;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        top: $i * 1%;
+        bottom: $i * 1%;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        top: $i * 1%;
+        bottom: $i * 1%;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        top: $i * 1%;
+        bottom: $i * 1%;
+      }
+    }
+  }
+}
+/* px */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .posY-px-#{$num} {
+    top: $num + px;
+    bottom: $num + px;
+    &-xl{
+      @include xl{
+        top: $num + px;
+        bottom: $num + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        top: $num + px;
+        bottom: $num + px;
+      }
+    }
+    &-md{
+      @include md{
+        top: $num + px;
+        bottom: $num + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        top: $num + px;
+        bottom: $num + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        top: $num + px;
+        bottom: $num + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        top: $num + px;
+        bottom: $num + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        top: $num + px;
+        bottom: $num + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        top: $num + px;
+        bottom: $num + px;
+      }
+    }
+  }
+}
+/* vw */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .posY-vw-#{$num} {
+    top: xl($num);
+    bottom: xl($num);
+    &-xl{
+      @include xl{
+        top: xl($num);
+        bottom: xl($num);
+      }
+    }
+    &-lg{
+      @include lg{
+        top: lg($num);
+        bottom: lg($num);
+      }
+    }
+    &-md{
+      @include md{
+        top: xxs($num);
+        bottom: xxs($num);
+      }
+    }
+    &-xs{
+      @include xs{
+        top: xxs($num);
+        bottom: xxs($num);
+      }
+    }
+    &-minxs{
+      @include minxs{
+        top: xl($num);
+        bottom: xl($num);
+      }
+    }
+    &-minmd{
+      @include minmd{
+        top: xl($num);
+        bottom: xl($num);
+      }
+    }
+    &-minlg{
+      @include minlg{
+        top: xl($num);
+        bottom: xl($num);
+      }
+    }
+    &-minxl{
+      @include minxl{
+        top: xl($num);
+        bottom: xl($num);
+      }
+    }
+  }
+}
+// auto
+.posY{
+  top: auto;
+  bottom: auto;
+  &-xl{
+    @include xl{
+      top: auto;
+      bottom: auto;
+    }
+  }
+  &-lg{
+    @include lg{
+      top: auto;
+      bottom: auto;
+    }
+  }
+  &-md{
+    @include md{
+      top: auto;
+      bottom: auto;
+    }
+  }
+  &-xs{
+    @include xs{
+      top: auto;
+      bottom: auto;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      top: auto;
+      bottom: auto;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      top: auto;
+      bottom: auto;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      top: auto;
+      bottom: auto;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      top: auto;
+      bottom: auto;
+    }
+  }
+}
+
+/* right & left -  posY */
+/* % */
+@for $i from 0 through 100 {
+  .posX-#{$i} {
+    right: $i * 1%;
+    left: $i * 1%;
+    &-xl{
+      @include xl{
+        right: $i * 1%;
+        left: $i * 1%;
+      }
+    }
+    &-lg{
+      @include lg{
+        right: $i * 1%;
+        left: $i * 1%;
+      }
+    }
+    &-md{
+      @include md{
+        right: $i * 1%;
+        left: $i * 1%;
+      }
+    }
+    &-xs{
+      @include xs{
+        right: $i * 1%;
+        left: $i * 1%;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        right: $i * 1%;
+        left: $i * 1%;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        right: $i * 1%;
+        left: $i * 1%;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        right: $i * 1%;
+        left: $i * 1%;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        right: $i * 1%;
+        left: $i * 1%;
+      }
+    }
+  }
+}
+/* px */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .posX-px-#{$num} {
+    right: $num + px;
+    left: $num + px;
+    &-xl{
+      @include xl{
+        right: $num + px;
+        left: $num + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        right: $num + px;
+        left: $num + px;
+      }
+    }
+    &-md{
+      @include md{
+        right: $num + px;
+        left: $num + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        right: $num + px;
+        left: $num + px;
+      }
+    }
+
+    &-minxs{
+      @include minxs{
+        right: $num + px;
+        left: $num + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        right: $num + px;
+        left: $num + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        right: $num + px;
+        left: $num + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        right: $num + px;
+        left: $num + px;
+      }
+    }
+  }
+}
+/* vw */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .posX-vw-#{$num} {
+    right: xl($num);
+    left: xl($num);
+    &-xl{
+      @include xl{
+        right: xl($num);
+        left: xl($num);
+      }
+    }
+    &-lg{
+      @include lg{
+        right: lg($num);
+        left: lg($num);
+      }
+    }
+    &-md{
+      @include md{
+        right: xxs($num);
+        left: xxs($num);
+      }
+    }
+    &-xs{
+      @include xs{
+        right: xxs($num);
+        left: xxs($num);
+      }
+    }
+    &-minxs{
+      @include minxs{
+        right: xl($num);
+        left: xl($num);
+      }
+    }
+    &-minmd{
+      @include minmd{
+        right: xl($num);
+        left: xl($num);
+      }
+    }
+    &-minlg{
+      @include minlg{
+        right: xl($num);
+        left: xl($num);
+      }
+    }
+    &-minxl{
+      @include minxl{
+        right: xl($num);
+        left: xl($num);
+      }
+    }
+  }
+}
+// auto
+.posX{
+  right: auto;
+  left: auto;
+  &-xl{
+    @include xl{
+      right: auto;
+      left: auto;
+    }
+  }
+  &-lg{
+    @include lg{
+      right: auto;
+      left: auto;
+    }
+  }
+  &-md{
+    @include md{
+      right: auto;
+      left: auto;
+    }
+  }
+  &-xs{
+    @include xs{
+      right: auto;
+      left: auto;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      right: auto;
+      left: auto;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      right: auto;
+      left: auto;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      right: auto;
+      left: auto;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      right: auto;
+      left: auto;
+    }
+  }
+}
+
+/* top -  posT */
+/* % */
+@for $i from 0 through 100 {
+  .posT-#{$i} {
+    top: $i * 1%;
+    &-xl{
+      @include xl{
+        top: $i * 1%;
+      }
+    }
+    &-lg{
+      @include lg{
+        top: $i * 1%;
+      }
+    }
+    &-md{
+      @include md{
+        top: $i * 1%;
+      }
+    }
+    &-xs{
+      @include xs{
+        top: $i * 1%;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        top: $i * 1%;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        top: $i * 1%;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        top: $i * 1%;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        top: $i * 1%;
+      }
+    }
+  }
+}
+/* px */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .posT-px-#{$num} {
+    top: $num + px;
+    &-xl{
+      @include xl{
+        top: $num + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        top: $num + px;
+      }
+    }
+    &-md{
+      @include md{
+        top: $num + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        top: $num + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        top: $num + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        top: $num + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        top: $num + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        top: $num + px;
+      }
+    }
+  }
+  .posT-px-n#{$num} {
+    top: #{-$num} + px;
+    &-xl{
+      @include xl{
+        top: #{-$num} + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        top: #{-$num} + px;
+      }
+    }
+    &-md{
+      @include md{
+        top: #{-$num} + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        top: #{-$num} + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        top: #{-$num} + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        top: #{-$num} + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        top: #{-$num} + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        top: #{-$num} + px;
+      }
+    }
+  }
+}
+/* vw */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .posT-vw-#{$num} {
+    top: xl($num);
+    &-xl{
+      @include xl{
+        top: xl($num);
+      }
+    }
+    &-lg{
+      @include lg{
+        top: lg($num);
+      }
+    }
+    &-md{
+      @include md{
+        top: xxs($num);
+      }
+    }
+    &-xs{
+      @include xs{
+        top: xxs($num);
+      }
+    }
+    &-minxs{
+      @include minxs{
+        top: xl($num);
+      }
+    }
+    &-minmd{
+      @include minmd{
+        top: xl($num);
+      }
+    }
+    &-minlg{
+      @include minlg{
+        top: xl($num);
+      }
+    }
+    &-minxl{
+      @include minxl{
+        top: xl($num);
+      }
+    }
+  }
+}
+// auto
+.posT{
+  top: auto;
+  &-xl{
+    @include xl{
+      top: auto;
+    }
+  }
+  &-lg{
+    @include lg{
+      top: auto;
+    }
+  }
+  &-md{
+    @include md{
+      top: auto;
+    }
+  }
+  &-xs{
+    @include xs{
+      top: auto;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      top: auto;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      top: auto;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      top: auto;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      top: auto;
+    }
+  }
+}
+
+/* right -  posR */
+/* % */
+@for $i from 0 through 100 {
+  .posR-#{$i} {
+    right: $i * 1%;
+    &-xl{
+      @include xl{
+        right: $i * 1%;
+      }
+    }
+    &-lg{
+      @include lg{
+        right: $i * 1%;
+      }
+    }
+    &-md{
+      @include md{
+        right: $i * 1%;
+      }
+    }
+    &-xs{
+      @include xs{
+        right: $i * 1%;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        right: $i * 1%;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        right: $i * 1%;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        right: $i * 1%;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        right: $i * 1%;
+      }
+    }
+  }
+}
+/* px */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .posR-px-#{$num} {
+    right: $num + px;
+    &-xl{
+      @include xl{
+        right: $num + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        right: $num + px;
+      }
+    }
+    &-md{
+      @include md{
+        right: $num + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        right: $num + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        right: $num + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        right: $num + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        right: $num + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        right: $num + px;
+      }
+    }
+  }
+}
+/* vw */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .posR-vw-#{$num} {
+    right: xl($num);
+    &-xl{
+      @include xl{
+        right: xl($num);
+      }
+    }
+    &-lg{
+      @include lg{
+        right: lg($num);
+      }
+    }
+    &-md{
+      @include md{
+        right: xxs($num);
+      }
+    }
+    &-xs{
+      @include xs{
+        right: xxs($num);
+      }
+    }
+    &-minxs{
+      @include minxs{
+        right: xl($num);
+      }
+    }
+    &-minmd{
+      @include minmd{
+        right: xl($num);
+      }
+    }
+    &-minlg{
+      @include minlg{
+        right: xl($num);
+      }
+    }
+    &-minxl{
+      @include minxl{
+        right: xl($num);
+      }
+    }
+  }
+}
+// auto
+.posR{
+  right: auto;
+  &-xl{
+    @include xl{
+      right: auto;
+    }
+  }
+  &-lg{
+    @include lg{
+      right: auto;
+    }
+  }
+  &-md{
+    @include md{
+      right: auto;
+    }
+  }
+  &-xs{
+    @include xs{
+      right: auto;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      right: auto;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      right: auto;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      right: auto;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      right: auto;
+    }
+  }
+}
+
+/* bottom - posB */
+/* % */
+@for $i from 0 through 100 {
+  .posB-#{$i} {
+    bottom: $i * 1%;
+    &-xl{
+      @include xl{
+        bottom: $i * 1%;
+      }
+    }
+    &-lg{
+      @include lg{
+        bottom: $i * 1%;
+      }
+    }
+    &-md{
+      @include md{
+        bottom: $i * 1%;
+      }
+    }
+    &-xs{
+      @include xs{
+        bottom: $i * 1%;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        bottom: $i * 1%;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        bottom: $i * 1%;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        bottom: $i * 1%;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        bottom: $i * 1%;
+      }
+    }
+  }
+}
+/* px */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .posB-px-#{$num} {
+    bottom: $num + px;
+    &-xl{
+      @include xl{
+        bottom: $num + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        bottom: $num + px;
+      }
+    }
+    &-md{
+      @include md{
+        bottom: $num + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        bottom: $num + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        bottom: $num + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        bottom: $num + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        bottom: $num + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        bottom: $num + px;
+      }
+    }
+  }
+}
+/* vw */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .posB-vw-#{$num} {
+    bottom: xl($num);
+    &-xl{
+      @include xl{
+        bottom: xl($num);
+      }
+    }
+    &-lg{
+      @include lg{
+        bottom: lg($num);
+      }
+    }
+    &-md{
+      @include md{
+        bottom: xxs($num);
+      }
+    }
+    &-xs{
+      @include xs{
+        bottom: xxs($num);
+      }
+    }
+    &-minxs{
+      @include minxs{
+        bottom: xl($num);
+      }
+    }
+    &-minmd{
+      @include minmd{
+        bottom: xl($num);
+      }
+    }
+    &-minlg{
+      @include minlg{
+        bottom: xl($num);
+      }
+    }
+    &-minxl{
+      @include minxl{
+        bottom: xl($num);
+      }
+    }
+  }
+}
+// auto
+.posB{
+  &-xl{
+    @include xl{
+      bottom: auto;
+    }
+  }
+  &-lg{
+    @include lg{
+      bottom: auto;
+    }
+  }
+  &-md{
+    @include md{
+      bottom: auto;
+    }
+  }
+  &-xs{
+    @include xs{
+      bottom: auto;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      bottom: auto;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      bottom: auto;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      bottom: auto;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      bottom: auto;
+    }
+  }
+}
+
+/* left - posL */
+/* % */
+@for $i from 0 through 100 {
+  .posL-#{$i} {
+    left: $i * 1%;
+    &-xl{
+      @include xl{
+        left: $i * 1%;
+      }
+    }
+    &-lg{
+      @include lg{
+        left: $i * 1%;
+      }
+    }
+    &-md{
+      @include md{
+        left: $i * 1%;
+      }
+    }
+    &-xs{
+      @include xs{
+        left: $i * 1%;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        left: $i * 1%;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        left: $i * 1%;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        left: $i * 1%;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        left: $i * 1%;
+      }
+    }
+  }
+}
+/* px */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .posL-px-#{$num} {
+    left: $num + px;
+    &-xl{
+      @include xl{
+        left: $num + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        left: $num + px;
+      }
+    }
+    &-md{
+      @include md{
+        left: $num + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        left: $num + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        left: $num + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        left: $num + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        left: $num + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        left: $num + px;
+      }
+    }
+  }
+}
+/* vw */
+@for $i from 0 through 40 {
+  $num: $i * 5;
+  .posL-vw-#{$num} {
+    left: xl($num);
+    &-xl{
+      @include xl{
+        left: xl($num);
+      }
+    }
+    &-lg{
+      @include lg{
+        left: lg($num);
+      }
+    }
+    &-md{
+      @include md{
+        left: xxs($num);
+      }
+    }
+    &-xs{
+      @include xs{
+        left: xxs($num);
+      }
+    }
+    &-minxs{
+      @include minxs{
+        left: xl($num);
+      }
+    }
+    &-minmd{
+      @include minmd{
+        left: xl($num);
+      }
+    }
+    &-minlg{
+      @include minlg{
+        left: xl($num);
+      }
+    }
+    &-minxl{
+      @include minxl{
+        left: xl($num);
+      }
+    }
+  }
+}
+// auto
+.posL{
+  left: auto;
+  &-xl{
+    @include xl{
+      left: auto;
+    }
+  }
+  &-lg{
+    @include lg{
+      left: auto;
+    }
+  }
+  &-md{
+    @include md{
+      left: auto;
+    }
+  }
+  &-xs{
+    @include xs{
+      left: auto;
+    }
+  }
+  &-minxs{
+    @include minxs{
+      left: auto;
+    }
+  }
+  &-minmd{
+    @include minmd{
+      left: auto;
+    }
+  }
+  &-minlg{
+    @include minlg{
+      left: auto;
+    }
+  }
+  &-minxl{
+    @include minxl{
+      left: auto;
+    }
+  }
+}
+
+
+/* --- border - bd --- */
+@for $i from 0 through 10 {
+  .bdA-px-#{$i}{
+    // 初期値はsolid
+    border-style: solid;
+    border-width: $i + px;
+    &-xl{
+      @include xl{
+        border-style: solid;
+        border-width: $i + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        border-style: solid;
+        border-width: $i + px;
+      }
+    }
+    &-md{
+      @include md{
+        border-style: solid;
+        border-width: $i + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        border-style: solid;
+        border-width: $i + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        border-style: solid;
+        border-width: $i + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        border-style: solid;
+        border-width: $i + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        border-style: solid;
+        border-width: $i + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        border-style: solid;
+        border-width: $i + px;
+      }
+    }
+    // solid
+    &-sld{
+      border-style: solid;
+      border-width: $i + px;
+      &-xl{
+        @include xl{
+          border-style: solid;
+          border-width: $i + px;
+        }
+      }
+      &-lg{
+        @include lg{
+          border-style: solid;
+          border-width: $i + px;
+        }
+      }
+      &-md{
+        @include md{
+          border-style: solid;
+          border-width: $i + px;
+        }
+      }
+      &-xs{
+        @include xs{
+          border-style: solid;
+          border-width: $i + px;
+        }
+      }
+      &-minxs{
+        @include minxs{
+          border-style: solid;
+          border-width: $i + px;
+        }
+      }
+      &-minmd{
+        @include minmd{
+          border-style: solid;
+          border-width: $i + px;
+        }
+      }
+      &-minlg{
+        @include minlg{
+          border-style: solid;
+          border-width: $i + px;
+        }
+      }
+      &-minxl{
+        @include minxl{
+          border-style: solid;
+          border-width: $i + px;
+        }
+      }
+    }
+    // dashed
+    &-dsh{
+      border-style: dashed;
+      border-width: $i + px;
+      &-xl{
+        @include xl{
+          border-style: dashed;
+          border-width: $i + px;
+        }
+      }
+      &-lg{
+        @include lg{
+          border-style: dashed;
+          border-width: $i + px;
+        }
+      }
+      &-md{
+        @include md{
+          border-style: dashed;
+          border-width: $i + px;
+        }
+      }
+      &-xs{
+        @include xs{
+          border-style: dashed;
+          border-width: $i + px;
+        }
+      }
+      &-minxs{
+        @include minxs{
+          border-style: dashed;
+          border-width: $i + px;
+        }
+      }
+      &-minmd{
+        @include minmd{
+          border-style: dashed;
+          border-width: $i + px;
+        }
+      }
+      &-minlg{
+        @include minlg{
+          border-style: dashed;
+          border-width: $i + px;
+        }
+      }
+      &-minxl{
+        @include minxl{
+          border-style: dashed;
+          border-width: $i + px;
+        }
+      }
+    }
+    // dotted
+    &-dot{
+      border-style: dotted;
+      border-width: $i + px;
+      &-xl{
+        @include xl{
+          border-style: dotted;
+          border-width: $i + px;
+        }
+      }
+      &-lg{
+        @include lg{
+          border-style: dotted;
+          border-width: $i + px;
+        }
+      }
+      &-md{
+        @include md{
+          border-style: dotted;
+          border-width: $i + px;
+        }
+      }
+      &-xs{
+        @include xs{
+          border-style: dotted;
+          border-width: $i + px;
+        }
+      }
+      &-minxs{
+        @include minxs{
+          border-style: dotted;
+          border-width: $i + px;
+        }
+      }
+      &-minmd{
+        @include minmd{
+          border-style: dotted;
+          border-width: $i + px;
+        }
+      }
+      &-minlg{
+        @include minlg{
+          border-style: dotted;
+          border-width: $i + px;
+        }
+      }
+      &-minxl{
+        @include minxl{
+          border-style: dotted;
+          border-width: $i + px;
+        }
+      }
+    }
+  }
+  .bdY-px-#{$i}{
+    // 初期値はsolid
+    border-style: solid;
+    border-width: $i + px 0 $i + px 0;
+    &-xl{
+      @include xl{
+        border-style: solid;
+        border-width: $i + px 0 $i + px 0;
+      }
+    }
+    &-lg{
+      @include lg{
+        border-style: solid;
+        border-width: $i + px 0 $i + px 0;
+      }
+    }
+    &-md{
+      @include md{
+        border-style: solid;
+        border-width: $i + px 0 $i + px 0;
+      }
+    }
+    &-xs{
+      @include xs{
+        border-style: solid;
+        border-width: $i + px 0 $i + px 0;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        border-style: solid;
+        border-width: $i + px 0 $i + px 0;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        border-style: solid;
+        border-width: $i + px 0 $i + px 0;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        border-style: solid;
+        border-width: $i + px 0 $i + px 0;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        border-style: solid;
+        border-width: $i + px 0 $i + px 0;
+      }
+    }
+    // solid
+    &-sld{
+      border-style: solid;
+      border-width: $i + px 0 $i + px 0;
+      &-xl{
+        @include xl{
+          border-style: solid;
+          border-width: $i + px 0 $i + px 0;
+        }
+      }
+      &-lg{
+        @include lg{
+          border-style: solid;
+          border-width: $i + px 0 $i + px 0;
+        }
+      }
+      &-md{
+        @include md{
+          border-style: solid;
+          border-width: $i + px 0 $i + px 0;
+        }
+      }
+      &-xs{
+        @include xs{
+          border-style: solid;
+          border-width: $i + px 0 $i + px 0;
+        }
+      }
+      &-minxs{
+        @include minxs{
+          border-style: solid;
+          border-width: $i + px 0 $i + px 0;
+        }
+      }
+      &-minmd{
+        @include minmd{
+          border-style: solid;
+          border-width: $i + px 0 $i + px 0;
+        }
+      }
+      &-minlg{
+        @include minlg{
+          border-style: solid;
+          border-width: $i + px 0 $i + px 0;
+        }
+      }
+      &-minxl{
+        @include minxl{
+          border-style: solid;
+          border-width: $i + px 0 $i + px 0;
+        }
+      }
+    }
+    // dashed
+    &-dsh{
+      border-style: dashed;
+      border-width: $i + px 0 $i + px 0;
+      &-xl{
+        @include xl{
+          border-style: dashed;
+          border-width: $i + px 0 $i + px 0;
+        }
+      }
+      &-lg{
+        @include lg{
+          border-style: dashed;
+          border-width: $i + px 0 $i + px 0;
+        }
+      }
+      &-md{
+        @include md{
+          border-style: dashed;
+          border-width: $i + px 0 $i + px 0;
+        }
+      }
+      &-xs{
+        @include xs{
+          border-style: dashed;
+          border-width: $i + px 0 $i + px 0;
+        }
+      }
+      &-minxs{
+        @include minxs{
+          border-style: dashed;
+          border-width: $i + px 0 $i + px 0;
+        }
+      }
+      &-minmd{
+        @include minmd{
+          border-style: dashed;
+          border-width: $i + px 0 $i + px 0;
+        }
+      }
+      &-minlg{
+        @include minlg{
+          border-style: dashed;
+          border-width: $i + px 0 $i + px 0;
+        }
+      }
+      &-minxl{
+        @include minxl{
+          border-style: dashed;
+          border-width: $i + px 0 $i + px 0;
+        }
+      }
+    }
+    // dotted
+    &-dot{
+      border-style: dotted;
+      border-width: $i + px 0 $i + px 0;
+      &-xl{
+        @include xl{
+          border-style: dotted;
+          border-width: $i + px 0 $i + px 0;
+        }
+      }
+      &-lg{
+        @include lg{
+          border-style: dotted;
+          border-width: $i + px 0 $i + px 0;
+        }
+      }
+      &-md{
+        @include md{
+          border-style: dotted;
+          border-width: $i + px 0 $i + px 0;
+        }
+      }
+      &-xs{
+        @include xs{
+          border-style: dotted;
+          border-width: $i + px 0 $i + px 0;
+        }
+      }
+      &-minxs{
+        @include minxs{
+          border-style: dotted;
+          border-width: $i + px 0 $i + px 0;
+        }
+      }
+      &-minmd{
+        @include minmd{
+          border-style: dotted;
+          border-width: $i + px 0 $i + px 0;
+        }
+      }
+      &-minlg{
+        @include minlg{
+          border-style: dotted;
+          border-width: $i + px 0 $i + px 0;
+        }
+      }
+      &-minxl{
+        @include minxl{
+          border-style: dotted;
+          border-width: $i + px 0 $i + px 0;
+        }
+      }
+    }
+  }
+  .bdX-px-#{$i}{
+    // 初期値はsolid
+    border-style: solid;
+    border-width: 0 $i + px 0 $i + px;
+    &-xl{
+      @include xl{
+        border-style: solid;
+        border-width: 0 $i + px 0 $i + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        border-style: solid;
+        border-width: 0 $i + px 0 $i + px;
+      }
+    }
+    &-md{
+      @include md{
+        border-style: solid;
+        border-width: 0 $i + px 0 $i + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        border-style: solid;
+        border-width: 0 $i + px 0 $i + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        border-style: solid;
+        border-width: 0 $i + px 0 $i + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        border-style: solid;
+        border-width: 0 $i + px 0 $i + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        border-style: solid;
+        border-width: 0 $i + px 0 $i + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        border-style: solid;
+        border-width: 0 $i + px 0 $i + px;
+      }
+    }
+    // solid
+    &-sld{
+      border-style: solid;
+      border-width: 0 $i + px 0 $i + px;
+      &-xl{
+        @include xl{
+          border-style: solid;
+          border-width: 0 $i + px 0 $i + px;
+        }
+      }
+      &-lg{
+        @include lg{
+          border-style: solid;
+          border-width: 0 $i + px 0 $i + px;
+        }
+      }
+      &-md{
+        @include md{
+          border-style: solid;
+          border-width: 0 $i + px 0 $i + px;
+        }
+      }
+      &-xs{
+        @include xs{
+          border-style: solid;
+          border-width: 0 $i + px 0 $i + px;
+        }
+      }
+      &-minxs{
+        @include minxs{
+          border-style: solid;
+          border-width: 0 $i + px 0 $i + px;
+        }
+      }
+      &-minmd{
+        @include minmd{
+          border-style: solid;
+          border-width: 0 $i + px 0 $i + px;
+        }
+      }
+      &-minlg{
+        @include minlg{
+          border-style: solid;
+          border-width: 0 $i + px 0 $i + px;
+        }
+      }
+      &-minxl{
+        @include minxl{
+          border-style: solid;
+          border-width: 0 $i + px 0 $i + px;
+        }
+      }
+    }
+    // dashed
+    &-dsh{
+      border-style: dashed;
+      border-width: 0 $i + px 0 $i + px;
+      &-xl{
+        @include xl{
+          border-style: dashed;
+          border-width: 0 $i + px 0 $i + px;
+        }
+      }
+      &-lg{
+        @include lg{
+          border-style: dashed;
+          border-width: 0 $i + px 0 $i + px;
+        }
+      }
+      &-md{
+        @include md{
+          border-style: dashed;
+          border-width: 0 $i + px 0 $i + px;
+        }
+      }
+      &-xs{
+        @include xs{
+          border-style: dashed;
+          border-width: 0 $i + px 0 $i + px;
+        }
+      }
+      &-minxs{
+        @include minxs{
+          border-style: dashed;
+          border-width: 0 $i + px 0 $i + px;
+        }
+      }
+      &-minmd{
+        @include minmd{
+          border-style: dashed;
+          border-width: 0 $i + px 0 $i + px;
+        }
+      }
+      &-minlg{
+        @include minlg{
+          border-style: dashed;
+          border-width: 0 $i + px 0 $i + px;
+        }
+      }
+      &-minxl{
+        @include minxl{
+          border-style: dashed;
+          border-width: 0 $i + px 0 $i + px;
+        }
+      }
+    }
+    // dotted
+    &-dot{
+      border-style: dotted;
+      border-width: 0 $i + px 0 $i + px;
+      &-xl{
+        @include xl{
+          border-style: dotted;
+          border-width: 0 $i + px 0 $i + px;
+        }
+      }
+      &-lg{
+        @include lg{
+          border-style: dotted;
+          border-width: 0 $i + px 0 $i + px;
+        }
+      }
+      &-md{
+        @include md{
+          border-style: dotted;
+          border-width: 0 $i + px 0 $i + px;
+        }
+      }
+      &-xs{
+        @include xs{
+          border-style: dotted;
+          border-width: 0 $i + px 0 $i + px;
+        }
+      }
+      &-minxs{
+        @include minxs{
+          border-style: dotted;
+          border-width: 0 $i + px 0 $i + px;
+        }
+      }
+      &-minmd{
+        @include minmd{
+          border-style: dotted;
+          border-width: 0 $i + px 0 $i + px;
+        }
+      }
+      &-minlg{
+        @include minlg{
+          border-style: dotted;
+          border-width: 0 $i + px 0 $i + px;
+        }
+      }
+      &-minxl{
+        @include minxl{
+          border-style: dotted;
+          border-width: 0 $i + px 0 $i + px;
+        }
+      }
+    }
+  }
+  .bdT-px-#{$i}{
+    // 初期値はsolid
+    border-style: solid;
+    border-top-width: $i + px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    &-xl{
+      @include xl{
+        border-style: solid;
+        border-top-width: $i + px;
+        border-right-width: 0px;
+        border-bottom-width: 0px;
+        border-left-width: 0px;
+      }
+    }
+    &-lg{
+      @include lg{
+        border-style: solid;
+        border-top-width: $i + px;
+        border-right-width: 0px;
+        border-bottom-width: 0px;
+        border-left-width: 0px;
+      }
+    }
+    &-md{
+      @include md{
+        border-style: solid;
+        border-top-width: $i + px;
+        border-right-width: 0px;
+        border-bottom-width: 0px;
+        border-left-width: 0px;
+      }
+    }
+    &-xs{
+      @include xs{
+        border-style: solid;
+        border-top-width: $i + px;
+        border-right-width: 0px;
+        border-bottom-width: 0px;
+        border-left-width: 0px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        border-style: solid;
+        border-top-width: $i + px;
+        border-right-width: 0px;
+        border-bottom-width: 0px;
+        border-left-width: 0px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        border-style: solid;
+        border-top-width: $i + px;
+        border-right-width: 0px;
+        border-bottom-width: 0px;
+        border-left-width: 0px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        border-style: solid;
+        border-top-width: $i + px;
+        border-right-width: 0px;
+        border-bottom-width: 0px;
+        border-left-width: 0px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        border-style: solid;
+        border-top-width: $i + px;
+        border-right-width: 0px;
+        border-bottom-width: 0px;
+        border-left-width: 0px;
+      }
+    }
+    // solid
+    &-sld{
+      border-style: solid;
+      border-top-width: $i + px;
+      border-right-width: 0px;
+      border-bottom-width: 0px;
+      border-left-width: 0px;
+      &-xl{
+        @include xl{
+          border-style: solid;
+          border-top-width: $i + px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-lg{
+        @include lg{
+          border-style: solid;
+          border-top-width: $i + px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-md{
+        @include md{
+          border-style: solid;
+          border-top-width: $i + px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-xs{
+        @include xs{
+          border-style: solid;
+          border-top-width: $i + px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-minxs{
+        @include minxs{
+          border-style: solid;
+          border-top-width: $i + px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-minmd{
+        @include minmd{
+          border-style: solid;
+          border-top-width: $i + px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-minlg{
+        @include minlg{
+          border-style: solid;
+          border-top-width: $i + px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-minxl{
+        @include minxl{
+          border-style: solid;
+          border-top-width: $i + px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+    }
+    // dashed
+    &-dsh{
+      border-style: dashed;
+      border-top-width: $i + px;
+      border-right-width: 0px;
+      border-bottom-width: 0px;
+      border-left-width: 0px;
+      &-xl{
+        @include xl{
+          border-style: dashed;
+          border-top-width: $i + px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-lg{
+        @include lg{
+          border-style: dashed;
+          border-top-width: $i + px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-md{
+        @include md{
+          border-style: dashed;
+          border-top-width: $i + px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-xs{
+        @include xs{
+          border-style: dashed;
+          border-top-width: $i + px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-minxs{
+        @include minxs{
+          border-style: dashed;
+          border-top-width: $i + px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-minmd{
+        @include minmd{
+          border-style: dashed;
+          border-top-width: $i + px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-minlg{
+        @include minlg{
+          border-style: dashed;
+          border-top-width: $i + px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-minxl{
+        @include minxl{
+          border-style: dashed;
+          border-top-width: $i + px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+    }
+    // dotted
+    &-dot{
+      border-style: dotted;
+      &-xl{
+        @include xl{
+          border-style: dotted;
+          border-top-width: $i + px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-lg{
+        @include lg{
+          border-style: dotted;
+          border-top-width: $i + px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-md{
+        @include md{
+          border-style: dotted;
+          border-top-width: $i + px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-xs{
+        @include xs{
+          border-style: dotted;
+          border-top-width: $i + px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-minxs{
+        @include minxs{
+          border-style: dotted;
+          border-top-width: $i + px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-minmd{
+        @include minmd{
+          border-style: dotted;
+          border-top-width: $i + px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-minlg{
+        @include minlg{
+          border-style: dotted;
+          border-top-width: $i + px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-minxl{
+        @include minxl{
+          border-style: dotted;
+          border-top-width: $i + px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+    }
+  }
+  .bdR-px-#{$i}{
+    // 初期値はsolid
+    border-style: solid;
+    border-top-width: 0px;
+    border-right-width: $i + px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    &-xl{
+      @include xl{
+        border-style: solid;
+        border-top-width: 0px;
+        border-right-width: $i + px;
+        border-bottom-width: 0px;
+        border-left-width: 0px;
+      }
+    }
+    &-lg{
+      @include lg{
+        border-style: solid;
+        border-top-width: 0px;
+        border-right-width: $i + px;
+        border-bottom-width: 0px;
+        border-left-width: 0px;
+      }
+    }
+    &-md{
+      @include md{
+        border-style: solid;
+        border-top-width: 0px;
+        border-right-width: $i + px;
+        border-bottom-width: 0px;
+        border-left-width: 0px;
+      }
+    }
+    &-xs{
+      @include xs{
+        border-style: solid;
+        border-top-width: 0px;
+        border-right-width: $i + px;
+        border-bottom-width: 0px;
+        border-left-width: 0px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        border-style: solid;
+        border-top-width: 0px;
+        border-right-width: $i + px;
+        border-bottom-width: 0px;
+        border-left-width: 0px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        border-style: solid;
+        border-top-width: 0px;
+        border-right-width: $i + px;
+        border-bottom-width: 0px;
+        border-left-width: 0px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        border-style: solid;
+        border-top-width: 0px;
+        border-right-width: $i + px;
+        border-bottom-width: 0px;
+        border-left-width: 0px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        border-style: solid;
+        border-top-width: 0px;
+        border-right-width: $i + px;
+        border-bottom-width: 0px;
+        border-left-width: 0px;
+      }
+    }
+    // solid
+    &-sld{
+      border-style: solid;
+      border-top-width: 0px;
+      border-right-width: $i + px;
+      border-bottom-width: 0px;
+      border-left-width: 0px;
+      &-xl{
+        @include xl{
+          border-style: solid;
+          border-top-width: 0px;
+          border-right-width: $i + px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-lg{
+        @include lg{
+          border-style: solid;
+          border-top-width: 0px;
+          border-right-width: $i + px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-md{
+        @include md{
+          border-style: solid;
+          border-top-width: 0px;
+          border-right-width: $i + px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-xs{
+        @include xs{
+          border-style: solid;
+          border-top-width: 0px;
+          border-right-width: $i + px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-minxs{
+        @include minxs{
+          border-style: solid;
+          border-top-width: 0px;
+          border-right-width: $i + px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-minmd{
+        @include minmd{
+          border-style: solid;
+          border-top-width: 0px;
+          border-right-width: $i + px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-minlg{
+        @include minlg{
+          border-style: solid;
+          border-top-width: 0px;
+          border-right-width: $i + px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-minxl{
+        @include minxl{
+          border-style: solid;
+          border-top-width: 0px;
+          border-right-width: $i + px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+    }
+    // dashed
+    &-dsh{
+      border-style: dashed;
+      border-top-width: 0px;
+      border-right-width: $i + px;
+      border-bottom-width: 0px;
+      border-left-width: 0px;
+      &-xl{
+        @include xl{
+          border-style: dashed;
+          border-top-width: 0px;
+          border-right-width: $i + px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-lg{
+        @include lg{
+          border-style: dashed;
+          border-top-width: 0px;
+          border-right-width: $i + px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-md{
+        @include md{
+          border-style: dashed;
+          border-top-width: 0px;
+          border-right-width: $i + px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-xs{
+        @include xs{
+          border-style: dashed;
+          border-top-width: 0px;
+          border-right-width: $i + px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-minxs{
+        @include minxs{
+          border-style: dashed;
+          border-top-width: 0px;
+          border-right-width: $i + px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-minmd{
+        @include minmd{
+          border-style: dashed;
+          border-top-width: 0px;
+          border-right-width: $i + px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-minlg{
+        @include minlg{
+          border-style: dashed;
+          border-top-width: 0px;
+          border-right-width: $i + px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-minxl{
+        @include minxl{
+          border-style: dashed;
+          border-top-width: 0px;
+          border-right-width: $i + px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+    }
+    // dotted
+    &-dot{
+      border-style: dotted;
+      border-top-width: 0px;
+      border-right-width: $i + px;
+      border-bottom-width: 0px;
+      border-left-width: 0px;
+      &-xl{
+        @include xl{
+          border-style: dotted;
+          border-top-width: 0px;
+          border-right-width: $i + px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-lg{
+        @include lg{
+          border-style: dotted;
+          border-top-width: 0px;
+          border-right-width: $i + px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-md{
+        @include md{
+          border-style: dotted;
+          border-top-width: 0px;
+          border-right-width: $i + px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-xs{
+        @include xs{
+          border-style: dotted;
+          border-top-width: 0px;
+          border-right-width: $i + px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-minxs{
+        @include minxs{
+          border-style: dotted;
+          border-top-width: 0px;
+          border-right-width: $i + px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-minmd{
+        @include minmd{
+          border-style: dotted;
+          border-top-width: 0px;
+          border-right-width: $i + px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-minlg{
+        @include minlg{
+          border-style: dotted;
+          border-top-width: 0px;
+          border-right-width: $i + px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+      &-minxl{
+        @include minxl{
+          border-style: dotted;
+          border-top-width: 0px;
+          border-right-width: $i + px;
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+        }
+      }
+    }
+  }
+  .bdB-px-#{$i}{
+    // 初期値はsolid
+    border-style: solid;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: $i + px;
+    border-left-width: 0px;
+    &-xl{
+      @include xl{
+        border-style: solid;
+        border-top-width: 0px;
+        border-right-width: 0px;
+        border-bottom-width: $i + px;
+        border-left-width: 0px;
+      }
+    }
+    &-lg{
+      @include lg{
+        border-style: solid;
+        border-top-width: 0px;
+        border-right-width: 0px;
+        border-bottom-width: $i + px;
+        border-left-width: 0px;
+      }
+    }
+    &-md{
+      @include md{
+        border-style: solid;
+        border-top-width: 0px;
+        border-right-width: 0px;
+        border-bottom-width: $i + px;
+        border-left-width: 0px;
+      }
+    }
+    &-xs{
+      @include xs{
+        border-style: solid;
+        border-top-width: 0px;
+        border-right-width: 0px;
+        border-bottom-width: $i + px;
+        border-left-width: 0px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        border-style: solid;
+        border-top-width: 0px;
+        border-right-width: 0px;
+        border-bottom-width: $i + px;
+        border-left-width: 0px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        border-style: solid;
+        border-top-width: 0px;
+        border-right-width: 0px;
+        border-bottom-width: $i + px;
+        border-left-width: 0px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        border-style: solid;
+        border-top-width: 0px;
+        border-right-width: 0px;
+        border-bottom-width: $i + px;
+        border-left-width: 0px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        border-style: solid;
+        border-top-width: 0px;
+        border-right-width: 0px;
+        border-bottom-width: $i + px;
+        border-left-width: 0px;
+      }
+    }
+    // solid
+    &-sld{
+      border-style: solid;
+      border-top-width: 0px;
+      border-right-width: 0px;
+      border-bottom-width: $i + px;
+      border-left-width: 0px;
+      &-xl{
+        @include xl{
+          border-style: solid;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: $i + px;
+          border-left-width: 0px;
+        }
+      }
+      &-lg{
+        @include lg{
+          border-style: solid;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: $i + px;
+          border-left-width: 0px;
+        }
+      }
+      &-md{
+        @include md{
+          border-style: solid;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: $i + px;
+          border-left-width: 0px;
+        }
+      }
+      &-xs{
+        @include xs{
+          border-style: solid;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: $i + px;
+          border-left-width: 0px;
+        }
+      }
+      &-minxs{
+        @include minxs{
+          border-style: solid;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: $i + px;
+          border-left-width: 0px;
+        }
+      }
+      &-minmd{
+        @include minmd{
+          border-style: solid;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: $i + px;
+          border-left-width: 0px;
+        }
+      }
+      &-minlg{
+        @include minlg{
+          border-style: solid;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: $i + px;
+          border-left-width: 0px;
+        }
+      }
+      &-minxl{
+        @include minxl{
+          border-style: solid;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: $i + px;
+          border-left-width: 0px;
+        }
+      }
+    }
+    // dashed
+    &-dsh{
+      border-style: dashed;
+      border-top-width: 0px;
+      border-right-width: 0px;
+      border-bottom-width: $i + px;
+      border-left-width: 0px;
+      &-xl{
+        @include xl{
+          border-style: dashed;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: $i + px;
+          border-left-width: 0px;
+        }
+      }
+      &-lg{
+        @include lg{
+          border-style: dashed;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: $i + px;
+          border-left-width: 0px;
+        }
+      }
+      &-md{
+        @include md{
+          border-style: dashed;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: $i + px;
+          border-left-width: 0px;
+        }
+      }
+      &-xs{
+        @include xs{
+          border-style: dashed;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: $i + px;
+          border-left-width: 0px;
+        }
+      }
+      &-minxs{
+        @include minxs{
+          border-style: dashed;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: $i + px;
+          border-left-width: 0px;
+        }
+      }
+      &-minmd{
+        @include minmd{
+          border-style: dashed;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: $i + px;
+          border-left-width: 0px;
+        }
+      }
+      &-minlg{
+        @include minlg{
+          border-style: dashed;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: $i + px;
+          border-left-width: 0px;
+        }
+      }
+      &-minxl{
+        @include minxl{
+          border-style: dashed;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: $i + px;
+          border-left-width: 0px;
+        }
+      }
+    }
+    // dotted
+    &-dot{
+      border-style: dotted;
+      &-xl{
+        @include xl{
+          border-style: dotted;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: $i + px;
+          border-left-width: 0px;
+        }
+      }
+      &-lg{
+        @include lg{
+          border-style: dotted;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: $i + px;
+          border-left-width: 0px;
+        }
+      }
+      &-md{
+        @include md{
+          border-style: dotted;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: $i + px;
+          border-left-width: 0px;
+        }
+      }
+      &-xs{
+        @include xs{
+          border-style: dotted;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: $i + px;
+          border-left-width: 0px;
+        }
+      }
+      &-minxs{
+        @include minxs{
+          border-style: dotted;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: $i + px;
+          border-left-width: 0px;
+        }
+      }
+      &-minmd{
+        @include minmd{
+          border-style: dotted;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: $i + px;
+          border-left-width: 0px;
+        }
+      }
+      &-minlg{
+        @include minlg{
+          border-style: dotted;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: $i + px;
+          border-left-width: 0px;
+        }
+      }
+      &-minxl{
+        @include minxl{
+          border-style: dotted;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: $i + px;
+          border-left-width: 0px;
+        }
+      }
+    }
+  }
+  .bdL-px-#{$i}{
+    // 初期値はsolid
+    border-style: solid;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: $i + px;
+    &-xl{
+      @include xl{
+        border-style: solid;
+        border-top-width: 0px;
+        border-right-width: 0px;
+        border-bottom-width: 0px;
+        border-left-width: $i + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        border-style: solid;
+        border-top-width: 0px;
+        border-right-width: 0px;
+        border-bottom-width: 0px;
+        border-left-width: $i + px;
+      }
+    }
+    &-md{
+      @include md{
+        border-style: solid;
+        border-top-width: 0px;
+        border-right-width: 0px;
+        border-bottom-width: 0px;
+        border-left-width: $i + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        border-style: solid;
+        border-top-width: 0px;
+        border-right-width: 0px;
+        border-bottom-width: 0px;
+        border-left-width: $i + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        border-style: solid;
+        border-top-width: 0px;
+        border-right-width: 0px;
+        border-bottom-width: 0px;
+        border-left-width: $i + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        border-style: solid;
+        border-top-width: 0px;
+        border-right-width: 0px;
+        border-bottom-width: 0px;
+        border-left-width: $i + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        border-style: solid;
+        border-top-width: 0px;
+        border-right-width: 0px;
+        border-bottom-width: 0px;
+        border-left-width: $i + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        border-style: solid;
+        border-top-width: 0px;
+        border-right-width: 0px;
+        border-bottom-width: 0px;
+        border-left-width: $i + px;
+      }
+    }
+    // solid
+    &-sld{
+      border-style: solid;
+      border-top-width: 0px;
+      border-right-width: 0px;
+      border-bottom-width: 0px;
+      border-left-width: $i + px;
+      &-xl{
+        @include xl{
+          border-style: solid;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: $i + px;
+        }
+      }
+      &-lg{
+        @include lg{
+          border-style: solid;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: $i + px;
+        }
+      }
+      &-md{
+        @include md{
+          border-style: solid;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: $i + px;
+        }
+      }
+      &-xs{
+        @include xs{
+          border-style: solid;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: $i + px;
+        }
+      }
+      &-minxs{
+        @include minxs{
+          border-style: solid;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: $i + px;
+        }
+      }
+      &-minmd{
+        @include minmd{
+          border-style: solid;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: $i + px;
+        }
+      }
+      &-minlg{
+        @include minlg{
+          border-style: solid;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: $i + px;
+        }
+      }
+      &-minxl{
+        @include minxl{
+          border-style: solid;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: $i + px;
+        }
+      }
+    }
+    // dashed
+    &-dsh{
+      border-style: dashed;
+      border-top-width: 0px;
+      border-right-width: 0px;
+      border-bottom-width: 0px;
+      border-left-width: $i + px;
+      &-xl{
+        @include xl{
+          border-style: dashed;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: $i + px;
+        }
+      }
+      &-lg{
+        @include lg{
+          border-style: dashed;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: $i + px;
+        }
+      }
+      &-md{
+        @include md{
+          border-style: dashed;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: $i + px;
+        }
+      }
+      &-xs{
+        @include xs{
+          border-style: dashed;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: $i + px;
+        }
+      }
+      &-minxs{
+        @include minxs{
+          border-style: dashed;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: $i + px;
+        }
+      }
+      &-minmd{
+        @include minmd{
+          border-style: dashed;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: $i + px;
+        }
+      }
+      &-minlg{
+        @include minlg{
+          border-style: dashed;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: $i + px;
+        }
+      }
+      &-minxl{
+        @include minxl{
+          border-style: dashed;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: $i + px;
+        }
+      }
+    }
+    // dotted
+    &-dot{
+      border-style: dotted;
+      &-xl{
+        @include xl{
+          border-style: dotted;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: $i + px;
+        }
+      }
+      &-lg{
+        @include lg{
+          border-style: dotted;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: $i + px;
+        }
+      }
+      &-md{
+        @include md{
+          border-style: dotted;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: $i + px;
+        }
+      }
+      &-xs{
+        @include xs{
+          border-style: dotted;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: $i + px;
+        }
+      }
+      &-minxs{
+        @include minxs{
+          border-style: dotted;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: $i + px;
+        }
+      }
+      &-minmd{
+        @include minmd{
+          border-style: dotted;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: $i + px;
+        }
+      }
+      &-minlg{
+        @include minlg{
+          border-style: dotted;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: $i + px;
+        }
+      }
+      &-minxl{
+        @include minxl{
+          border-style: dotted;
+          border-top-width: 0px;
+          border-right-width: 0px;
+          border-bottom-width: 0px;
+          border-left-width: $i + px;
+        }
+      }
+    }
+  }
+}
+
+.bds{
+  &-sld{
+    $value:solid;
+    &-xl{
+      @include xl{
+        border-style: $value;
+      }
+    }
+    &-lg{
+      @include lg{
+        border-style: $value;
+      }
+    }
+    &-md{
+      @include md{
+        border-style: $value;
+      }
+    }
+    &-xs{
+      @include xs{
+        border-style: $value;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        border-style: $value;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        border-style: $value;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        border-style: $value;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        border-style: $value;
+      }
+    }
+  }
+  &-dsh{
+    $value:dashed;
+    &-xl{
+      @include xl{
+        border-style: $value;
+      }
+    }
+    &-lg{
+      @include lg{
+        border-style: $value;
+      }
+    }
+    &-md{
+      @include md{
+        border-style: $value;
+      }
+    }
+    &-xs{
+      @include xs{
+        border-style: $value;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        border-style: $value;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        border-style: $value;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        border-style: $value;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        border-style: $value;
+      }
+    }
+  }
+  &-dot{
+    $value:dotted;
+    &-xl{
+      @include xl{
+        border-style: $value;
+      }
+    }
+    &-lg{
+      @include lg{
+        border-style: $value;
+      }
+    }
+    &-md{
+      @include md{
+        border-style: $value;
+      }
+    }
+    &-xs{
+      @include xs{
+        border-style: $value;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        border-style: $value;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        border-style: $value;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        border-style: $value;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        border-style: $value;
+      }
+    }
+  }
+  &-dbl{
+    $value:double;
+    &-xl{
+      @include xl{
+        border-style: $value;
+      }
+    }
+    &-lg{
+      @include lg{
+        border-style: $value;
+      }
+    }
+    &-md{
+      @include md{
+        border-style: $value;
+      }
+    }
+    &-xs{
+      @include xs{
+        border-style: $value;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        border-style: $value;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        border-style: $value;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        border-style: $value;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        border-style: $value;
+      }
+    }
+  }
+}
+
+
+
+/* --- border-radius - br --- */
+@for $i from 0 through 100 {
+  .brA-px-#{$i} {
+    border-radius: $i + px;
+    &-xl{
+      @include xl{
+        border-radius: $i + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        border-radius: $i + px;
+      }
+    }
+    &-md{
+      @include md{
+        border-radius: $i + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        border-radius: $i + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        border-radius: $i + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        border-radius: $i + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        border-radius: $i + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        border-radius: $i + px;
+      }
+    }
+  }
+  .brY-px-#{$i} {
+    border-radius: $i + px 0 $i + px 0;
+    &-xl{
+      @include xl{
+        border-radius: $i + px 0 $i + px 0;
+      }
+    }
+    &-lg{
+      @include lg{
+        border-radius: $i + px 0 $i + px 0;
+      }
+    }
+    &-md{
+      @include md{
+        border-radius: $i + px 0 $i + px 0;
+      }
+    }
+    &-xs{
+      @include xs{
+        border-radius: $i + px 0 $i + px 0;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        border-radius: $i + px 0 $i + px 0;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        border-radius: $i + px 0 $i + px 0;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        border-radius: $i + px 0 $i + px 0;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        border-radius: $i + px 0 $i + px 0;
+      }
+    }
+  }
+  .brX-px-#{$i} {
+    border-radius: 0 $i + px 0 $i + px;
+    &-xl{
+      @include xl{
+        border-radius: 0 $i + px 0 $i + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        border-radius: 0 $i + px 0 $i + px;
+      }
+    }
+    &-md{
+      @include md{
+        border-radius: 0 $i + px 0 $i + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        border-radius: 0 $i + px 0 $i + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        border-radius: 0 $i + px 0 $i + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        border-radius: 0 $i + px 0 $i + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        border-radius: 0 $i + px 0 $i + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        border-radius: 0 $i + px 0 $i + px;
+      }
+    }
+  }
+  .brT-px-#{$i} {
+    border-top-left-radius: $i + px;
+    &-xl{
+      @include xl{
+        border-top-left-radius: $i + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        border-top-left-radius: $i + px;
+      }
+    }
+    &-md{
+      @include md{
+        border-top-left-radius: $i + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        border-top-left-radius: $i + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        border-top-left-radius: $i + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        border-top-left-radius: $i + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        border-top-left-radius: $i + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        border-top-left-radius: $i + px;
+      }
+    }
+  }
+  .brR-px-#{$i} {
+    border-top-right-radius: $i + px;
+    &-xl{
+      @include xl{
+        border-top-right-radius: $i + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        border-top-right-radius: $i + px;
+      }
+    }
+    &-md{
+      @include md{
+        border-top-right-radius: $i + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        border-top-right-radius: $i + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        border-top-right-radius: $i + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        border-top-right-radius: $i + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        border-top-right-radius: $i + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        border-top-right-radius: $i + px;
+      }
+    }
+  }
+  .brB-px-#{$i} {
+    border-bottom-right-radius: $i + px;
+    &-xl{
+      @include xl{
+        border-bottom-right-radius: $i + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        border-bottom-right-radius: $i + px;
+      }
+    }
+    &-md{
+      @include md{
+        border-bottom-right-radius: $i + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        border-bottom-right-radius: $i + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        border-bottom-right-radius: $i + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        border-bottom-right-radius: $i + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        border-bottom-right-radius: $i + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        border-bottom-right-radius: $i + px;
+      }
+    }
+  }
+  .brL-px-#{$i} {
+    border-bottom-left-radius: $i + px;
+    &-xl{
+      @include xl{
+        border-bottom-left-radius: $i + px;
+      }
+    }
+    &-lg{
+      @include lg{
+        border-bottom-left-radius: $i + px;
+      }
+    }
+    &-md{
+      @include md{
+        border-bottom-left-radius: $i + px;
+      }
+    }
+    &-xs{
+      @include xs{
+        border-bottom-left-radius: $i + px;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        border-bottom-left-radius: $i + px;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        border-bottom-left-radius: $i + px;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        border-bottom-left-radius: $i + px;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        border-bottom-left-radius: $i + px;
+      }
+    }
+  }
+}
+
+
+/* --- overflow - ov --- */
+.ov-hid{
+  overflow: hidden;
+}
+.ov-scr{
+  overflow: scroll;
+}
+.ovY-hid{
+  overflow-y: hidden;
+}
+.ovY-scr{
+  overflow-y: scroll;
+}
+.ovX-hid{
+  overflow-x: hidden;
+}
+.ovX-scr{
+  overflow-x: scroll;
+}
+
+/* --- background セット - ov --- */
+/* background-size - bg-wid */
+.bg{
+  &-size{
+    &-cov{
+      $value:cover;
+      background-size: $value;
+      &-xl{
+        @include xl{
+          background-size: $value;
+        }
+      }
+      &-lg{
+        @include lg{
+          background-size: $value;
+        }
+      }
+      &-md{
+        @include md{
+          background-size: $value;
+        }
+      }
+      &-xs{
+        @include xs{
+          background-size: $value;
+        }
+      }
+      &-minxs{
+        @include minxs{
+          background-size: $value;
+        }
+      }
+      &-minmd{
+        @include minmd{
+          background-size: $value;
+        }
+      }
+      &-minlg{
+        @include minlg{
+          background-size: $value;
+        }
+      }
+      &-minxl{
+        @include minxl{
+          background-size: $value;
+        }
+      }
+    }
+    &-con{
+      $value:contain;
+      background-size: $value;
+      &-xl{
+        @include xl{
+          background-size: $value;
+        }
+      }
+      &-lg{
+        @include lg{
+          background-size: $value;
+        }
+      }
+      &-md{
+        @include md{
+          background-size: $value;
+        }
+      }
+      &-xs{
+        @include xs{
+          background-size: $value;
+        }
+      }
+      &-minxs{
+        @include minxs{
+          background-size: $value;
+        }
+      }
+      &-minmd{
+        @include minmd{
+          background-size: $value;
+        }
+      }
+      &-minlg{
+        @include minlg{
+          background-size: $value;
+        }
+      }
+      &-minxl{
+        @include minxl{
+          background-size: $value;
+        }
+      }
+    }
+  }
+  &-rep{
+    $value:repeat;
+    background-repeat: $value;
+    &-xl{
+      @include xl{
+        background-repeat: $value;
+      }
+    }
+    &-lg{
+      @include lg{
+        background-repeat: $value;
+      }
+    }
+    &-md{
+      @include md{
+        background-repeat: $value;
+      }
+    }
+    &-xs{
+      @include xs{
+        background-repeat: $value;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        background-repeat: $value;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        background-repeat: $value;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        background-repeat: $value;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        background-repeat: $value;
+      }
+    }
+  }
+  &-norep{
+    $value:no-repeat;
+    background-repeat: $value;
+    &-xl{
+      @include xl{
+        background-repeat: $value;
+      }
+    }
+    &-lg{
+      @include lg{
+        background-repeat: $value;
+      }
+    }
+    &-md{
+      @include md{
+        background-repeat: $value;
+      }
+    }
+    &-xs{
+      @include xs{
+        background-repeat: $value;
+      }
+    }
+    &-minxs{
+      @include minxs{
+        background-repeat: $value;
+      }
+    }
+    &-minmd{
+      @include minmd{
+        background-repeat: $value;
+      }
+    }
+    &-minlg{
+      @include minlg{
+        background-repeat: $value;
+      }
+    }
+    &-minxl{
+      @include minxl{
+        background-repeat: $value;
+      }
+    }
+  }
+  &-pos{
+    $value1:center;
+    $value2:center;
+    background-position: $value1 $value2;
+    &-cc{
+      $value1:center;
+      $value2:center;
+      background-position: $value1 $value2;
+      &-xl{
+        @include xl{
+          background-position: $value1 $value2;
+        }
+      }
+      &-lg{
+        @include lg{
+          background-position: $value1 $value2;
+        }
+      }
+      &-md{
+        @include md{
+          background-position: $value1 $value2;
+        }
+      }
+      &-xs{
+        @include xs{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minxs{
+        @include minxs{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minmd{
+        @include minmd{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minlg{
+        @include minlg{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minxl{
+        @include minxl{
+          background-position: $value1 $value2;
+        }
+      }
+    }
+    &-tl{
+      $value1:top;
+      $value2:left;
+      background-position: $value1 $value2;
+      &-xl{
+        @include xl{
+          background-position: $value1 $value2;
+        }
+      }
+      &-lg{
+        @include lg{
+          background-position: $value1 $value2;
+        }
+      }
+      &-md{
+        @include md{
+          background-position: $value1 $value2;
+        }
+      }
+      &-xs{
+        @include xs{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minxs{
+        @include minxs{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minmd{
+        @include minmd{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minlg{
+        @include minlg{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minxl{
+        @include minxl{
+          background-position: $value1 $value2;
+        }
+      }
+    }
+    &-tc{
+      $value1:top;
+      $value2:center;
+      background-position: $value1 $value2;
+      &-xl{
+        @include xl{
+          background-position: $value1 $value2;
+        }
+      }
+      &-lg{
+        @include lg{
+          background-position: $value1 $value2;
+        }
+      }
+      &-md{
+        @include md{
+          background-position: $value1 $value2;
+        }
+      }
+      &-xs{
+        @include xs{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minxs{
+        @include minxs{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minmd{
+        @include minmd{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minlg{
+        @include minlg{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minxl{
+        @include minxl{
+          background-position: $value1 $value2;
+        }
+      }
+    }
+    &-tr{
+      $value1:top;
+      $value2:right;
+      background-position: $value1 $value2;
+      &-xl{
+        @include xl{
+          background-position: $value1 $value2;
+        }
+      }
+      &-lg{
+        @include lg{
+          background-position: $value1 $value2;
+        }
+      }
+      &-md{
+        @include md{
+          background-position: $value1 $value2;
+        }
+      }
+      &-xs{
+        @include xs{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minxs{
+        @include minxs{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minmd{
+        @include minmd{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minlg{
+        @include minlg{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minxl{
+        @include minxl{
+          background-position: $value1 $value2;
+        }
+      }
+    }
+    &-cl{
+      $value1:center;
+      $value2:left;
+      background-position: $value1 $value2;
+      &-xl{
+        @include xl{
+          background-position: $value1 $value2;
+        }
+      }
+      &-lg{
+        @include lg{
+          background-position: $value1 $value2;
+        }
+      }
+      &-md{
+        @include md{
+          background-position: $value1 $value2;
+        }
+      }
+      &-xs{
+        @include xs{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minxs{
+        @include minxs{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minmd{
+        @include minmd{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minlg{
+        @include minlg{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minxl{
+        @include minxl{
+          background-position: $value1 $value2;
+        }
+      }
+    }
+    &-cr{
+      $value1:center;
+      $value2:right;
+      background-position: $value1 $value2;
+      &-xl{
+        @include xl{
+          background-position: $value1 $value2;
+        }
+      }
+      &-lg{
+        @include lg{
+          background-position: $value1 $value2;
+        }
+      }
+      &-md{
+        @include md{
+          background-position: $value1 $value2;
+        }
+      }
+      &-xs{
+        @include xs{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minxs{
+        @include minxs{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minmd{
+        @include minmd{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minlg{
+        @include minlg{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minxl{
+        @include minxl{
+          background-position: $value1 $value2;
+        }
+      }
+    }
+    &-bl{
+      $value1:bottom;
+      $value2:left;
+      background-position: $value1 $value2;
+      &-xl{
+        @include xl{
+          background-position: $value1 $value2;
+        }
+      }
+      &-lg{
+        @include lg{
+          background-position: $value1 $value2;
+        }
+      }
+      &-md{
+        @include md{
+          background-position: $value1 $value2;
+        }
+      }
+      &-xs{
+        @include xs{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minxs{
+        @include minxs{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minmd{
+        @include minmd{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minlg{
+        @include minlg{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minxl{
+        @include minxl{
+          background-position: $value1 $value2;
+        }
+      }
+    }
+    &-bc{
+      $value1:bottom;
+      $value2:center;
+      background-position: $value1 $value2;
+      &-xl{
+        @include xl{
+          background-position: $value1 $value2;
+        }
+      }
+      &-lg{
+        @include lg{
+          background-position: $value1 $value2;
+        }
+      }
+      &-md{
+        @include md{
+          background-position: $value1 $value2;
+        }
+      }
+      &-xs{
+        @include xs{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minxs{
+        @include minxs{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minmd{
+        @include minmd{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minlg{
+        @include minlg{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minxl{
+        @include minxl{
+          background-position: $value1 $value2;
+        }
+      }
+    }
+    &-br{
+      $value1:bottom;
+      $value2:right;
+      background-position: $value1 $value2;
+      &-xl{
+        @include xl{
+          background-position: $value1 $value2;
+        }
+      }
+      &-lg{
+        @include lg{
+          background-position: $value1 $value2;
+        }
+      }
+      &-md{
+        @include md{
+          background-position: $value1 $value2;
+        }
+      }
+      &-xs{
+        @include xs{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minxs{
+        @include minxs{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minmd{
+        @include minmd{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minlg{
+        @include minlg{
+          background-position: $value1 $value2;
+        }
+      }
+      &-minxl{
+        @include minxl{
+          background-position: $value1 $value2;
+        }
+      }
+    }
+
+
+  }
+}
+
+
+/* --- white-space - ws --- */
+.ws{
+  white-space: nowrap;
+  &-no{
+    white-space: nowrap;
+  }
+  &-pre{
+    white-space: pre;
+  }
+}
+
+
+/* --- appearance - ap --- */
+.ap{
+  &-n{
+    appearance:none;
+  }
+}
+
+
+
+.cur{
+  cursor: pointer;
+  &-n{
+    cursor:inherit;
+  }
+}
+
+
+/* --- text-shadow - ts --- */
+.ts-01{
+  text-shadow: 1px 1px 2px #000000;
+  &-child{
+    *{
+      text-shadow: 1px 1px 2px #000000;
+    }
+  }
+}
+.ts-02{
+  text-shadow: 2px 2px 3px #000000;
+  &-child{
+    *{
+      text-shadow: 2px 2px 3px #000000;
+    }
+  }
+}
+.ts-03{
+  text-shadow: 3px 3px 4px #000000;
+  &-child{
+    *{
+      text-shadow: 3px 3px 4px #000000;
+    }
+  }
+}
+
+
+/* --- box-shadow - ts --- */
+.bs-01{
+  box-shadow: 1px 1px 2px #000000;
+  &-child{
+    *{
+      box-shadow: 1px 1px 2px #000000;
+    }
+  }
+}
+.bs-02{
+  box-shadow: 2px 2px 3px #000000;
+  &-child{
+    *{
+      box-shadow: 2px 2px 3px #000000;
+    }
+  }
+}
+.bs-03{
+  box-shadow: 3px 3px 4px #000000;
+  &-child{
+    *{
+      box-shadow: 3px 3px 4px #000000;
+    }
+  }
+}

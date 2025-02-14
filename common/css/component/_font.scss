@@ -1,0 +1,638 @@
+@import "mixin";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;700&display=swap');
+
+.san-l{
+	font-family: 'Noto Sans JP', sans-serif;
+	font-weight: 300;
+}
+.san-r{
+	font-family: 'Noto Sans JP', sans-serif;
+	font-weight: 400;
+}
+.san-m{
+	font-family: 'Noto Sans JP', sans-serif;
+	font-weight: 500;
+}
+.san-b{
+	font-family: 'Noto Sans JP', sans-serif;
+	font-weight: 700;
+}
+
+.serif-l{
+	font-family: 'Noto Serif JP', sans-serif;
+	font-weight: 300;
+}
+.serif-r{
+	font-family: 'Noto Serif JP', sans-serif;
+	font-weight: 400;
+}
+.serif-m{
+	font-family: 'Noto Serif JP', sans-serif;
+	font-weight: 500;
+}
+.serif-b{
+	font-family: 'Noto Serif JP', sans-serif;
+	font-weight: 700;
+}
+
+.en-el{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 200;
+	transform: translateY(2px);
+}
+.en-l{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	transform: translateY(2px);
+}
+.en-r{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	transform: translateY(2px);
+}
+.en-m{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+	transform: translateY(2px);
+}
+.en-sb{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	transform: translateY(2px);
+}
+.en-b{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	transform: translateY(2px);
+}
+
+.it{
+	font-style: italic;
+}
+
+
+
+/* ======================================
+文字サイズ
+====================================== */
+.f150{font-size: lg(150px);}
+.f145{font-size: lg(145px);}
+.f140{font-size: lg(140px);}
+.f135{font-size: lg(135px);}
+.f130{font-size: lg(130px);}
+.f125{font-size: lg(125px);}
+.f120{font-size: lg(120px);}
+.f115{font-size: lg(115px);}
+.f110{font-size: lg(110px);}
+.f100{font-size: lg(100px);}
+
+.f99{font-size: lg(99px);}
+.f98{font-size: lg(98px);}
+.f97{font-size: lg(97px);}
+.f96{font-size: lg(96px);}
+.f95{font-size: lg(95px);}
+.f94{font-size: lg(94px);}
+.f93{font-size: lg(93px);}
+.f92{font-size: lg(92px);}
+.f91{font-size: lg(91px);}
+.f90{font-size: lg(90px);}
+
+.f89{font-size: lg(89px);}
+.f88{font-size: lg(88px);}
+.f87{font-size: lg(87px);}
+.f86{font-size: lg(86px);}
+.f85{font-size: lg(85px);}
+.f84{font-size: lg(84px);}
+.f83{font-size: lg(83px);}
+.f82{font-size: lg(82px);}
+.f81{font-size: lg(81px);}
+.f80{font-size: lg(80px);}
+
+.f79{font-size: lg(79px);}
+.f78{font-size: lg(78px);}
+.f77{font-size: lg(77px);}
+.f76{font-size: lg(76px);}
+.f75{font-size: lg(75px);}
+.f74{font-size: lg(74px);}
+.f73{font-size: lg(73px);}
+.f72{font-size: lg(72px);}
+.f71{font-size: lg(71px);}
+.f70{font-size: lg(70px);}
+
+.f69{font-size: lg(69px);}
+.f68{font-size: lg(68px);}
+.f67{font-size: lg(67px);}
+.f66{font-size: lg(66px);}
+.f65{font-size: lg(65px);}
+.f64{font-size: lg(64px);}
+.f63{font-size: lg(63px);}
+.f62{font-size: lg(62px);}
+.f61{font-size: lg(61px);}
+.f60{font-size: lg(60px);}
+
+.f59{font-size: lg(59px);}
+.f58{font-size: lg(58px);}
+.f57{font-size: lg(57px);}
+.f56{font-size: lg(56px);}
+.f55{font-size: lg(55px);}
+.f54{font-size: lg(54px);}
+.f53{font-size: lg(53px);}
+.f52{font-size: lg(52px);}
+.f51{font-size: lg(51px);}
+.f50{font-size: lg(50px);}
+
+.f49{font-size: lg(49px);}
+.f48{font-size: lg(48px);}
+.f47{font-size: lg(47px);}
+.f46{font-size: lg(46px);}
+.f45{font-size: lg(45px);}
+.f44{font-size: lg(44px);}
+.f43{font-size: lg(43px);}
+.f42{font-size: lg(42px);}
+.f41{font-size: lg(41px);}
+.f40{font-size: lg(40px);}
+
+.f39{font-size: lg(39px);}
+.f38{font-size: lg(38px);}
+.f37{font-size: lg(37px);}
+.f36{font-size: lg(36px);}
+.f35{font-size: lg(35px);}
+.f34{font-size: lg(34px);}
+.f33{font-size: lg(33px);}
+.f32{font-size: lg(32px);}
+.f31{font-size: lg(31px);}
+.f30{font-size: lg(30px);}
+
+.f29{font-size: lg(29px);}
+.f28{font-size: lg(28px);}
+.f27{font-size: lg(27px);}
+.f26{font-size: lg(26px);}
+.f25{font-size: lg(25px);}
+.f24{font-size: lg(24px);}
+.f23{font-size: lg(23px);}
+.f22{font-size: lg(22px);}
+.f21{font-size: lg(21px);}
+.f20{font-size: lg(20px);}
+
+.f19{font-size: lg(19px);}
+.f18{font-size: lg(18px);}
+.f17{font-size: lg(17px);}
+.f16{font-size: lg(16px);}
+.f15{font-size: lg(15px);}
+.f14{font-size: lg(14px);}
+.f13{font-size: lg(13px);}
+.f12{font-size: lg(12px);}
+.f11{font-size: lg(11px);}
+.f10{font-size: lg(10px);}
+
+.f9{font-size: lg(9px);}
+.f8{font-size: lg(8px);}
+
+
+@include minlg{
+	.f150{font-size: 150px;}
+	.f145{font-size: 145px;}
+	.f140{font-size: 140px;}
+	.f135{font-size: 135px;}
+	.f130{font-size: 130px;}
+	.f125{font-size: 125px;}
+	.f120{font-size: 120px;}
+	.f115{font-size: 115px;}
+	.f110{font-size: 110px;}
+	.f100{font-size: 100px;}
+
+	.f99{font-size: 99px;}
+	.f98{font-size: 98px;}
+	.f97{font-size: 97px;}
+	.f96{font-size: 96px;}
+	.f95{font-size: 95px;}
+	.f94{font-size: 94px;}
+	.f93{font-size: 93px;}
+	.f92{font-size: 92px;}
+	.f91{font-size: 91px;}
+	.f90{font-size: 90px;}
+
+	.f89{font-size: 89px;}
+	.f88{font-size: 88px;}
+	.f87{font-size: 87px;}
+	.f86{font-size: 86px;}
+	.f85{font-size: 85px;}
+	.f84{font-size: 84px;}
+	.f83{font-size: 83px;}
+	.f82{font-size: 82px;}
+	.f81{font-size: 81px;}
+	.f80{font-size: 80px;}
+
+	.f79{font-size: 79px;}
+	.f78{font-size: 78px;}
+	.f77{font-size: 77px;}
+	.f76{font-size: 76px;}
+	.f75{font-size: 75px;}
+	.f74{font-size: 74px;}
+	.f73{font-size: 73px;}
+	.f72{font-size: 72px;}
+	.f71{font-size: 71px;}
+	.f70{font-size: 70px;}
+
+	.f69{font-size: 69px;}
+	.f68{font-size: 68px;}
+	.f67{font-size: 67px;}
+	.f66{font-size: 66px;}
+	.f65{font-size: 65px;}
+	.f64{font-size: 64px;}
+	.f63{font-size: 63px;}
+	.f62{font-size: 62px;}
+	.f61{font-size: 61px;}
+	.f60{font-size: 60px;}
+
+	.f59{font-size: 59px;}
+	.f58{font-size: 58px;}
+	.f57{font-size: 57px;}
+	.f56{font-size: 56px;}
+	.f55{font-size: 55px;}
+	.f54{font-size: 54px;}
+	.f53{font-size: 53px;}
+	.f52{font-size: 52px;}
+	.f51{font-size: 51px;}
+	.f50{font-size: 50px;}
+
+	.f49{font-size: 49px;}
+	.f48{font-size: 48px;}
+	.f47{font-size: 47px;}
+	.f46{font-size: 46px;}
+	.f45{font-size: 45px;}
+	.f44{font-size: 44px;}
+	.f43{font-size: 43px;}
+	.f42{font-size: 42px;}
+	.f41{font-size: 41px;}
+	.f40{font-size: 40px;}
+
+	.f39{font-size: 39px;}
+	.f38{font-size: 38px;}
+	.f37{font-size: 37px;}
+	.f36{font-size: 36px;}
+	.f35{font-size: 35px;}
+	.f34{font-size: 34px;}
+	.f33{font-size: 33px;}
+	.f32{font-size: 32px;}
+	.f31{font-size: 31px;}
+	.f30{font-size: 30px;}
+
+	.f29{font-size: 29px;}
+	.f28{font-size: 28px;}
+	.f27{font-size: 27px;}
+	.f26{font-size: 26px;}
+	.f25{font-size: 25px;}
+	.f24{font-size: 24px;}
+	.f23{font-size: 23px;}
+	.f22{font-size: 22px;}
+	.f21{font-size: 21px;}
+	.f20{font-size: 20px;}
+
+	.f19{font-size: 19px;}
+	.f18{font-size: 18px;}
+	.f17{font-size: 17px;}
+	.f16{font-size: 16px;}
+	.f15{font-size: 15px;}
+	.f14{font-size: 14px;}
+	.f13{font-size: 13px;}
+	.f12{font-size: 12px;}
+	.f11{font-size: 11px;}
+	.f10{font-size: 10px;}
+
+	.f9{font-size: 9px;}
+	.f8{font-size: 8px;}
+}
+
+@include sm{
+	.f150{font-size: sm(145px);}
+	.f145{font-size: sm(140px);}
+	.f140{font-size: sm(135px);}
+	.f135{font-size: sm(130px);}
+	.f130{font-size: sm(125px);}
+	.f125{font-size: sm(120px);}
+	.f120{font-size: sm(115px);}
+	.f115{font-size: sm(110px);}
+	.f110{font-size: sm(105px);}
+	.f100{font-size: sm(100px);}
+	.f99{font-size: sm(99px);}
+	.f98{font-size: sm(98px);}
+	.f97{font-size: sm(97px);}
+	.f96{font-size: sm(96px);}
+	.f95{font-size: sm(95px);}
+	.f94{font-size: sm(94px);}
+	.f93{font-size: sm(93px);}
+	.f92{font-size: sm(92px);}
+	.f91{font-size: sm(91px);}
+	.f90{font-size: sm(90px);}
+
+	.f89{font-size: sm(89px);}
+	.f88{font-size: sm(88px);}
+	.f87{font-size: sm(87px);}
+	.f86{font-size: sm(86px);}
+	.f85{font-size: sm(85px);}
+	.f84{font-size: sm(84px);}
+	.f83{font-size: sm(83px);}
+	.f82{font-size: sm(82px);}
+	.f81{font-size: sm(81px);}
+	.f80{font-size: sm(80px);}
+
+	.f79{font-size: sm(79px);}
+	.f78{font-size: sm(78px);}
+	.f77{font-size: sm(77px);}
+	.f76{font-size: sm(76px);}
+	.f75{font-size: sm(75px);}
+	.f74{font-size: sm(74px);}
+	.f73{font-size: sm(73px);}
+	.f72{font-size: sm(72px);}
+	.f71{font-size: sm(71px);}
+	.f70{font-size: sm(70px);}
+
+	.f69{font-size: sm(69px);}
+	.f68{font-size: sm(68px);}
+	.f67{font-size: sm(67px);}
+	.f66{font-size: sm(66px);}
+	.f65{font-size: sm(65px);}
+	.f64{font-size: sm(64px);}
+	.f63{font-size: sm(63px);}
+	.f62{font-size: sm(62px);}
+	.f61{font-size: sm(61px);}
+	.f60{font-size: sm(60px);}
+
+	.f59{font-size: sm(59px);}
+	.f58{font-size: sm(58px);}
+	.f57{font-size: sm(57px);}
+	.f56{font-size: sm(56px);}
+	.f55{font-size: sm(55px);}
+	.f54{font-size: sm(54px);}
+	.f53{font-size: sm(53px);}
+	.f52{font-size: sm(52px);}
+	.f51{font-size: sm(51px);}
+	.f50{font-size: sm(50px);}
+
+	.f49{font-size: sm(49px);}
+	.f48{font-size: sm(48px);}
+	.f47{font-size: sm(47px);}
+	.f46{font-size: sm(46px);}
+	.f45{font-size: sm(45px);}
+	.f44{font-size: sm(44px);}
+	.f43{font-size: sm(43px);}
+	.f42{font-size: sm(42px);}
+	.f41{font-size: sm(41px);}
+	.f40{font-size: sm(40px);}
+
+	.f39{font-size: sm(39px);}
+	.f38{font-size: sm(38px);}
+	.f37{font-size: sm(37px);}
+	.f36{font-size: sm(36px);}
+	.f35{font-size: sm(35px);}
+	.f34{font-size: sm(34px);}
+	.f33{font-size: sm(33px);}
+	.f32{font-size: sm(32px);}
+	.f31{font-size: sm(31px);}
+	.f30{font-size: sm(30px);}
+
+	.f29{font-size: sm(29px);}
+	.f28{font-size: sm(28px);}
+	.f27{font-size: sm(27px);}
+	.f26{font-size: sm(26px);}
+	.f25{font-size: sm(25px);}
+	.f24{font-size: sm(24px);}
+	.f23{font-size: sm(23px);}
+	.f22{font-size: sm(22px);}
+	.f21{font-size: sm(21px);}
+	.f20{font-size: sm(20px);}
+
+	.f19{font-size: sm(19px);}
+	.f18{font-size: sm(18px);}
+	.f17{font-size: sm(17px);}
+	.f16{font-size: sm(16px);}
+	.f15{font-size: sm(15px);}
+	.f14{font-size: sm(14px);}
+	.f13{font-size: sm(13px);}
+	.f12{font-size: sm(12px);}
+	.f11{font-size: sm(11px);}
+	.f10{font-size: sm(10px);}
+
+	.f9{font-size: sm(9px);}
+	.f8{font-size: sm(8px);}
+}
+
+@include tb{
+	.f150{font-size: tb(110px);}
+	.f145{font-size: tb(105px);}
+	.f140{font-size: tb(100px);}
+	.f135{font-size: tb(95px);}
+	.f130{font-size: tb(90px);}
+	.f125{font-size: tb(85px);}
+	.f120{font-size: tb(80px);}
+	.f115{font-size: tb(75px);}
+	.f110{font-size: tb(70px);}
+	.f100{font-size: tb(65px);}
+	.f99{font-size: tb(55px);}
+	.f98{font-size: tb(55px);}
+	.f97{font-size: tb(55px);}
+	.f96{font-size: tb(55px);}
+	.f95{font-size: tb(55px);}
+	.f94{font-size: tb(53px);}
+	.f93{font-size: tb(53px);}
+	.f92{font-size: tb(53px);}
+	.f91{font-size: tb(53px);}
+	.f90{font-size: tb(53px);}
+
+	.f89{font-size: tb(51px);}
+	.f88{font-size: tb(51px);}
+	.f87{font-size: tb(51px);}
+	.f86{font-size: tb(51px);}
+	.f85{font-size: tb(51px);}
+	.f84{font-size: tb(49px);}
+	.f83{font-size: tb(49px);}
+	.f82{font-size: tb(49px);}
+	.f81{font-size: tb(49px);}
+	.f80{font-size: tb(49px);}
+
+	.f79{font-size: tb(47px);}
+	.f78{font-size: tb(47px);}
+	.f77{font-size: tb(47px);}
+	.f76{font-size: tb(47px);}
+	.f75{font-size: tb(47px);}
+	.f74{font-size: tb(45px);}
+	.f73{font-size: tb(45px);}
+	.f72{font-size: tb(45px);}
+	.f71{font-size: tb(45px);}
+	.f70{font-size: tb(45px);}
+
+	.f69{font-size: tb(43px);}
+	.f68{font-size: tb(43px);}
+	.f67{font-size: tb(43px);}
+	.f66{font-size: tb(43px);}
+	.f65{font-size: tb(43px);}
+	.f64{font-size: tb(41px);}
+	.f63{font-size: tb(41px);}
+	.f62{font-size: tb(41px);}
+	.f61{font-size: tb(41px);}
+	.f60{font-size: tb(41px);}
+
+	.f59{font-size: tb(39px);}
+	.f58{font-size: tb(39px);}
+	.f57{font-size: tb(39px);}
+	.f56{font-size: tb(39px);}
+	.f55{font-size: tb(39px);}
+	.f54{font-size: tb(37px);}
+	.f53{font-size: tb(37px);}
+	.f52{font-size: tb(37px);}
+	.f51{font-size: tb(37px);}
+	.f50{font-size: tb(37px);}
+
+	.f49{font-size: tb(35px);}
+	.f48{font-size: tb(35px);}
+	.f47{font-size: tb(35px);}
+	.f46{font-size: tb(35px);}
+	.f45{font-size: tb(35px);}
+	.f44{font-size: tb(35px);}
+	.f43{font-size: tb(33px);}
+	.f42{font-size: tb(33px);}
+	.f41{font-size: tb(33px);}
+	.f40{font-size: tb(33px);}
+
+	.f39{font-size: tb(31px);}
+	.f38{font-size: tb(31px);}
+	.f37{font-size: tb(31px);}
+	.f36{font-size: tb(31px);}
+	.f35{font-size: tb(31px);}
+	.f34{font-size: tb(29px);}
+	.f33{font-size: tb(29px);}
+	.f32{font-size: tb(29px);}
+	.f31{font-size: tb(29px);}
+	.f30{font-size: tb(29px);}
+
+	.f29{font-size: tb(28px);}
+	.f28{font-size: tb(27px);}
+	.f27{font-size: tb(26px);}
+	.f26{font-size: tb(25px);}
+	.f25{font-size: tb(24px);}
+	.f24{font-size: tb(23px);}
+	.f23{font-size: tb(22px);}
+	.f22{font-size: tb(21px);}
+	.f21{font-size: tb(20px);}
+	.f20{font-size: tb(19px);}
+
+	.f19{font-size: tb(18px);}
+	.f18{font-size: tb(17px);}
+	.f17{font-size: tb(16px);}
+	.f16{font-size: tb(15px);}
+	.f15{font-size: tb(14px);}
+	.f14{font-size: tb(13px);}
+	.f13{font-size: tb(12px);}
+	.f12{font-size: tb(11px);}
+	.f11{font-size: tb(10px);}
+	.f10{font-size: tb(9px);}
+
+	.f9{font-size: tb(8px);}
+	.f8{font-size: tb(7px);}
+
+}
+
+@include sp{
+	.f99{font-size: sp(78px);}
+	.f98{font-size: sp(78px);}
+	.f97{font-size: sp(77px);}
+	.f96{font-size: sp(76px);}
+	.f95{font-size: sp(75px);}
+	.f94{font-size: sp(74px);}
+	.f93{font-size: sp(73px);}
+	.f92{font-size: sp(72px);}
+	.f91{font-size: sp(71px);}
+	.f90{font-size: sp(70px);}
+
+	.f89{font-size: sp(69px);}
+	.f88{font-size: sp(68px);}
+	.f87{font-size: sp(67px);}
+	.f86{font-size: sp(66px);}
+	.f85{font-size: sp(65px);}
+	.f84{font-size: sp(64px);}
+	.f83{font-size: sp(63px);}
+	.f82{font-size: sp(62px);}
+	.f81{font-size: sp(61px);}
+	.f80{font-size: sp(60px);}
+
+	.f79{font-size: sp(59px);}
+	.f78{font-size: sp(58px);}
+	.f77{font-size: sp(57px);}
+	.f76{font-size: sp(56px);}
+	.f75{font-size: sp(55px);}
+	.f74{font-size: sp(54px);}
+	.f73{font-size: sp(53px);}
+	.f72{font-size: sp(52px);}
+	.f71{font-size: sp(51px);}
+	.f70{font-size: sp(50px);}
+
+	.f69{font-size: sp(49px);}
+	.f68{font-size: sp(48px);}
+	.f67{font-size: sp(47px);}
+	.f66{font-size: sp(46px);}
+	.f65{font-size: sp(45px);}
+	.f64{font-size: sp(44px);}
+	.f63{font-size: sp(43px);}
+	.f62{font-size: sp(42px);}
+	.f61{font-size: sp(41px);}
+	.f60{font-size: sp(40px);}
+
+	.f59{font-size: sp(39px);}
+	.f58{font-size: sp(38px);}
+	.f57{font-size: sp(37px);}
+	.f56{font-size: sp(36px);}
+	.f55{font-size: sp(35px);}
+	.f54{font-size: sp(34px);}
+	.f53{font-size: sp(33px);}
+	.f52{font-size: sp(32px);}
+	.f51{font-size: sp(31px);}
+	.f50{font-size: sp(30px);}
+
+	.f49{font-size: sp(29px);}
+	.f48{font-size: sp(28px);}
+	.f47{font-size: sp(27px);}
+	.f46{font-size: sp(26px);}
+	.f45{font-size: sp(25px);}
+	.f44{font-size: sp(24px);}
+	.f43{font-size: sp(23px);}
+	.f42{font-size: sp(22px);}
+	.f41{font-size: sp(21px);}
+	.f40{font-size: sp(20px);}
+
+	.f39{font-size: sp(20px);}
+	.f38{font-size: sp(20px);}
+	.f37{font-size: sp(20px);}
+	.f36{font-size: sp(20px);}
+	.f35{font-size: sp(20px);}
+	.f34{font-size: sp(20px);}
+	.f33{font-size: sp(19px);}
+	.f32{font-size: sp(19px);}
+	.f31{font-size: sp(19px);}
+	.f30{font-size: sp(19px);}
+
+	.f29{font-size: sp(19px);}
+	.f28{font-size: sp(18px);}
+	.f27{font-size: sp(18px);}
+	.f26{font-size: sp(18px);}
+	.f25{font-size: sp(18px);}
+	.f24{font-size: sp(18px);}
+	.f23{font-size: sp(18px);}
+	.f22{font-size: sp(18px);}
+	.f21{font-size: sp(16px);}
+	.f20{font-size: sp(16px);}
+
+	.f19{font-size: sp(16px);}
+	.f18{font-size: sp(16px);}
+	.f17{font-size: sp(15px);}
+	.f16{font-size: sp(14px);}
+	.f15{font-size: sp(14px);}
+	.f14{font-size: sp(14px);}
+	.f13{font-size: sp(12px);}
+	.f12{font-size: sp(10px);}
+	.f11{font-size: sp(10px);}
+	.f10{font-size: sp(10px);}
+
+	.f9{font-size: sp(9px);}
+	.f8{font-size: sp(8px);}
+}

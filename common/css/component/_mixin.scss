@@ -1,0 +1,1117 @@
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// ブレイクポイントの設定
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 変数の定義
+$sp: 480px;
+$min-sp: $sp+1;
+$tb: 768px;
+$min-tb: $tb+1;
+$sm: 1024px;
+$min-sm: $sm+1;
+$lg: 1366px;
+$min-lg: $lg+1;
+
+@mixin lg-sm {
+  @media screen and (min-width: $min-sm) and (max-width: $lg) {
+    @content;
+  }
+}
+
+@mixin lg-tb {
+  @media screen and (min-width: $min-tb) and (max-width: $lg) {
+    @content;
+  }
+}
+
+@mixin lg-sp {
+  @media screen and (min-width: $min-sp) and (max-width: $lg) {
+    @content;
+  }
+}
+
+@mixin sm-tb {
+  @media screen and (min-width: $min-tb) and (max-width: $sm) {
+    @content;
+  }
+}
+
+@mixin sm-sp {
+  @media screen and (min-width: $min-sp) and (max-width: $sm) {
+    @content;
+  }
+}
+
+@mixin tb-sp {
+  @media screen and (min-width: $min-sp) and (max-width: $tb) {
+    @content;
+  }
+}
+
+@mixin minlg {
+  @media (min-width: ($min-lg)) {
+    @content;
+  }
+}
+@mixin minsm {
+  @media (min-width: ($min-sm)) {
+    @content;
+  }
+}
+@mixin mintb {
+  @media (min-width: ($min-tb)) {
+    @content;
+  }
+}
+@mixin minsp {
+  @media (min-width: ($min-sp)) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (max-width: ($lg)) {
+    @content;
+  }
+}
+@mixin sm {
+  @media (max-width: ($sm)) {
+    @content;
+  }
+}
+@mixin tb {
+  @media (max-width: ($tb)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// vw計算
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@function fs($size, $std_width: 1366) {
+  $no_unit_size: $size / ($size * 0 + 1);
+  @return (100 / $std_width) * $no_unit_size * 1vw;
+}
+
+@function lg($size, $std_width: 1366) {
+  $no_unit_size: $size / ($size * 0 + 1);
+  @return (100 / $std_width) * $no_unit_size * 1vw;
+}
+@function sm($size, $std_width: 1024) {
+  $no_unit_size: $size / ($size * 0 + 1);
+  @return (100 / $std_width) * $no_unit_size * 1vw;
+}
+@function tb($size, $std_width: 768) {
+  $no_unit_size: $size / ($size * 0 + 1);
+  @return (100 / $std_width) * $no_unit_size * 1vw;
+}
+@function sp($size, $std_width: 375) {
+  $no_unit_size: $size / ($size * 0 + 1);
+  @return (100 / $std_width) * $no_unit_size * 1vw;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//css 変数セット
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+///////////////////////////////////////////////////////////////////////
+// %計算
+///////////////////////////////////////////////////////////////////////
+@mixin w( $parentPxWidth:null, $pxWidth:null ){
+  @if $parentPxWidth == f and $pxWidth != null {
+    width: $pxWidth + px;
+  }@elseif $parentPxWidth == a {
+    width: auto;
+  }@elseif $parentPxWidth == null and $pxWidth == null {
+    width: 100%;
+  }@else {
+    width: floor((( $pxWidth / $parentPxWidth ) * 10000% )) / 100;
+  }
+}
+
+@mixin h( $parentPxUnit:null, $unit:null ){
+  @if $parentPxUnit == f and $unit != null {
+    height: $unit + px;
+  }@elseif $parentPxUnit == a {
+    height: auto;
+  }@elseif $parentPxUnit == null and $unit == null {
+    height: 100%;
+  }@else {
+    height: floor((( $unit / $parentPxUnit ) * 10000% )) / 100;
+  }
+}
+
+@mixin m($parentPxWidth:null, $mTop:null, $mRight:null, $mBottom:null, $mLeft:null){
+  @if $parentPxWidth == f and $mTop != null and $mRight != null and $mBottom != null and $mLeft != null{
+    // $parentPxWidthが 'f' かつ 残りがnullじゃない
+    margin-top: $mTop + px;
+    margin-right: $mRight + px;
+    margin-bottom: $mBottom + px;
+    margin-left: $mLeft + px;
+  }@elseif $parentPxWidth == f and $mTop == null and $mRight == null and $mBottom == null and $mLeft == null {
+    // $parentPxWidthが 'f' かつ 残りがnull
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+  }@elseif $parentPxWidth == null and $mTop == null and $mRight == null and $mBottom == null and $mLeft == null {
+    // 全てがnull
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+  }@elseif $parentPxWidth != f and $parentPxWidth != null{
+    margin-top : floor((($mTop / $parentPxWidth) * 10000%)) / 100 ;
+
+    @if $mRight != null{
+      margin-right : floor((($mRight / $parentPxWidth) * 10000%)) / 100 ;
+    }@else {
+      margin-right : floor((($mTop / $parentPxWidth) * 10000%)) / 100 ;
+    }
+    @if $mBottom != null{
+      margin-bottom : floor((($mBottom / $parentPxWidth) * 10000%)) / 100 ;
+    }@else {
+      margin-bottom : floor((($mTop / $parentPxWidth) * 10000%)) / 100 ;
+    }
+    @if $mLeft != null{
+      margin-left : floor((($mLeft / $parentPxWidth) * 10000%)) / 100 ;
+    }@else {
+      margin-left : floor((($mTop / $parentPxWidth) * 10000%)) / 100 ;
+    }
+  }
+}
+
+@mixin my($parentPxWidth:null, $mTop:null, $mBottom:null){
+  @if $parentPxWidth == f and $mTop != null and $mBottom != null{
+    margin-top: $mTop + px;
+    margin-bottom: $mBottom + px;
+  }@elseif $parentPxWidth == null and $mTop == null and $mBottom == null {
+    margin-top: auto;
+    margin-bottom: auto;
+  }@elseif $parentPxWidth != f and $parentPxWidth != null {
+    margin-top : floor((($mTop / $parentPxWidth) * 10000%)) / 100 ;
+
+    @if $mBottom != null{
+      margin-bottom : floor((($mBottom / $parentPxWidth) * 10000%)) / 100 ;
+    }@else {
+      margin-bottom : floor((($mTop / $parentPxWidth) * 10000%)) / 100 ;
+    }
+  }@elseif $parentPxWidth == f and $mTop == null and $mBottom == null{
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+@mixin mx($parentPxWidth:null, $mRight:null, $mLeft:null){
+  @if $parentPxWidth == f and $mRight != null and $mLeft != null {
+    margin-right: $mRight + px;
+    margin-left: $mLeft + px;
+  }@elseif $parentPxWidth == null and $mRight == null and $mLeft == null {
+    margin-right: auto;
+    margin-left: auto;
+  }@elseif $parentPxWidth != f and $parentPxWidth != null {
+    margin-right : floor((($mRight / $parentPxWidth) * 10000%)) / 100 ;
+
+    @if $mLeft != null{
+      margin-left : floor((($mLeft / $parentPxWidth) * 10000%)) / 100 ;
+    }@else {
+      margin-left : floor((($mRight / $parentPxWidth) * 10000%)) / 100 ;
+    }
+  }@elseif $parentPxWidth == f and $mRight == null and $mLeft == null{
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+
+@mixin mt($parentPxWidth:null, $mTop:null){
+  @if $parentPxWidth == f and $mTop != null{
+    margin-top: $mTop + px;
+  }@elseif $parentPxWidth == null and $mTop == null {
+    margin-top: auto;
+  }@elseif $parentPxWidth != f and $parentPxWidth != null{
+    margin-top : floor((($mTop / $parentPxWidth) * 10000%)) / 100 ;
+  }@elseif $parentPxWidth == f and $mTop == null{
+    margin-top : 0 ;
+  }
+}
+
+@mixin mr($parentPxWidth:null,$mRight:null){
+  @if $parentPxWidth == f and $mRight != null{
+    margin-right: $mRight + px;
+  }@elseif $parentPxWidth == null and $mRight == null {
+    margin-right: auto;
+  }@elseif $parentPxWidth != f and $parentPxWidth != null{
+    margin-right : floor((($mRight / $parentPxWidth) * 10000%)) / 100 ;
+  }@elseif $parentPxWidth == f and $mRight == null{
+    margin-right : 0 ;
+  }
+}
+
+@mixin mb($parentPxWidth:null,$mBottom:null){
+  @if $parentPxWidth == f and $mBottom != null{
+    margin-bottom: $mBottom + px;
+  }@elseif $parentPxWidth == null and $mBottom == null {
+    margin-bottom: auto;
+  }@elseif $parentPxWidth != f and $parentPxWidth != null{
+    margin-bottom : floor((($mBottom / $parentPxWidth) * 10000%)) / 100 ;
+  }@elseif $parentPxWidth == f and $mBottom == null{
+    margin-bottom : 0 ;
+  }
+}
+
+@mixin ml($parentPxWidth:null,$mLeft:null){
+  @if $parentPxWidth == f and $mLeft != null{
+    margin-left: $mLeft + px;
+  }@elseif $parentPxWidth == null and $mLeft == null {
+    margin-left: auto;
+  }@elseif $parentPxWidth != f and $parentPxWidth != null{
+    margin-left : floor((($mLeft / $parentPxWidth) * 10000%)) / 100 ;
+  }@elseif $parentPxWidth == f and $mLeft == null{
+    margin-left : 0 ;
+  }
+}
+
+
+@mixin p($parentPxWidth, $pTop:null, $pRight:null, $pBottom:null, $pLeft:null){
+  @if $parentPxWidth == f and $pTop != null and $pRight != null and $pBottom != null and $pLeft != null{
+    padding-top: $pTop + px;
+    padding-right: $pRight + px;
+    padding-bottom: $pBottom + px;
+    padding-left: $pLeft + px;
+  }@elseif $parentPxWidth == f and $pTop == null and $pRight == null and $pBottom == null and $pLeft == null{
+    padding-top : 0 ;
+    padding-right:0;
+    padding-bottom:0;
+    padding-left:0;
+  }@else {
+    padding-top : floor((($pTop / $parentPxWidth) * 10000%)) / 100 ;
+    @if $pRight != null{
+      padding-right : floor((($pRight / $parentPxWidth) * 10000%)) / 100 ;
+    }@else {
+      padding-right : floor((($pTop / $parentPxWidth) * 10000%)) / 100 ;
+    }
+    @if $pBottom != null{
+      padding-bottom : floor((($pBottom / $parentPxWidth) * 10000%)) / 100 ;
+    }@else {
+      padding-bottom : floor((($pTop / $parentPxWidth) * 10000%)) / 100 ;
+    }
+    @if $pLeft != null{
+      padding-left : floor((($pLeft / $parentPxWidth) * 10000%)) / 100 ;
+    }@else {
+      padding-left : floor((($pTop / $parentPxWidth) * 10000%)) / 100 ;
+    }
+  }
+}
+
+@mixin py($parentPxWidth, $pTop:null, $pBottom:null){
+  @if $parentPxWidth == f and $pTop != null and $pBottom != null{
+    padding-top: $pTop + px;
+    padding-bottom: $pBottom + px;
+  }@elseif $parentPxWidth == f and $pTop == null and $pBottom == null{
+    padding-top : 0 ;
+    padding-bottom:0;
+  }@elseif $parentPxWidth != f {
+    padding-top : floor((($pTop / $parentPxWidth) * 10000%)) / 100 ;
+
+    @if $pBottom != null{
+      padding-bottom : floor((($pBottom / $parentPxWidth) * 10000%)) / 100 ;
+    }@else {
+      padding-bottom : floor((($pTop / $parentPxWidth) * 10000%)) / 100 ;
+    }
+  }
+}
+
+@mixin px($parentPxWidth, $pRight:null, $pLeft:null){
+  @if $parentPxWidth == f and $pRight != null and $pLeft != null{
+    padding-right: $pRight + px;
+    padding-left: $pLeft + px;
+  }@elseif $parentPxWidth == f and $pRight == null and $pLeft == null{
+    padding-right : 0 ;
+    padding-left:0;
+  }@elseif $parentPxWidth != f  {
+    padding-right : floor((($pRight / $parentPxWidth) * 10000%)) / 100 ;
+
+    @if $pLeft != null{
+      padding-left : floor((($pLeft / $parentPxWidth) * 10000%)) / 100 ;
+    }@else {
+      padding-left : floor((($pRight / $parentPxWidth) * 10000%)) / 100 ;
+    }
+  }
+}
+
+@mixin pt($parentPxWidth, $pTop:null){
+  @if $parentPxWidth == f and $pTop != null{
+    padding-top: $pTop + px;
+  }@elseif $parentPxWidth == f and $pTop == null{
+    padding-top : 0 ;
+  }@elseif $parentPxWidth != f  {
+    padding-top : floor((($pTop / $parentPxWidth) * 10000%)) / 100 ;
+  }
+}
+@mixin pr($parentPxWidth,$pRight:null){
+  @if $parentPxWidth == f and $pRight != null{
+    padding-right: $pRight + px;
+  }@elseif $parentPxWidth == f and $pRight == null{
+    padding-right : 0 ;
+  }@elseif $parentPxWidth != f  {
+    padding-right : floor((($pRight / $parentPxWidth) * 10000%)) / 100 ;
+  }
+}
+@mixin pb($parentPxWidth, $pBottom:null){
+  @if $parentPxWidth == f and $pBottom != null{
+    padding-bottom: $pBottom + px;
+  }@elseif $parentPxWidth == f and $pBottom == null{
+    padding-bottom : 0 ;
+  }@elseif $parentPxWidth != f  {
+    padding-bottom : floor((($pBottom / $parentPxWidth) * 10000%)) / 100 ;
+  }
+}
+@mixin pl($parentPxWidth,$pLeft:null){
+  @if $parentPxWidth == f and $pLeft != null{
+    padding-left: $pLeft + px;
+  }@elseif $parentPxWidth == f and $pLeft == null{
+    padding-left : 0 ;
+  }@elseif $parentPxWidth != f  {
+    padding-left : floor((($pLeft / $parentPxWidth) * 10000%)) / 100 ;
+  }
+}
+
+
+
+///////////////////////////////////////////////////////////////////////
+// 要素位置指定
+///////////////////////////////////////////////////////////////////////
+@mixin mc{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+@mixin mxc{
+  margin-left: auto;
+  margin-right: auto;
+}
+@mixin myc{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+@mixin mta{
+  margin-top: 0;
+  margin-bottom: auto;
+}
+
+@mixin mba{
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+@mixin mla{
+  margin-left: 0;
+  margin-right: auto;
+}
+
+@mixin mra{
+  margin-left: auto;
+  margin-right: 0;
+}
+
+
+
+///////////////////////////////////////////////////////////////////////
+// ---- display ---- //
+///////////////////////////////////////////////////////////////////////
+@mixin d($display) {
+  display: $display;
+}
+
+@mixin db() {
+  display: block;
+}
+
+@mixin df() {
+  display: flex;
+}
+
+@mixin dib() {
+  display: inline-block;
+}
+
+@mixin dif() {
+  display: inline-flex;
+}
+
+@mixin dn() {
+  display: none;
+}
+
+
+
+///////////////////////////////////////////////////////////////////////
+// ---- flexレイアウト ---- //
+///////////////////////////////////////////////////////////////////////
+@mixin fs($display,$set:null,$wrap:null) {
+  @if $display == f{
+    display: flex;
+  }@elseif $display == if {
+    display: inline-flex;
+  }@else{
+    display: flex;
+  }
+
+  @if $set == ss{
+    align-items: flex-start;
+    justify-content: flex-start;
+  }@elseif $set == sc {
+    align-items: flex-start;
+    justify-content: center;
+  }@elseif $set == se {
+    align-items: flex-start;
+    justify-content: flex-end;
+  }@elseif $set == sb {
+    align-items: flex-start;
+    justify-content: space-between;
+  }@elseif $set == cs {
+    align-items: center;
+    justify-content: flex-start;
+  }@elseif $set == cc {
+    align-items: center;
+    justify-content: center;
+  }@elseif $set == ce {
+    align-items: center;
+    justify-content: flex-end;
+  }@elseif $set == cb {
+    align-items: center;
+    justify-content: space-between;
+  }@elseif $set == es {
+    align-items: flex-end;
+    justify-content: flex-start;
+  }@elseif $set == ec {
+    align-items: flex-end;
+    justify-content: center;
+  }@elseif $set == ee {
+    align-items: flex-end;
+    justify-content: flex-end;
+  }@elseif $set == eb {
+    align-items: flex-end;
+    justify-content: space-between;
+  }@else{
+
+  }
+
+  @if $wrap != null{
+    flex-wrap: wrap;
+  }@else{
+    flex-wrap: nowrap;
+  }
+
+}
+
+
+
+///////////////////////////////////////////////////////////////////////
+// flex-direction
+///////////////////////////////////////////////////////////////////////
+@mixin col {
+  flex-direction: column;
+}
+@mixin col-r {
+  flex-direction: column-reverse;
+}
+@mixin row {
+  flex-direction: row;
+}
+@mixin row-r {
+  flex-direction: row-reverse;
+}
+
+
+
+///////////////////////////////////////////////////////////////////////
+// text-align
+///////////////////////////////////////////////////////////////////////
+@mixin tac {
+  text-align: center;
+}
+@mixin tat {
+  text-align: top;
+}
+@mixin tar {
+  text-align: right;
+}
+@mixin tab {
+  text-align: bottom;
+}
+@mixin tal {
+  text-align: left;
+}
+@mixin taj {
+  text-align: justify;
+}
+
+
+
+///////////////////////////////////////////////////////////////////////
+// position
+///////////////////////////////////////////////////////////////////////
+@mixin abs($top: null,$right: null,$bottom: null,$left: null,$z_index: null) {
+  position: absolute;
+  @if $top != null {
+    top: $top;
+  }@else {
+    top: 0;
+  }
+  @if $right != null {
+    right: $right;
+  }@else {
+    right: 0;
+  }
+  @if $bottom != null {
+    bottom: $bottom;
+  }@else {
+    bottom: 0;
+  }
+  @if $left != null {
+    left: $left;
+  }@else {
+    left: 0;
+  }
+  @if $z_index != null {
+    z-index: $z_index;
+  }@else {
+    z-index: 0;
+  }
+}
+
+@mixin rel($z_index: null) {
+  position: relative;
+  @if $z_index != null {
+    z-index: $z_index;
+  }@else {
+    z-index: 0;
+  }
+}
+
+@mixin fix($top,$right,$bottom,$left,$z_index: null) {
+  position: fixed;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  @if $z_index != null {
+    z-index: $z_index;
+  }@else {
+    z-index: 0;
+  }
+}
+
+///////////////////////////////////////////////////////////////////////
+// background-image
+///////////////////////////////////////////////////////////////////////
+// $PATH_IMGはtemplate.cssの現在地(ディレクトリ)から一つ上にあるimgフォルダを指定
+
+$PATH_IMG: '../img/';
+@mixin bg($fileName,$extend,$drName: null) {
+  @if $drName{
+    background-image: url($PATH_IMG + $drName/$fileName + "." + $extend);
+  } @else {
+    background-image: url($PATH_IMG + $fileName + "." + $extend);
+  }
+}
+
+
+///////////////////////////////////////////////////////////////////////
+// 背景画像セット
+///////////////////////////////////////////////////////////////////////
+@mixin bg-con($position1:c,$position2:c) {
+  background-repeat: no-repeat;
+  @if $position1 == c and $position2 == c{
+    background-position: center ;
+  }@elseif $position1 == t and $position2 == t{
+    background-position: top;
+  }@elseif $position1 == r and $position2 == r{
+    background-position: right ;
+  }@elseif $position1 == b and $position2 == b{
+    background-position: bottom ;
+  }@elseif $position1 == l and $position2 == l{
+    background-position: left ;
+  }
+  @elseif $position1 == c and $position2 == t{
+    background-position: center top ;
+  }@elseif $position1 == c and $position2 == r{
+    background-position: center right ;
+  }@elseif $position1 == c and $position2 == b{
+    background-position: center bottom ;
+  }@elseif $position1 == c and $position2 == l{
+    background-position: center left ;
+  }
+  @elseif $position1 == t and $position2 == c{
+    background-position: top center ;
+  }@elseif $position1 == t and $position2 == r{
+    background-position: top right ;
+  }@elseif $position1 == t and $position2 == b{
+    background-position: top bottom ;
+  }@elseif $position1 == t and $position2 == l{
+    background-position: top left ;
+  }
+  @elseif $position1 == r and $position2 == c{
+    background-position: right center ;
+  }@elseif $position1 == r and $position2 == t{
+    background-position: right top ;
+  }@elseif $position1 == r and $position2 == b{
+    background-position: right bottom ;
+  }@elseif $position1 == r and $position2 == l{
+    background-position: right left ;
+  }
+  @elseif $position1 == b and $position2 == c{
+    background-position: bottom center ;
+  }@elseif $position1 == b and $position2 == t{
+    background-position: bottom top ;
+  }@elseif $position1 == b and $position2 == r{
+    background-position: bottom right ;
+  }@elseif $position1 == b and $position2 == l{
+    background-position: bottom left ;
+  }
+  @elseif $position1 == l and $position2 == c{
+    background-position: left center ;
+  }@elseif $position1 == l and $position2 == t{
+    background-position: left top ;
+  }@elseif $position1 == l and $position2 == r{
+    background-position: left right ;
+  }@elseif $position1 == l and $position2 == b{
+    background-position: left bottom ;
+  }@else {
+    background-position: center ;
+  }
+  background-size: contain;
+}
+
+@mixin bg-cov($position1,$position2) {
+  background-repeat: no-repeat;
+  @if $position1 == c and $position2 == c{
+    background-position: center ;
+  }@elseif $position1 == t and $position2 == t{
+    background-position: top;
+  }@elseif $position1 == r and $position2 == r{
+    background-position: right ;
+  }@elseif $position1 == b and $position2 == b{
+    background-position: bottom ;
+  }@elseif $position1 == l and $position2 == l{
+    background-position: left ;
+  }
+  @elseif $position1 == c and $position2 == t{
+    background-position: center top ;
+  }@elseif $position1 == c and $position2 == r{
+    background-position: center right ;
+  }@elseif $position1 == c and $position2 == b{
+    background-position: center bottom ;
+  }@elseif $position1 == c and $position2 == l{
+    background-position: center left ;
+  }
+  @elseif $position1 == t and $position2 == c{
+    background-position: top center ;
+  }@elseif $position1 == t and $position2 == r{
+    background-position: top right ;
+  }@elseif $position1 == t and $position2 == b{
+    background-position: top bottom ;
+  }@elseif $position1 == t and $position2 == l{
+    background-position: top left ;
+  }
+  @elseif $position1 == r and $position2 == c{
+    background-position: right center ;
+  }@elseif $position1 == r and $position2 == t{
+    background-position: right top ;
+  }@elseif $position1 == r and $position2 == b{
+    background-position: right bottom ;
+  }@elseif $position1 == r and $position2 == l{
+    background-position: right left ;
+  }
+  @elseif $position1 == b and $position2 == c{
+    background-position: bottom center ;
+  }@elseif $position1 == b and $position2 == t{
+    background-position: bottom top ;
+  }@elseif $position1 == b and $position2 == r{
+    background-position: bottom right ;
+  }@elseif $position1 == b and $position2 == l{
+    background-position: bottom left ;
+  }
+  @elseif $position1 == l and $position2 == c{
+    background-position: left center ;
+  }@elseif $position1 == l and $position2 == t{
+    background-position: left top ;
+  }@elseif $position1 == l and $position2 == r{
+    background-position: left right ;
+  }@elseif $position1 == l and $position2 == b{
+    background-position: left bottom ;
+  }@else {
+    background-position: center ;
+  }
+  background-size: cover;
+}
+
+@mixin bg-size($position1,$position2,$size) {
+  background-repeat: no-repeat;
+  @if $position1 == c and $position2 == c{
+    background-position: center ;
+  }@elseif $position1 == t and $position2 == t{
+    background-position: top;
+  }@elseif $position1 == r and $position2 == r{
+    background-position: right ;
+  }@elseif $position1 == b and $position2 == b{
+    background-position: bottom ;
+  }@elseif $position1 == l and $position2 == l{
+    background-position: left ;
+  }
+  @elseif $position1 == c and $position2 == t{
+    background-position: center top ;
+  }@elseif $position1 == c and $position2 == r{
+    background-position: center right ;
+  }@elseif $position1 == c and $position2 == b{
+    background-position: center bottom ;
+  }@elseif $position1 == c and $position2 == l{
+    background-position: center left ;
+  }
+  @elseif $position1 == t and $position2 == c{
+    background-position: top center ;
+  }@elseif $position1 == t and $position2 == r{
+    background-position: top right ;
+  }@elseif $position1 == t and $position2 == b{
+    background-position: top bottom ;
+  }@elseif $position1 == t and $position2 == l{
+    background-position: top left ;
+  }
+  @elseif $position1 == r and $position2 == c{
+    background-position: right center ;
+  }@elseif $position1 == r and $position2 == t{
+    background-position: right top ;
+  }@elseif $position1 == r and $position2 == b{
+    background-position: right bottom ;
+  }@elseif $position1 == r and $position2 == l{
+    background-position: right left ;
+  }
+  @elseif $position1 == b and $position2 == c{
+    background-position: bottom center ;
+  }@elseif $position1 == b and $position2 == t{
+    background-position: bottom top ;
+  }@elseif $position1 == b and $position2 == r{
+    background-position: bottom right ;
+  }@elseif $position1 == b and $position2 == l{
+    background-position: bottom left ;
+  }
+  @elseif $position1 == l and $position2 == c{
+    background-position: left center ;
+  }@elseif $position1 == l and $position2 == t{
+    background-position: left top ;
+  }@elseif $position1 == l and $position2 == r{
+    background-position: left right ;
+  }@elseif $position1 == l and $position2 == b{
+    background-position: left bottom ;
+  }@else {
+    background-position: center ;
+  }
+  background-size: $size;
+}
+
+
+
+///////////////////////////////////////////////////////////////////////
+// background-color
+///////////////////////////////////////////////////////////////////////
+@mixin bgc($red, $green, $blue, $alpha){
+  background-color: rgba($red, $green, $blue, $alpha);
+}
+
+///////////////////////////////////////////////////////////////////////
+// color
+///////////////////////////////////////////////////////////////////////
+@mixin c($red, $green, $blue, $alpha: 1){
+  color: rgba($red, $green, $blue, $alpha);
+}
+
+///////////////////////////////////////////////////////////////////////
+// 矢印
+///////////////////////////////////////////////////////////////////////
+@mixin arrow($direction: right, $size: 10, $color: #000){
+  $set: left;
+
+  @if $direction == left{
+    $set: right;
+  }@elseif $direction == top{
+    $set: bottom;
+  }@elseif $direction == bottom{
+    $set: top;
+  }@else{
+    $set: left;
+  }
+  $size: round($size / 2);
+
+  width: 0;
+  height: 0;
+  border: $size + px solid transparent;
+  border-#{$set}-color: $color;
+}
+
+
+
+@mixin arrowlink($top,$right,$bottom,$left, $size: 10, $color: $black){
+  position: relative;
+  &:before{
+    display: block;
+    content: "";
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    @include arrow(right, $size, $color);
+  }
+}
+
+
+
+///////////////////////////////////////////////////////////////////////
+// トランスフォーム関連
+///////////////////////////////////////////////////////////////////////
+@mixin transform($transforms) {
+  -webkit-transform: $transforms;
+  -moz-transform: $transforms;
+  -ms-transform: $transforms;
+  transform: $transforms;
+}
+// Rotate
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+// Scale
+@mixin scale($scale) {
+  @include transform(scale($scale));
+}
+
+// Translate
+@mixin translate ($x, $y) {
+  @include transform(translate($x, $y));
+}
+
+// Skew
+@mixin skew ($x, $y) {
+  @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+
+///////////////////////////////////////////////////////////////////////
+// トランジション - @include anime(background-color 1s 2s, color 2s);
+///////////////////////////////////////////////////////////////////////
+@mixin anime($transition: null) {
+  @if $transition != null {
+    -moz-transition:    $transition + s;
+    -o-transition:      $transition + s;
+    -webkit-transition: $transition + s;
+    transition:         $transition + s;
+  } @else {
+    -moz-transition:    0.3s;
+    -o-transition:      0.3s;
+    -webkit-transition: 0.3s;
+    transition:         0.3s;
+  }
+
+}
+
+
+///////////////////////////////////////////////////////////////////////
+// キーフレーム
+///////////////////////////////////////////////////////////////////////
+@mixin key($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation($animation-name) {
+  -webkit-animation: $animation-name;
+  -moz-animation: $animation-name;
+  animation: $animation-name;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+// 使い方 //
+// @include key(animationSample){
+// 	0% {
+// 		opacity:0;
+// 	}
+// 	100% {
+// 		opacity:1;
+// 	}
+// }
+//
+// #hoge{
+// 	@include animation(animationSample 1.2s ease 0.15s);
+// }
+
+
+
+///////////////////////////////////////////////////////////////////////
+// justify : 両端揃えの設定
+///////////////////////////////////////////////////////////////////////
+@mixin justify(){
+  text-align: justify;
+  text-justify: inter-ideograph;
+}
+
+// 使い方 //
+// @include justify();
+
+
+///////////////////////////////////////////////////////////////////////
+// line-truncate : 文字が溢れた際の表示を … にする
+///////////////////////////////////////////////////////////////////////
+@mixin line-truncate(){
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// 使い方 //
+// @include line-truncate();
+
+
+///////////////////////////////////////////////////////////////////////
+// lines-truncate : 文字が溢れた際の表示を … にする（複数行対応, Chrome/Safariのみ）
+///////////////////////////////////////////////////////////////////////
+// 溢れた文字については … と省略するmixin。
+// 複数行にも対応できますが、Chrome / Safari にしか対応していませんので line-truncate と使い分けましょう。
+// 第1引数には、何行目まで表示させるかを数値で指定します。（省略時は2行）
+@mixin lines-truncate($lines: 2){
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+}
+
+// 使い方 //
+// @include lines-truncate(3);
+
+
+///////////////////////////////////////////////////////////////////////
+// aspect-ratio : ブロックの縦横比を設定
+///////////////////////////////////////////////////////////////////////
+@mixin aspect($parentPxWidth,$width, $height, $image_path: null) {
+  display: block;
+  width: floor((( $width / $parentPxWidth ) * 10000% )) / 100;
+  height: 0;
+  padding-top: ($height / $width) * 70%;
+  @if $image_path != null {
+    background: url($image_path) 50% 50% no-repeat;
+    background-size: cover;
+  }
+}
+
+
+// 呼び出し方 //
+// p{
+//   @include aspect(1200px, 400px);
+// }
+// p.bg{
+//   @include aspect(1200px, 400px, "../images/bg.png");
+// }
+
+
+
+///////////////////////////////////////////////////////////////////////
+// 簡単に円を作る
+///////////////////////////////////////////////////////////////////////
+@mixin circle($circle){
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: $circle + px;
+  height: $circle + px;
+  border-radius: 50%;
+}
+
+
+
+///////////////////////////////////////////////////////////////////////
+// border-radius
+///////////////////////////////////////////////////////////////////////
+@mixin br($radius...){
+  border-radius: $radius;
+}
+
+
+
+///////////////////////////////////////////////////////////////////////
+// z-index
+///////////////////////////////////////////////////////////////////////
+@mixin z($z_index){
+  z-index: $z_index;
+}
+
+
+
+///////////////////////////////////////////////////////////////////////
+// line-hight
+///////////////////////////////////////////////////////////////////////
+@mixin lh($font-size,$line-height){
+  line-height: $line-height/$font-size;
+}
+
+
+
+///////////////////////////////////////////////////////////////////////
+// letter-spacing
+///////////////////////////////////////////////////////////////////////
+@mixin ls($letter-spacing){
+  letter-spacing: $letter-spacing/1000 + em;
+}
+
+///////////////////////////////////////////////////////////////////////
+// border
+///////////////////////////////////////////////////////////////////////
+@mixin bd($px, $color:null, $vector:null, $type:solid){
+  @if $vector == null {
+    border:$px + px $type $color;
+  } @elseif $vector == t {
+    border-top:$px + px $type $color;
+  } @elseif $vector == r {
+    border-right:$px + px $type $color;
+  } @elseif $vector == b {
+    border-bottom:$px + px $type $color;
+  } @elseif $vector == l {
+    border-left:$px + px $type $color;
+  }
+}
+
+
+
+///////////////////////////////////////////////////////////////////////
+// max-width
+///////////////////////////////////////////////////////////////////////
+@mixin mw($mw) {
+  max-width: $mw + px;
+}
+
+
+
+///////////////////////////////////////////////////////////////////////
+// max-height
+///////////////////////////////////////////////////////////////////////
+@mixin mh($mh) {
+  max-height: $mh + px;
+}

@@ -1,0 +1,95 @@
+@import "mixin";
+:root{
+  --site_color1: #0068b7;
+  --site_color2: #f2f5f8;
+  --site_color3: #385d77;
+  --site_color4: #3a4a53;
+  --site_color5: #002e73;
+  --site_color6: #e9f3f9;
+}
+
+.c1{
+  color: #fff;
+}
+
+.cc1{
+  color: var( --site_color1);
+}
+.cc2{
+  color: var( --site_color2);
+}
+.cc3{
+  color: var( --site_color3);
+}
+.cc4{
+  color: var( --site_color4);
+}
+.cc5{
+  color: var( --site_color5);
+}
+
+main{
+  max-width: 1140px;
+  margin:auto;
+  img{
+    @include w;
+  }
+  .fv{
+    @include mb(1140,50);
+    @include sp{
+      @include mb(375,30);
+    };
+  }
+  .contents-box{
+    *{
+      line-height: 1.5;
+    }
+    a{
+      color: var(--primary);
+    }
+    section{
+      @include mb(1140,70);
+      @include sp{
+        @include mb(375,40);
+      };
+    }
+    .link-box{
+      @include mt(1140,50);
+      @include sp{
+        @include mt(375,30);
+      };
+      a{
+        @include fs(if,cc);
+        color: #fff;
+        background: -moz-linear-gradient(left, #3eaf32 0%, #d0e785);
+        background: -webkit-linear-gradient(left, #3eaf32 0%, #d0e785);
+        background: linear-gradient(to right, #3eaf32 0%, #d0e785);
+        background:-ms-linear-gradient(left, #3eaf32 0%, #d0e785); /* IE */
+        @include p(1140,20,40,20,40);
+        @include w(1140,700);
+        @include br(10px);
+        @include rel;
+        &::after{
+          content: '';
+          @include abs(0,30px,0,auto);
+          @include bd(3,#fff,t);
+          @include bd(3,#fff,r);
+          @include rotate(45);
+          @include myc;
+          width: 20px;
+          height: 20px;
+          @include sp{
+            width: 10px;
+            height: 10px;
+            @include bd(2,#fff,t);
+            @include bd(2,#fff,r);
+          };
+        }
+        @include sp{
+          @include p(375,10,30,10,30);
+          @include w(375,300);
+        };
+      }
+    }
+  }
+}

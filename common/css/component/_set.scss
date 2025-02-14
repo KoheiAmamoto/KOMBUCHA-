@@ -1,0 +1,880 @@
+@import "mixin";
+//////////////////////////////////////////////////////
+// ===== HTMLにclass指定するだけで当たるレイアウト ===== //
+/////////////////////////////////////////////////////
+/* ===============================================
+改行用
+=============================================== */
+.br1366on{
+  display:none;
+}
+.br1024on{
+  display:none;
+}
+.br768on{
+  display:none;
+}
+.br480on{
+  display:none;
+}
+.br375on{
+  display:none;
+}
+@include minlg{
+  .br1366off{
+    display:none;
+  }
+  .br1366on{
+    display:block;
+  }
+  .sp1366off{
+    display:none;
+  }
+}
+
+@include sm{
+  .br1024off{
+    display:none;
+  }
+  .br1024on{
+    display:block;
+  }
+  .sp1024off{
+    display:none;
+  }
+}
+@include tb{
+  .br768off{
+    display:none;
+  }
+  .br768on{
+    display:block;
+  }
+  .sp768off{
+    display:none;
+  }
+}
+@include sp{
+  .br480off{
+    display:none;
+  }
+  .br480on{
+    display:block;
+  }
+  .sp480off{
+    display:none;
+  }
+}
+
+
+
+/* -----------------------------------------------
+表示/非表示
+----------------------------------------------- */
+
+@include minsp{
+  *.sp480on{
+    display: none !important;
+  }
+}
+
+@include mintb{
+  *.sp768on{
+    display: none !important;
+  }
+}
+
+@include minsm{
+  *.sp1024on{
+    display: none !important;
+  }
+}
+
+
+
+/* -----------------------------------------------
+文字位置
+----------------------------------------------- */
+.tc{
+  text-align: center;
+}
+.tr{
+  text-align: right;
+}
+.tl{
+  text-align: left;
+}
+
+
+
+/* -----------------------------------------------
+文字太さ
+----------------------------------------------- */
+.fb{
+  font-weight: 700;
+}
+.fm{
+  font-weight: 500;
+}
+.fr{
+  font-weight: 400;
+}
+.fl{
+  font-weight: 300;
+}
+
+
+
+/* -----------------------------------------------
+line-hight
+----------------------------------------------- */
+.lh1{
+  line-height: 1;
+}
+.lh1\.25{
+  line-height: 1.25;
+}
+.lh1\.5{
+  line-height: 1.5;
+}
+.lh1\.75{
+  line-height: 1.75;
+}
+.lh2{
+  line-height: 2;
+}
+
+/* -----------------------------------------------
+line-hight
+----------------------------------------------- */
+.ls25{
+  letter-spacing: 0.25em;
+}
+
+.ls50{
+  letter-spacing: 0.05em;
+}
+
+.ls75{
+  letter-spacing: 0.75em;
+}
+
+.ls100{
+  letter-spacing: 0.1em;
+}
+
+.ls125{
+  letter-spacing: 0.125em;
+}
+
+.ls150{
+  letter-spacing: 0.15em;
+}
+
+
+
+/* -----------------------------------------------
+縦書き
+----------------------------------------------- */
+.ver{
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+}
+
+// 英字の縦書き
+.ver.upright {
+  text-orientation: upright;
+}
+
+//記号など特定部分の縦書き
+.ver_part {
+  text-orientation: sideways;
+}
+
+
+@include tb{
+  .ver {
+    -ms-writing-mode: lr-tb;
+    -webkit-writing-mode: lr-tb;
+    writing-mode: horizontal-tb;
+  }
+}
+
+
+/* -----------------------------------------------
+要素の位置指定
+----------------------------------------------- */
+.mc{
+  margin: auto;
+}
+
+.mxc{
+  margin-left: auto;
+  margin-right: auto;
+}
+.myc{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.mr{
+  margin-left: auto;
+  margin-right: 0;
+}
+.ml{
+  margin-left: 0;
+  margin-right: auto;
+}
+
+
+/* -----------------------------------------------
+// order
+----------------------------------------------- */
+.o1{
+  order: 1;
+}
+.o2{
+  order: 2;
+}
+.o3{
+  order: 3;
+}
+.o4{
+  order: 4;
+}
+.o5{
+  order: 5;
+}
+.o6{
+  order: 6;
+}
+.o7{
+  order: 7;
+}
+.o8{
+  order: 8;
+}
+.o9{
+  order: 9;
+}
+.o10{
+  order: 10;
+}
+
+
+/* -----------------------------------------------
+横並び要素のカラム指定
+----------------------------------------------- */
+.col1,.col2,.col3,.col4,.col5,.col6{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+// 要素１個
+.col1 > *{
+  width: 100%;
+}
+
+
+// 要素2個
+.col2 > *{
+  width: 49%;
+  margin-right: 2%;
+}
+.col2 > *:nth-child(2n){
+  margin-right: 0%;
+}
+.col2 > *:nth-child(n+3){
+  margin-top: 4%;
+}
+
+
+// 要素3個
+.col3 > *{
+  width: 32%;
+  margin-right: 2%;
+}
+.col3 > *:nth-child(3n){
+  margin-right: 0%;
+}
+.col3 > *:nth-child(n+4){
+  margin-top: 4%;
+}
+
+
+// 要素4個
+.col4 > *{
+  width: 23.5%;
+  margin-right: 2%;
+}
+.col4 > *:nth-child(4n){
+  margin-right: 0%;
+}
+.col4 > *:nth-child(n+5){
+  margin-top: 4%;
+}
+
+
+// 要素5個
+.col5 > *{
+  width: 18.4%;
+  margin-right: 2%;
+}
+.col5 > *:nth-child(5n){
+  margin-right: 0%;
+}
+.col5 > *:nth-child(n+6){
+  margin-top: 4%;
+}
+
+
+// 要素6個
+.col6 > *{
+  width: 15%;
+  margin-right: 2%;
+}
+.col6 > *:nth-child(6n){
+  margin-right: 0%;
+}
+.col6 > *:nth-child(n+7){
+  margin-top: 4%;
+}
+
+
+@include sm{
+  .col4 > *,
+  .col5 > *,
+  .col6 > *{
+    width: 32%;
+    margin-right: 2%;
+  }
+  .col4 > *:nth-child(4n),
+  .col5 > *:nth-child(5n),
+  .col6 > *:nth-child(6n){
+    margin-right: 2%;
+  }
+  .col4 > *:nth-child(3n),
+  .col5 > *:nth-child(3n),
+  .col6 > *:nth-child(3n){
+    margin-right: 0%;
+  }
+  .col4 > *:nth-child(n+4),
+  .col5 > *:nth-child(n+4),
+  .col6 > *:nth-child(n+4){
+    margin-top: 4%;
+  }
+}
+@include tb{
+  .col3 > *,
+  .col4 > *,
+  .col5 > *,
+  .col6 > *{
+    width: 49%;
+    margin-right: 2%;
+  }
+
+  .col3 > *:nth-child(3n),
+  .col4 > *:nth-child(3n),
+  .col4 > *:nth-child(4n),
+  .col5 > *:nth-child(3n),
+  .col5 > *:nth-child(5n),
+  .col6 > *:nth-child(3n),
+  .col6 > *:nth-child(6n){
+    margin-right: 2%;
+  }
+
+  .col3 > *:nth-child(2n),
+  .col4 > *:nth-child(2n),
+  .col5 > *:nth-child(2n),
+  .col6 > *:nth-child(2n){
+    margin-right: 0%;
+  }
+
+  .col3 > *:nth-child(n+3),
+  .col4 > *:nth-child(n+3),
+  .col5 > *:nth-child(n+3),
+  .col6 > *:nth-child(n+3){
+    margin-top: 7%;
+  }
+}
+
+@include sp{
+  .col2 > *,
+  .col3 > *,
+  .col4 > *,
+  .col5 > *,
+  .col6 > *{
+    width: 100%;
+    margin-right: 0% !important;
+  }
+  .col2 > *:nth-child(n+2),
+  .col3 > *:nth-child(n+2),
+  .col4 > *:nth-child(n+2),
+  .col5 > *:nth-child(n+2),
+  .col6 > *:nth-child(n+2){
+    margin-top: 10%;
+  }
+}
+
+
+
+/* -----------------------------------------------
+アニメーション
+----------------------------------------------- */
+.opa{
+  transition: 0.3s;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.u_line {
+  transition: 0.3s;
+  border-bottom: 1px solid transparent;
+  &:hover{
+    border-bottom: 1px solid;
+  }
+}
+
+
+
+/* -----------------------------------------------
+その他
+----------------------------------------------- */
+// 文字折れ無くし、三点リーダーを出力
+.short{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+
+/* -----------------------------------------------
+ボーダー
+----------------------------------------------- */
+.border{
+  border: 1px solid;
+  &.primary{
+    border-color: var(--primary);
+  }
+  &.secondary{
+    border-color: var(--secondary);
+  }
+  &.success{
+    border-color: var(--success);
+  }
+  &.danger{
+    border-color: var(--danger);
+  }
+  &.warning{
+    border-color: var(--warning);
+  }
+  &.info{
+    border-color: var(--info);
+  }
+  &.light{
+    border-color: var(--light);
+  }
+  &.dark{
+    border-color: var(--dark);
+  }
+}
+
+.b-top{
+  border-top: 1px solid;
+  &.primary{
+    border-color: var(--primary);
+  }
+  &.secondary{
+    border-color: var(--secondary);
+  }
+  &.success{
+    border-color: var(--success);
+  }
+  &.danger{
+    border-color: var(--danger);
+  }
+  &.warning{
+    border-color: var(--warning);
+  }
+  &.info{
+    border-color: var(--info);
+  }
+  &.light{
+    border-color: var(--light);
+  }
+  &.dark{
+    border-color: var(--dark);
+  }
+}
+
+.b-right{
+  border-right: 1px solid;
+  &.primary{
+    border-color: var(--primary);
+  }
+  &.secondary{
+    border-color: var(--secondary);
+  }
+  &.success{
+    border-color: var(--success);
+  }
+  &.danger{
+    border-color: var(--danger);
+  }
+  &.warning{
+    border-color: var(--warning);
+  }
+  &.info{
+    border-color: var(--info);
+  }
+  &.light{
+    border-color: var(--light);
+  }
+  &.dark{
+    border-color: var(--dark);
+  }
+}
+.b-bottom{
+  border-bottom: 1px solid;
+  &.primary{
+    border-color: var(--primary);
+  }
+  &.secondary{
+    border-color: var(--secondary);
+  }
+  &.success{
+    border-color: var(--success);
+  }
+  &.danger{
+    border-color: var(--danger);
+  }
+  &.warning{
+    border-color: var(--warning);
+  }
+  &.info{
+    border-color: var(--info);
+  }
+  &.light{
+    border-color: var(--light);
+  }
+  &.dark{
+    border-color: var(--dark);
+  }
+}
+.b-left{
+  border-left: 1px solid;
+  &.primary{
+    border-color: var(--primary);
+  }
+  &.secondary{
+    border-color: var(--secondary);
+  }
+  &.success{
+    border-color: var(--success);
+  }
+  &.danger{
+    border-color: var(--danger);
+  }
+  &.warning{
+    border-color: var(--warning);
+  }
+  &.info{
+    border-color: var(--info);
+  }
+  &.light{
+    border-color: var(--light);
+  }
+  &.dark{
+    border-color: var(--dark);
+  }
+}
+.b2-top{
+  border-top: 2px solid;
+  &.primary{
+    border-color: var(--primary);
+  }
+  &.secondary{
+    border-color: var(--secondary);
+  }
+  &.success{
+    border-color: var(--success);
+  }
+  &.danger{
+    border-color: var(--danger);
+  }
+  &.warning{
+    border-color: var(--warning);
+  }
+  &.info{
+    border-color: var(--info);
+  }
+  &.light{
+    border-color: var(--light);
+  }
+  &.dark{
+    border-color: var(--dark);
+  }
+}
+
+.b2-right{
+  border-right: 2px solid;
+  &.primary{
+    border-color: var(--primary);
+  }
+  &.secondary{
+    border-color: var(--secondary);
+  }
+  &.success{
+    border-color: var(--success);
+  }
+  &.danger{
+    border-color: var(--danger);
+  }
+  &.warning{
+    border-color: var(--warning);
+  }
+  &.info{
+    border-color: var(--info);
+  }
+  &.light{
+    border-color: var(--light);
+  }
+  &.dark{
+    border-color: var(--dark);
+  }
+}
+.b2-bottom{
+  border-bottom: 2px solid;
+  &.primary{
+    border-color: var(--primary);
+  }
+  &.secondary{
+    border-color: var(--secondary);
+  }
+  &.success{
+    border-color: var(--success);
+  }
+  &.danger{
+    border-color: var(--danger);
+  }
+  &.warning{
+    border-color: var(--warning);
+  }
+  &.info{
+    border-color: var(--info);
+  }
+  &.light{
+    border-color: var(--light);
+  }
+  &.dark{
+    border-color: var(--dark);
+  }
+}
+.b2-left{
+  border-left: 2px solid;
+  &.primary{
+    border-color: var(--primary);
+  }
+  &.secondary{
+    border-color: var(--secondary);
+  }
+  &.success{
+    border-color: var(--success);
+  }
+  &.danger{
+    border-color: var(--danger);
+  }
+  &.warning{
+    border-color: var(--warning);
+  }
+  &.info{
+    border-color: var(--info);
+  }
+  &.light{
+    border-color: var(--light);
+  }
+  &.dark{
+    border-color: var(--dark);
+  }
+}
+
+.b3-top{
+  border-top: 3px solid;
+  &.primary{
+    border-color: var(--primary);
+  }
+  &.secondary{
+    border-color: var(--secondary);
+  }
+  &.success{
+    border-color: var(--success);
+  }
+  &.danger{
+    border-color: var(--danger);
+  }
+  &.warning{
+    border-color: var(--warning);
+  }
+  &.info{
+    border-color: var(--info);
+  }
+  &.light{
+    border-color: var(--light);
+  }
+  &.dark{
+    border-color: var(--dark);
+  }
+}
+
+.b3-right{
+  border-right: 3px solid;
+  &.primary{
+    border-color: var(--primary);
+  }
+  &.secondary{
+    border-color: var(--secondary);
+  }
+  &.success{
+    border-color: var(--success);
+  }
+  &.danger{
+    border-color: var(--danger);
+  }
+  &.warning{
+    border-color: var(--warning);
+  }
+  &.info{
+    border-color: var(--info);
+  }
+  &.light{
+    border-color: var(--light);
+  }
+  &.dark{
+    border-color: var(--dark);
+  }
+}
+.b3-bottom{
+  border-bottom: 3px solid;
+  &.primary{
+    border-color: var(--primary);
+  }
+  &.secondary{
+    border-color: var(--secondary);
+  }
+  &.success{
+    border-color: var(--success);
+  }
+  &.danger{
+    border-color: var(--danger);
+  }
+  &.warning{
+    border-color: var(--warning);
+  }
+  &.info{
+    border-color: var(--info);
+  }
+  &.light{
+    border-color: var(--light);
+  }
+  &.dark{
+    border-color: var(--dark);
+  }
+}
+.b3-left{
+  border-left: 3px solid;
+  &.primary{
+    border-color: var(--primary);
+  }
+  &.secondary{
+    border-color: var(--secondary);
+  }
+  &.success{
+    border-color: var(--success);
+  }
+  &.danger{
+    border-color: var(--danger);
+  }
+  &.warning{
+    border-color: var(--warning);
+  }
+  &.info{
+    border-color: var(--info);
+  }
+  &.light{
+    border-color: var(--light);
+  }
+  &.dark{
+    border-color: var(--dark);
+  }
+}
+
+
+
+/* //////////////////////////////////////////////////////////////////////
+// グリッドレイアウト
+////////////////////////////////////////////////////////////////////// */
+$grid-rows: 12;
+$sizes: (sm 481px, md 769px, lg 1025px, xl 1367px);
+$prefix: 'w';
+$padding: 6px 4px;
+.grid{
+  margin: 0 auto;
+  .row{
+    display: flex;
+    flex-wrap: wrap;
+    > div[class*='#{$prefix}-']{
+      padding: $padding;
+      box-sizing: border-box;
+    }
+    > div:not([class*='#{$prefix}-']){
+      flex: 1;
+      padding: $padding;
+    }
+    @for $i from 1 through $grid-rows{
+      .#{$prefix}-#{$i}{
+        flex-basis: $i / $grid-rows * 100%;
+      }
+      .#{$prefix}-offset-#{$i}{
+        margin-left: $i / $grid-rows * 100%;
+      }
+      @each $sizeLabel, $value in $sizes{
+        [class*='#{$prefix}-offset-#{$sizeLabel}-']{
+          margin-left: 0;
+        }
+        .#{$prefix}-#{$sizeLabel}-#{$i}{
+          flex-basis: 100%
+        }
+      }
+      @each $classLabel, $cssValue in (as flex-start, ac center, ae flex-end){
+        > div[class*='#{$prefix}-'].#{$classLabel}{
+          align-self: $cssValue;
+        }
+      }
+      @each $classLabel, $cssValue in (as flex-start, ac center, ae flex-end, space-around space-around, space-between space-between){
+        &.#{$classLabel}{
+          justify-content: $cssValue;
+        }
+        @each $sizeLabel, $value in $sizes{
+          @media only screen and (min-width: #{$value}){
+            @for $i from 1 through $grid-rows{
+              .row > .#{$prefix}-#{$sizeLabel}-#{$i}{
+                flex-basis: $i / $grid-rows * 100%;
+              }
+              .row > .#{$prefix}-offset-#{$sizeLabel}-#{$i}{
+                margin-left: $i / $grid-rows * 100%;
+              }
+              .gird{
+                width: if(index($sizes,$sizeLabel $value) > 2, $value, 99%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
